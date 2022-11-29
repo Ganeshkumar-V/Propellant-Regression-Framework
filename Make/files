@@ -1,0 +1,13 @@
+iTModel = interfaceTrackingModels
+$(iTModel)/interfaceTrackingModel/interfaceTrackingModel.C
+$(iTModel)/subCellularInterfaceMotion/subCellularInterfaceMotion.C
+
+HTModel = sharpInterfaceHeatTransferModels
+$(HTModel)/sharpInterfaceHeatTransferModel/sharpInterfaceHeatTransferModel.C
+$(HTModel)/RanzMarshall/RanzMarshall.C
+
+multiphaseSystem/multiPhaseSystem.C
+multiphaseSystem/multiPhaseSystemNew.C
+multiphaseSystem/multiPhaseSystems.C
+
+LIB = $(FOAM_USER_LIBBIN)/libpropellantRegressionPhaseSystem
