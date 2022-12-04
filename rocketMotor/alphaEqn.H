@@ -1,9 +1,6 @@
 {
   PtrList<volScalarField> dmdts(fluid.dmdts());
 
-  word particlePhase = fluid.get<word>("particlePhase");
-  word gasPhase = fluid.get<word>("gasPhase");
-
   volScalarField dalpha(0*fluid.phases()[0]);
 
   forAll(fluid.phases(), phasei)
@@ -37,7 +34,7 @@
   {
     phaseModel& phase = fluid.phases()[phasei];
     if(phase.stationary()) continue;
-    
+
     volScalarField& alpha = phase;
 
     if (phase.name() == gasPhase)

@@ -157,9 +157,9 @@ int main(int argc, char *argv[])
         // --- Pressure-velocity PIMPLE corrector loop
         while (pimple.loop())
         {
-            fluid.solve();
+            fluid.solve();  // Just regress propellant surface
             #include "alphaEqn.H"
-            
+
             fluid.correct();
 
             #include "YEqns.H"
