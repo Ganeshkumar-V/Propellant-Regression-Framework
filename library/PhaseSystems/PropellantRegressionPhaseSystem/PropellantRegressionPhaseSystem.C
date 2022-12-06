@@ -173,6 +173,20 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::PropellantRegressionPhas
         coeff
       );
     }
+
+    // Exit if efficiency is 0%
+    if (zeta == 0)
+    {
+      FatalInErrorFunction
+          << "Efficiency cannot be 0%\n"
+          << "Choose any number -> (0, 1.0]" << exit(FatalError);
+    }
+    if (zeta > 1.0)
+    {
+      FatalInErrorFunction
+          << "Efficiency cannot be more than 100%\n"
+          << "Choose any number -> (0, 1.0]" << exit(FatalError);
+    }
 }
 
 
