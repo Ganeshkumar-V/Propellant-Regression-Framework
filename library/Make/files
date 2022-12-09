@@ -1,3 +1,5 @@
+phaseModel/phaseModel/phaseModels.C
+
 iTModel = interfaceTrackingModels
 $(iTModel)/interfaceTrackingModel/interfaceTrackingModel.C
 $(iTModel)/subCellularInterfaceMotion/subCellularInterfaceMotion.C
