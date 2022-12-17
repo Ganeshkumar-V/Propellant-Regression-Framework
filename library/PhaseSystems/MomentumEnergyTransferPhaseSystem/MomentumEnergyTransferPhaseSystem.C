@@ -1285,7 +1285,7 @@ Foam::MomentumEnergyTransferPhaseSystem<BasePhaseSystem>::heatTransfer() const
         const volVectorField Ug(pair.phase2().U());
 
         // *eqns[pair.phase1().name()] -= K*(Up - Ug)&Up;
-        *eqns[pair.phase2().name()] += K*(Up - Ug)&Ug;
+        *eqns[pair.phase2().name()] += K*(Up - Ug)&Up;
     }
 
     return eqnsPtr;

@@ -295,8 +295,8 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::heatTransfer() const
 
 
     // Kinetic Energy Source
-    eqn1 += - coeff*rDmdt*phase1.K()
-            + coeff*rDmdt*(0.5*magSqr(Up));
+    // eqn1 += - coeff*rDmdt*phase1.K()
+    //         + coeff*rDmdt*(0.5*magSqr(Up));
     eqn2 += - (1.0 - coeff)*rDmdt*phase2.K()
             + (1.0 - coeff)*rDmdt*(0.5*magSqr(Ug));
   }

@@ -35,6 +35,7 @@ License
 #include "phaseModel.H"
 #include "ThermoPhaseModel.H"
 #include "AnisothermalParticlePhaseModel.H"
+#include "ThermalEnergyPhaseModel.H"
 #include "PurePhaseModel.H"
 #include "InertPhaseModel.H"
 #include "MovingPhaseModel.H"
@@ -65,6 +66,30 @@ namespace Foam
         pureParticlePhaseModel,
         phaseSystem,
         pureParticlePhaseModel
+    );
+
+    typedef
+        ThermalEnergyPhaseModel
+        <
+            PurePhaseModel
+            <
+                InertPhaseModel
+                <
+                    MovingPhaseModel
+                    <
+                        ThermoPhaseModel<phaseModel, rhoThermo>
+                    >
+                >
+            >
+        >
+        pureThermalEnergyPhaseModel;
+
+    addNamedToRunTimeSelectionTable
+    (
+        phaseModel,
+        pureThermalEnergyPhaseModel,
+        phaseSystem,
+        pureThermalEnergyPhaseModel
     );
 }
 
