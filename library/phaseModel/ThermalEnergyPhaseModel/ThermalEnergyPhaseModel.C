@@ -107,6 +107,12 @@ Foam::ThermalEnergyPhaseModel<BasePhaseModel>::heEqn()
     const tmp<volScalarField> tgradPU(fvc::grad(alpha*this->thermo().p())&U);
     const volScalarField& gradPU(tgradPU());
 
+    const tmp<volScalarField> tDpDt
+    (
+      fvc::ddt((alpha*this->thermo().p())()) + gradPU
+    );
+    const volScalarField& DpDt(tDpDt());
+
     volScalarField& he = this->thermo_->he();
 
     tmp<fvScalarMatrix> tEEqn
@@ -122,9 +128,8 @@ Foam::ThermalEnergyPhaseModel<BasePhaseModel>::heEqn()
             he
         )
      ==
-        (alpha*this->Qdot() + gradPU)
+        DpDt
     );
-    tEEqn.ref() -= alpha*this->fluid().dpdt();
 
     return tEEqn;
 }
