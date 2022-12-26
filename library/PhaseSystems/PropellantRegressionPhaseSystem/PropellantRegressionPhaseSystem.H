@@ -108,8 +108,8 @@ protected:
         dimensionedScalar alphaRhoAl;
 
         // Inlet velocity
-        volVectorField Ug;
-        volVectorField Up;
+        volVectorField Ug_;
+        volVectorField Up_;
 
         // Sub Models
 

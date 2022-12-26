@@ -82,15 +82,15 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::PropellantRegressionPhas
     rhoPropellant("rhoprop", dimDensity, this->template get<scalar>("propellantRho")),
     rhoParticle("rhopar", dimDensity, this->template get<scalar>("particleRho")),
     alphaRhoAl("alphaRhoAl", dimDensity, 0),
-    Ug
+    Ug_
     (
       volVectorField
       (
-        IOobject("Ugas", mesh), mesh,
+        IOobject("Ug_as", mesh), mesh,
         dimensionedVector("", dimVelocity, vector(0, 0, 0))
       )
     ),
-    Up
+    Up_
     (
       volVectorField
       (
@@ -274,8 +274,11 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::heatTransfer() const
     const phaseModel& phase2 = pair.phase2();
 
     // Enthalpy source
-    volScalarField hs1(phase1.thermo().he(phase1.thermo().p(), Tad));
-    volScalarField hs2(phase2.thermo().he(phase2.thermo().p(), Tad));
+    const tmp<volScalarField> ths1(phase1.thermo().he(phase1.thermo().p(), Tad));
+    const volScalarField& hs1(ths1());
+
+    const tmp<volScalarField> ths2(phase2.thermo().he(phase2.thermo().p(), Tad));
+    const volScalarField& hs2(ths2());
 
     // Equations
     fvScalarMatrix& eqn1 = *eqns[phase1.name()];
@@ -295,10 +298,14 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::heatTransfer() const
 
 
     // Kinetic Energy Source
-    eqn1 += - coeff*rDmdt*phase1.K()
-            + coeff*rDmdt*(0.5*magSqr(Up));
-    eqn2 += - (1.0 - coeff)*rDmdt*phase2.K()
-            + (1.0 - coeff)*rDmdt*(0.5*magSqr(Ug));
+    // eqn1 += - coeff*rDmdt*phase1.K()
+    //         + coeff*rDmdt*(0.5*magSqr(Up_));
+    if (this->totalEnergyGas)
+    {
+      eqn2 += - (1.0 - coeff)*rDmdt*phase2.K()
+              + (1.0 - coeff)*rDmdt*(0.5*magSqr(Ug_));
+    }
+
   }
 
   return eqnsPtr;
@@ -329,9 +336,9 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::momentumTransfer()
 
     // Momentum Source
     eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
-            + coeff*rDmdt*Up;
+            + coeff*rDmdt*Up_;
     eqn2 += - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi())
-            + (1.0 - coeff)*rDmdt*Ug;
+            + (1.0 - coeff)*rDmdt*Ug_;
   }
 
   return eqnsPtr;
@@ -401,10 +408,12 @@ void Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::calculateVelocity()
     //                into the combustion chamber
 
     // density of gas phase entering,
-    volScalarField rhog(this->phases()[0].thermo().p()/(Tad*R_));
+    const tmp<volScalarField> trhog(this->phases()[0].thermo().p()/(Tad*R_));
+    const volScalarField& rhog(trhog());
 
     // volume fraction of particle phase
-    volScalarField alphap(1/(1 + (rhoParticle/rhog)*(zeta/(8 + 9*eqR_))));
+    const tmp<volScalarField> talphap(1/(1 + (rhoParticle/rhog)*(zeta/(8 + 9*eqR_))));
+    const volScalarField& alphap(talphap());
 
     // Velocity of gas and particle phase
     const fvMesh& mesh(this->phases()[0].mesh());
@@ -416,12 +425,12 @@ void Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::calculateVelocity()
         scalar temp = (-alphaRhoAl.value()*rb_[cellI]
                       /(9.0*eqR_*(1 - alphap[cellI])*rhog[cellI]));
 
-        Ug[cellI].x() = temp;
-        Up[cellI].x() = Ug[cellI].x()*zeta;
+        Ug_[cellI].x() = temp;
+        Up_[cellI].x() = Ug_[cellI].x()*zeta;
 
         // Correct for change of Reference
-        Ug[cellI].x() += rb_[cellI];
-        Up[cellI].x() += rb_[cellI];
+        Ug_[cellI].x() += rb_[cellI];
+        Up_[cellI].x() += rb_[cellI];
     }
 
 }

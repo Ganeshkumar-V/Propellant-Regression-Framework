@@ -43,6 +43,7 @@ Description
 #include "localEulerDdtScheme.H"
 #include "fvcSmooth.H"
 #include "simpleMatrix.H"
+#include "timeProfiler.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 void displayMatrix(fvScalarMatrix TEqn, volScalarField T)
@@ -132,8 +133,23 @@ int main(int argc, char *argv[])
 
     Info<< "\nStarting time loop\n" << endl;
 
-    while (runTime.run())
+    StopWatch totalTime;
+    StopWatch runLoopTime;
+    StopWatch courantNoTime;
+    StopWatch pimpleLoopTime;
+    StopWatch alphaEqnTime;
+    StopWatch EEqnTime;
+    StopWatch PEqnTime;
+    StopWatch UEqnTime;
+    StopWatch infoTime;
+    EEqntimeProfiler EEqnProfile;
+
+    totalTime.start();
+    while (!runTime.end())
     {
+      runLoopTime.start();
+
+        courantNoTime.start();
         #include "readTimeControls.H"
 
         int nEnergyCorrectors
@@ -153,10 +169,13 @@ int main(int argc, char *argv[])
 
         runTime++;
         Info<< "Time = " << runTime.timeName() << nl << endl;
+        courantNoTime.stop();
 
+        pimpleLoopTime.start();
         // --- Pressure-velocity PIMPLE corrector loop
         while (pimple.loop())
         {
+          alphaEqnTime.start();
             fluid.solve();  // Just regress propellant surface
 
             // #include "findPropellantCells.H"
@@ -195,8 +214,9 @@ int main(int argc, char *argv[])
 
             #include "alphaEqn.H"
             fluid.correct();
+          alphaEqnTime.stop();
 
-            #include "YEqns.H"
+            // #include "YEqns.H"
 
             if (faceMomentum)
             {
@@ -206,9 +226,17 @@ int main(int argc, char *argv[])
             }
             else
             {
+              UEqnTime.start();
                 #include "pU/UEqns.H"
+              UEqnTime.stop();
+
+              EEqnTime.start();
                 #include "EEqns.H"
+              EEqnTime.stop();
+
+              PEqnTime.start();
                 #include "pU/pEqn.H"
+              PEqnTime.stop();
             }
 
             fluid.correctKinematics();
@@ -218,7 +246,9 @@ int main(int argc, char *argv[])
                 fluid.correctTurbulence();
             }
         }
+        pimpleLoopTime.stop();
 
+        infoTime.start();
         forAll(phases, phasei)
         {
             phaseModel& phase = phases[phasei];
@@ -232,8 +262,26 @@ int main(int argc, char *argv[])
         runTime.write();
 
         runTime.printExecutionTime(Info);
-    }
+        infoTime.stop();
 
+      runLoopTime.stop();
+    }
+    totalTime.stop();
+
+    Info << "Time Profiling: " << endl;
+    double totalTimed = totalTime.getTotalTime();
+    Info << "TotalTime: " << totalTimed << endl;
+    Info << "      runTimeLoop : " << runLoopTime.getTotalTime()/totalTimed*100.0 << " % ( " << runLoopTime.getTotalTime() << " s)"<< endl;
+    Info << "       ->  courantNoTime : " << courantNoTime.getTotalTime()/totalTimed*100.0 << " % ( " << courantNoTime.getTotalTime() << " s)"<< endl;
+    Info << "       ->     info/write : " << infoTime.getTotalTime()/totalTimed*100.0 << " % ( " << infoTime.getTotalTime() << " s)"<< endl;
+    Info << "       -> pimpleLoopTime : " << pimpleLoopTime.getTotalTime()/totalTimed*100.0 << " % ( " << pimpleLoopTime.getTotalTime() << " s)"<< endl;
+    Info << "               -> alphaEqnTime : " << alphaEqnTime.getTotalTime()/totalTimed*100.0 << " % ( " << alphaEqnTime.getTotalTime() << " s)"<< endl;
+    Info << "               ->         EEqn : " << EEqnTime.getTotalTime()/totalTimed*100.0 << " % ( " << EEqnTime.getTotalTime() << " s)"<< endl;
+    Info << "               ->         UEqn : " << UEqnTime.getTotalTime()/totalTimed*100.0 << " % ( " << UEqnTime.getTotalTime() << " s)"<< endl;
+    Info << "               ->         PEqn : " << PEqnTime.getTotalTime()/totalTimed*100.0 << " % ( " << PEqnTime.getTotalTime() << " s)"<< endl;
+
+    EEqnProfile.displayTime();
+    // fluid.finalize();
     Info<< "End\n" << endl;
 
     return 0;

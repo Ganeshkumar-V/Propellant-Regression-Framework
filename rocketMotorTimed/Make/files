@@ -1,0 +1,3 @@
+rocketMotorTimed.C
+
+EXE = $(FOAM_APPBIN)/rocketMotorTimed

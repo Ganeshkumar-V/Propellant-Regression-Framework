@@ -26,14 +26,14 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "AnisothermalParticlePhaseModel.H"
+#include "ThermalEnergyPhaseModel.H"
 #include "phaseSystem.H"
 
 // * * * * * * * * * * * * Private Member Functions * * * * * * * * * * * * //
 
 template<class BasePhaseModel>
 Foam::tmp<Foam::volScalarField>
-Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::filterPressureWork
+Foam::ThermalEnergyPhaseModel<BasePhaseModel>::filterPressureWork
 (
     const tmp<volScalarField>& pressureWork
 ) const
@@ -59,7 +59,7 @@ Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::filterPressureWork
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
 template<class BasePhaseModel>
-Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::AnisothermalParticlePhaseModel
+Foam::ThermalEnergyPhaseModel<BasePhaseModel>::ThermalEnergyPhaseModel
 (
     const phaseSystem& fluid,
     const word& phaseName,
@@ -73,7 +73,7 @@ Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::AnisothermalParticlePhaseM
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 template<class BasePhaseModel>
-void Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::correctThermo()
+void Foam::ThermalEnergyPhaseModel<BasePhaseModel>::correctThermo()
 {
     BasePhaseModel::correctThermo();
 
@@ -82,7 +82,7 @@ void Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::correctThermo()
 
 
 template<class BasePhaseModel>
-bool Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::isothermal() const
+bool Foam::ThermalEnergyPhaseModel<BasePhaseModel>::isothermal() const
 {
     return false;
 }
@@ -90,7 +90,7 @@ bool Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::isothermal() const
 
 template<class BasePhaseModel>
 Foam::tmp<Foam::fvScalarMatrix>
-Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::heEqn()
+Foam::ThermalEnergyPhaseModel<BasePhaseModel>::heEqn()
 {
     const volScalarField& alpha = *this;
     const volScalarField& rho = this->rho();
@@ -107,6 +107,12 @@ Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::heEqn()
     const tmp<volScalarField> tgradPU(fvc::grad(alpha*this->thermo().p())&U);
     const volScalarField& gradPU(tgradPU());
 
+    const tmp<volScalarField> tDpDt
+    (
+      fvc::ddt((alpha*this->thermo().p())()) + gradPU
+    );
+    const volScalarField& DpDt(tDpDt());
+
     volScalarField& he = this->thermo_->he();
 
     tmp<fvScalarMatrix> tEEqn
@@ -122,9 +128,8 @@ Foam::AnisothermalParticlePhaseModel<BasePhaseModel>::heEqn()
             he
         )
      ==
-        (alpha*this->Qdot() + gradPU)
+        DpDt
     );
-    tEEqn.ref() -= alpha*this->fluid().dpdt();
 
     return tEEqn;
 }

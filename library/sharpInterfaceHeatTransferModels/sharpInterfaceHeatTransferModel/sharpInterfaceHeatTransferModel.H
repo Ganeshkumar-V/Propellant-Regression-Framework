@@ -67,6 +67,7 @@ protected:
 
         //- Dispersed Phase Thermal Conductivity
         tmp<volScalarField> kd_;
+        tmp<volScalarField> kc_;
 
 public:
 
@@ -132,6 +133,7 @@ public:
         virtual tmp<volScalarField> K(const scalar residualAlpha) const = 0;
 
         const tmp<volScalarField> Kd() const;
+        const tmp<volScalarField> Kc() const;
 };
 
 

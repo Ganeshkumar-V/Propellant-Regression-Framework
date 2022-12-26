@@ -61,13 +61,16 @@ Foam::sharpInterfaceHeatTransferModel::sharpInterfaceHeatTransferModel
           : pair_.phase1().residualAlpha().value()
         )
     ),
-    kd_(pair_.phase1().thermo().kappa())
+    kd_(pair_.phase1().thermo().kappa()),
+    kc_(pair_.phase2().thermo().kappa())
 {
   const fvMesh& mesh(pair_.phase1().mesh());
 
-  dimensionedScalar temp("Kd", kd_().dimensions(), dict.getOrDefault<scalar>("Kd", 0.0));
+  dimensionedScalar tempd("Kd", kd_().dimensions(), dict.getOrDefault<scalar>("Kd", 0.0));
+  dimensionedScalar tempc("Kc", kd_().dimensions(), dict.getOrDefault<scalar>("Kc", 0.0));
 
-  kd_.ref() = volScalarField(IOobject("Kd", mesh), mesh, temp);
+  kd_.ref() = volScalarField(IOobject("Kd", mesh), mesh, tempd);
+  kc_.ref() = volScalarField(IOobject("Kc", mesh), mesh, tempc);
 }
 
 // * * * * * * * * * * * * * * * * Selectors * * * * * * * * * * * * * * * * //
@@ -113,6 +116,12 @@ const Foam::tmp<Foam::volScalarField>
 Foam::sharpInterfaceHeatTransferModel::Kd() const
 {
     return kd_;
+}
+
+const Foam::tmp<Foam::volScalarField>
+Foam::sharpInterfaceHeatTransferModel::Kc() const
+{
+    return kc_;
 }
 
 // ************************************************************************* //
