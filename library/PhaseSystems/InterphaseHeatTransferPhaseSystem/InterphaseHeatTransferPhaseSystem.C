@@ -124,13 +124,13 @@ heatTransfer() const
       *eqns[phase1.name()] -=
             - fvm::laplacian
               (
-               fvc::interpolate(phase1)*fvc::interpolate(Kd/Cp1),
+               fvc::interpolate(phase1*Kd/Cp1),
                phase1.thermo().he()
               );
       *eqns[phase2.name()] -=
             - fvm::laplacian
               (
-                fvc::interpolate(phase2)*fvc::interpolate(Kc/Cp2),
+                fvc::interpolate(phase2*Kc/Cp2),
                 phase2.thermo().he()
               );
     }

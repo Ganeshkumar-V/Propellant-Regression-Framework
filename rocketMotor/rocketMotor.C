@@ -174,8 +174,8 @@ int main(int argc, char *argv[])
               }
             }
             labelList purePropellantCells(purePropellantSize);
-            // scalar Tad = fluid.get<scalar>("Tad");
-            // scalarField setTemp(purePropellantSize, Tad);
+            scalar Tad = fluid.get<scalar>("Tad");
+            scalarField setTemp(purePropellantSize, Tad);
             scalarField setAlpha(purePropellantSize, SMALL);
             vectorField setVelocity(purePropellantSize, vector(0, 0, 0));
             if (propellantIndex != -1)

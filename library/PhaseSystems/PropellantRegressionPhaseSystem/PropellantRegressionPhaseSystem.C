@@ -234,6 +234,7 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::dmdts() const
         const volScalarField& rDmdt = *rDmdtIter();
 
         const scalar coeff = coeff_[rDmdtIter.key()];
+        Info << "Mass transfer coeff: " << coeff << endl;
         this->addField(pair.phase1(), "dmdt", coeff*rDmdt, dmdts);
         this->addField(pair.phase2(), "dmdt", (1.0 - coeff)*rDmdt, dmdts);
     }
@@ -291,10 +292,10 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::heatTransfer() const
             + (1.0 - coeff)*rDmdt*hs2;
 
     // // Stabilization Terms
-    // eqn1 += coeff*rDmdt*phase1.thermo().he()
-    //         - fvm::Sp(coeff*rDmdt, eqn1.psi());
-    // eqn2 += (1.0 - coeff)*rDmdt*phase2.thermo().he()
-    //         - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi());
+    eqn1 += coeff*rDmdt*phase1.thermo().he()
+            - fvm::Sp(coeff*rDmdt, eqn1.psi());
+    eqn2 += (1.0 - coeff)*rDmdt*phase2.thermo().he()
+            - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi());
 
 
     // Kinetic Energy Source
@@ -302,6 +303,7 @@ Foam::PropellantRegressionPhaseSystem<BasePhaseSystem>::heatTransfer() const
     //         + coeff*rDmdt*(0.5*magSqr(Up_));
     if (this->totalEnergyGas)
     {
+      Info << "Kinetic Energy is getting added!" << endl;
       eqn2 += - (1.0 - coeff)*rDmdt*phase2.K()
               + (1.0 - coeff)*rDmdt*(0.5*magSqr(Ug_));
     }
