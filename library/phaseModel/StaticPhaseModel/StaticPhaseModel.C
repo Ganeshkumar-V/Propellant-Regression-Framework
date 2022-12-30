@@ -169,7 +169,10 @@ template<class BasePhaseModel>
 Foam::tmp<Foam::surfaceScalarField>
 Foam::StaticPhaseModel<BasePhaseModel>::phi() const
 {
-    return zeroSurfaceField<scalar>("phi", dimVolume/dimTime);
+    tmp<surfaceScalarField> tphi
+            = zeroSurfaceField<scalar>("phi", dimVolume/dimTime);
+    tphi.ref().setOriented();
+    return tphi;
 }
 
 

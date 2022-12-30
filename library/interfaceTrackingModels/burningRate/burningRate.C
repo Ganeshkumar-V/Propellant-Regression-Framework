@@ -67,9 +67,9 @@ void Foam::interfaceTrackingModels::burningRate::updateInterface()
         if (status == 0) // cell is cut
         {
             interfaceArea_[celli] =
-                mag(cutCell.faceArea())/mesh.V()[celli];
+                mag(cutCell.faceArea())/mesh_.V()[celli];
             interfaceAreaVector_[celli] =
-                cutCell.faceArea()/mesh.V()[celli];
+                cutCell.faceArea()/mesh_.V()[celli];
         }
     }
 }
@@ -90,6 +90,10 @@ Foam::interfaceTrackingModels::burningRate::burningRate
       "",
       pow(dimLength*dimTime*dimTime/dimMass, n)*dimVelocity,
       dict.get<scalar>("a")
+    ),
+    propellantPhase_
+    (
+      pair.phase1().db().lookupObject<phaseModel>("alpha." + this->propellant_)
     ),
     interfaceArea_
     (
@@ -129,10 +133,6 @@ Foam::interfaceTrackingModels::burningRate::burningRate
     ),
     crb_("", dimVelocity, dict.getOrDefault<scalar>("rb", -1))
 {
-  const phaseModel& phase = pair_.phase1();
-
-  propellantPhase_ = phase.db().lookupObjectRef<phaseModel>(propellant_);
-
   Info << "Propellant Phase is " << propellantPhase_.name()
             << " index - " << propellantPhase_.index() << endl;
 }
@@ -150,14 +150,14 @@ void Foam::interfaceTrackingModels::burningRate::correct()
   // rb = constant
   if (crb_.value() != -1)
   {
-    rb_.ref() = interface_.ref()*crb_;
+    rb_.ref() = crb_;
   }
   else
   {
     // rb = aP^n
     const phaseModel& phase = pair_.phase1();
     const volScalarField& p = phase.db().lookupObject<volScalarField>("p");
-    rb_ = (a*pow(p()/1e6, n))*1e-2;
+    rb_.ref() = (a*pow(p()/1e6, n))*1e-2;
   }
 
   // Find Interface

@@ -74,7 +74,7 @@ public:
     scalar n;
     dimensionedScalar a;
 
-    phaseModel propellantPhase_;
+    const phaseModel& propellantPhase_;
 
     //- Interface area and Vector
     volScalarField interfaceArea_;
