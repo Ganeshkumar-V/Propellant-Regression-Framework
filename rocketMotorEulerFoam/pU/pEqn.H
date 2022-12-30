@@ -14,6 +14,7 @@ PtrList<volScalarField> rAUs(phases.size());
 forAll(fluid.movingPhases(), movingPhasei)
 {
     phaseModel& phase = fluid.movingPhases()[movingPhasei];
+    if(!phase.moving()) continue;
     const volScalarField& alpha = phase;
 
     rAUs.set
@@ -63,6 +64,7 @@ while (pimple.correct())
     forAll(fluid.movingPhases(), movingPhasei)
     {
         phaseModel& phase = fluid.movingPhases()[movingPhasei];
+        if(!phase.moving()) continue;
         MRF.correctBoundaryFlux(phase.U(), phase.phiRef());
     }
 
@@ -109,6 +111,7 @@ while (pimple.correct())
         forAll(fluid.movingPhases(), movingPhasei)
         {
             phaseModel& phase = fluid.movingPhases()[movingPhasei];
+            if(!phase.moving()) continue;
             const volScalarField& alpha = phase;
 
             HbyAs.set
@@ -185,6 +188,7 @@ while (pimple.correct())
 
     forAll(phases, phasei)
     {
+        if(!phases[phasei].moving()) continue;
         phiHbyA += alphafs[phasei]*phiHbyAs[phasei];
     }
 
@@ -387,10 +391,12 @@ while (pimple.correct())
             forAll(fluid.movingPhases(), movingPhasei)
             {
                 phaseModel& phase = fluid.movingPhases()[movingPhasei];
-
-                phase.phiRef() =
-                    phiHbyAs[phase.index()]
-                  + alpharAUfs[phase.index()]*mSfGradp;
+                if(phase.moving())
+                {
+                    phase.phiRef() =
+                        phiHbyAs[phase.index()]
+                        + alpharAUfs[phase.index()]*mSfGradp;
+                }
 
                 // Set the phase dilatation rates
                 if (pEqnComps.set(phase.index()))
@@ -407,6 +413,7 @@ while (pimple.correct())
             forAll(fluid.movingPhases(), movingPhasei)
             {
                 phaseModel& phase = fluid.movingPhases()[movingPhasei];
+                if(!phase.moving()) continue;
 
                 phase.URef() =
                     HbyAs[phase.index()]
@@ -425,6 +432,7 @@ while (pimple.correct())
             forAll(fluid.movingPhases(), movingPhasei)
             {
                 phaseModel& phase = fluid.movingPhases()[movingPhasei];
+                if(!phase.moving()) continue;
 
                 phase.URef().correctBoundaryConditions();
                 fvOptions.correct(phase.URef());

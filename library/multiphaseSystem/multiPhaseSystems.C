@@ -62,14 +62,14 @@ namespace Foam
         <
             InterphaseHeatTransferPhaseSystem
             <
-                MomentumEnergyTransferPhaseSystem<multiphaseSystem>
+                MomentumEnergyTransferPhaseSystem<multiPhaseSystem>
             >
         >
         interfaceRegressionMultiphaseSystem;
 
     addNamedToRunTimeSelectionTable
     (
-        multiphaseSystem,
+        multiPhaseSystem,
         interfaceRegressionMultiphaseSystem,
         dictionary,
         interfaceRegressionMultiphaseSystem

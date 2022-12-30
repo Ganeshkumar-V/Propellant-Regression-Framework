@@ -95,8 +95,56 @@ Foam::StaticPhaseModel<BasePhaseModel>::StaticPhaseModel
 )
 :
     BasePhaseModel(fluid, phaseName, index),
+    U_
+    (
+        IOobject
+        (
+            IOobject::groupName("U", this->name()),
+            fluid.mesh().time().timeName(),
+            fluid.mesh()
+        ),
+        fluid.mesh(),
+        dimensionedVector(dimVelocity, vector(0, 0, 0))
+    ),
+    phi_
+    (
+        IOobject
+        (
+            IOobject::groupName("phi", phaseModel::name()),
+            fluid.mesh().time().timeName(),
+            fluid.mesh()
+        ),
+        fluid.mesh(),
+        dimensionedScalar(dimensionSet(0, 3, -1, 0, 0), Zero)
+    ),
+    alphaPhi_
+    (
+        IOobject
+        (
+            IOobject::groupName("alphaPhi", this->name()),
+            fluid.mesh().time().timeName(),
+            fluid.mesh()
+        ),
+        fluid.mesh(),
+        dimensionedScalar(dimensionSet(0, 3, -1, 0, 0), Zero)
+    ),
+    alphaRhoPhi_
+    (
+        IOobject
+        (
+            IOobject::groupName("alphaRhoPhi", this->name()),
+            fluid.mesh().time().timeName(),
+            fluid.mesh()
+        ),
+        fluid.mesh(),
+        dimensionedScalar(dimensionSet(1, 0, -1, 0, 0), Zero)
+    ),
     divU_(nullptr)
-{}
+{
+  phi_.setOriented();
+  alphaPhi_.setOriented();
+  alphaRhoPhi_.setOriented();
+}
 
 
 // * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //
@@ -149,7 +197,7 @@ template<class BasePhaseModel>
 Foam::tmp<Foam::volVectorField>
 Foam::StaticPhaseModel<BasePhaseModel>::U() const
 {
-    return zeroVolField<vector>("U", dimVelocity, true);
+    return tmp<volVectorField>(U_);
 }
 
 
@@ -169,10 +217,7 @@ template<class BasePhaseModel>
 Foam::tmp<Foam::surfaceScalarField>
 Foam::StaticPhaseModel<BasePhaseModel>::phi() const
 {
-    tmp<surfaceScalarField> tphi
-            = zeroSurfaceField<scalar>("phi", dimVolume/dimTime);
-    tphi.ref().setOriented();
-    return tphi;
+    return tmp<surfaceScalarField>(phi_);
 }
 
 
@@ -192,7 +237,7 @@ template<class BasePhaseModel>
 Foam::tmp<Foam::surfaceScalarField>
 Foam::StaticPhaseModel<BasePhaseModel>::alphaPhi() const
 {
-    return zeroSurfaceField<scalar>("alphaPhi", dimVolume/dimTime);
+    return tmp<surfaceScalarField>(alphaPhi_);
 }
 
 
@@ -212,7 +257,7 @@ template<class BasePhaseModel>
 Foam::tmp<Foam::surfaceScalarField>
 Foam::StaticPhaseModel<BasePhaseModel>::alphaRhoPhi() const
 {
-    return zeroSurfaceField<scalar>("alphaRhoPhi", dimMass/dimTime);
+    return tmp<surfaceScalarField>(alphaRhoPhi_);
 }
 
 

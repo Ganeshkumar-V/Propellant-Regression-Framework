@@ -37,7 +37,7 @@ Description
 \*---------------------------------------------------------------------------*/
 
 #include "fvCFD.H"
-#include "multiphaseSystem.H"
+#include "multiPhaseSystem.H"
 #include "phaseCompressibleTurbulenceModel.H"
 #include "pimpleControl.H"
 #include "localEulerDdtScheme.H"

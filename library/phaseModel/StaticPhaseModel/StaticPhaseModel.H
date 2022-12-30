@@ -94,6 +94,18 @@ private:
 protected:
      // Protected Data
 
+        //- Velocity field
+        volVectorField U_;
+
+        //- Flux
+        surfaceScalarField phi_;
+
+        //- Volumetric flux
+        surfaceScalarField alphaPhi_;
+
+        //- Mass flux
+        surfaceScalarField alphaRhoPhi_;
+
         //- Dilatation rate
         tmp<volScalarField> divU_;
 

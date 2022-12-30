@@ -12,7 +12,7 @@ PtrList<fvVectorMatrix> UEqns(phases.size());
     forAll(fluid.movingPhases(), movingPhasei)
     {
         phaseModel& phase = fluid.movingPhases()[movingPhasei];
-
+        if (!phase.moving()) continue;
         const volScalarField& alpha = phase;
         const volScalarField& rho = phase.rho();
         volVectorField& U = phase.URef();
