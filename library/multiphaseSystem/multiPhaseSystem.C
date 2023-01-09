@@ -200,6 +200,7 @@ void Foam::multiPhaseSystem::solveAlphas()
     labelHashSet fixedAlphaPhiCorrs;
     forAll(stationaryPhases(), stationaryPhasei)
     {
+      Info << "Stationary Phase is found" << endl;
         fixedAlphaPhiCorrs.insert(stationaryPhases()[stationaryPhasei].index());
     }
     MULES::limitSum(alphafs, alphaPhiCorrs, fixedAlphaPhiCorrs);

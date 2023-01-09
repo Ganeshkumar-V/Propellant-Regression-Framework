@@ -1,6 +1,6 @@
 if (adjustTimeStep)
 {
-  scalar factor = 1.01;
+  scalar factor = 1.2;
     scalar maxDeltaTFact = maxCo/(CoNum + SMALL);
     scalar deltaTFact = min(min(maxDeltaTFact, 1.0 + 0.1*maxDeltaTFact), factor);
 

@@ -289,10 +289,10 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::heatTransfer() const
     fvScalarMatrix& eqn2 = *eqns[phase2.name()];
 
     // Energy Source 1
-    eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
-            + coeff*rDmdt*hs1;
-    eqn2 += - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi())
-            + (1.0 - coeff)*rDmdt*hs2;
+    // eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
+    //         + coeff*rDmdt*hs1;
+    // eqn2 += - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi())
+    //         + (1.0 - coeff)*rDmdt*hs2;
 
     // Energy Source 2
     // eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
@@ -307,12 +307,12 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::heatTransfer() const
     // Kinetic Energy Source
     // eqn1 += - coeff*rDmdt*phase1.K()
     //         + coeff*rDmdt*(0.5*magSqr(Up_));
-    if (this->totalEnergyGas)
-    {
-      Info << "Kinetic Energy is getting added!" << endl;
-      eqn2 += - (1.0 - coeff)*rDmdt*phase2.K()
-              + (1.0 - coeff)*rDmdt*(0.5*magSqr(Ug_));
-    }
+    // if (this->totalEnergyGas)
+    // {
+    //   Info << "Kinetic Energy is getting added!" << endl;
+    //   eqn2 += - (1.0 - coeff)*rDmdt*phase2.K()
+    //           + (1.0 - coeff)*rDmdt*(0.5*magSqr(Ug_));
+    // }
 
   }
 
@@ -328,26 +328,26 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::momentumTransfer()
 
   phaseSystem::momentumTransferTable& eqns = eqnsPtr();
 
-  forAllConstIter(rDmdtTable, rDmdt_, rDmdtIter)
-  {
-    const phasePair& pair = this->phasePairs_[rDmdtIter.key()];
-    const volScalarField& rDmdt = *rDmdtIter();
-
-    const scalar coeff = coeff_[rDmdtIter.key()];
-
-    const phaseModel& phase1 = pair.phase1();
-    const phaseModel& phase2 = pair.phase2();
-
-    // Equations
-    fvVectorMatrix& eqn1 = *eqns[phase1.name()];
-    fvVectorMatrix& eqn2 = *eqns[phase2.name()];
-
-    // Momentum Source
-    eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
-            + coeff*rDmdt*Up_;
-    eqn2 += - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi())
-            + (1.0 - coeff)*rDmdt*Ug_;
-  }
+  // forAllConstIter(rDmdtTable, rDmdt_, rDmdtIter)
+  // {
+  //   const phasePair& pair = this->phasePairs_[rDmdtIter.key()];
+  //   const volScalarField& rDmdt = *rDmdtIter();
+  //
+  //   const scalar coeff = coeff_[rDmdtIter.key()];
+  //
+  //   const phaseModel& phase1 = pair.phase1();
+  //   const phaseModel& phase2 = pair.phase2();
+  //
+  //   // Equations
+  //   fvVectorMatrix& eqn1 = *eqns[phase1.name()];
+  //   fvVectorMatrix& eqn2 = *eqns[phase2.name()];
+  //
+  //   // Momentum Source
+  //   eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
+  //           + coeff*rDmdt*Up_;
+  //   eqn2 += - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi())
+  //           + (1.0 - coeff)*rDmdt*Ug_;
+  // }
 
   return eqnsPtr;
 }
@@ -385,14 +385,14 @@ void Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::correct()
         interfaceTrackingModelIter
     )
     {
-        *rDmdt_[interfaceTrackingModelIter.key()]
-              = interfaceTrackingModelIter()->rb()
-                *interfaceTrackingModelIter()->As()*rhoPropellant;
+        // *rDmdt_[interfaceTrackingModelIter.key()]
+        //       = interfaceTrackingModelIter()->rb()
+        //         *interfaceTrackingModelIter()->As()*rhoPropellant;
         rb_ = interfaceTrackingModelIter()->rb();
     }
 
     // calculate velocity of the gas and particle source
-    calculateVelocity();
+    // calculateVelocity();
 
 }
 
