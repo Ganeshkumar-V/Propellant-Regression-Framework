@@ -185,6 +185,7 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::PropellantInterfacePhaseS
     MW_.Al2O3 = molecularWeights_.get<scalar>("Al2O3");
     MW_.H2O = molecularWeights_.get<scalar>("H2O");
     MW_.H2 = molecularWeights_.get<scalar>("H2");
+    AAlC_ = this->template get<scalar>("activeAlContent");
 
     R_.value() = 8314.5/MW_.H2;
     alphaRhoAl.value() = rhoPropellant.value()*eqR_/(1 + eqR_);
@@ -197,24 +198,31 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::PropellantInterfacePhaseS
       interfaceTrackingModelIter
     )
     {
-        // number of moles of fuel
-        scalar xi = MW_.Al/(eqR_*MW_.H2O);
-        scalar coeff = 1.0;
+      scalar gcoeff = 1.0;
+      scalar pcoeff = 1.0;
 
-        if (eqR_ <= 1.0) // Lean or Stoichiometric Mixture
-        {
-            coeff = MW_.Al2O3/(2*MW_.Al*(1 + 1/eqR_));
-        }
-        else  // Rich mixture
-        {
-            coeff = 1.0 - MW_.H2*xi/(MW_.Al*(1 + 1/eqR_));
-        }
+      if (eqR_ <= 1.0) // Lean or Stoichiometric Mixture
+      {
+        pcoeff = AAlC_*MW_.Al2O3/(2*MW_.Al*(1 + 1/eqR_)) + (1 - AAlC_);
+        gcoeff = AAlC_*(1.0 - MW_.Al2O3/(2*MW_.Al*(1 + 1/eqR_)));
+      }
+      else  // Rich mixture
+      {
+        FatalErrorInFunction << "Equivalence Ratio is greater than 1.0 : "
+        << " Fuel Rich Mixture Coefficients is not implemented"
+        << exit(FatalError);
+      }
 
-        this->coeff_.set
-        (
-            interfaceTrackingModelIter.key(),
-            coeff
-        );
+      this->pCoeff_.set
+      (
+        interfaceTrackingModelIter.key(),
+        pcoeff
+      );
+      this->gCoeff_.set
+      (
+        interfaceTrackingModelIter.key(),
+        gcoeff
+      );
     }
 
     // Exit if efficiency is 0%
@@ -275,10 +283,11 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::dmdts() const
         const phasePair& pair = this->phasePairs_[rDmdtIter.key()];
         const volScalarField& rDmdt = *rDmdtIter();
 
-        const scalar coeff = coeff_[rDmdtIter.key()];
+        const scalar pcoeff = pCoeff_[rDmdtIter.key()];
+        const scalar gcoeff = gCoeff_[rDmdtIter.key()];
 
-        this->addField(pair.phase1(), "dmdt", coeff*rDmdt, dmdts);
-        this->addField(pair.phase2(), "dmdt", (1.0 - coeff)*rDmdt, dmdts);
+        this->addField(pair.phase1(), "dmdt", pcoeff*rDmdt, dmdts);
+        this->addField(pair.phase2(), "dmdt", gcoeff*rDmdt, dmdts);
 
         // Subtract for Propellant Phase
         this->addField(this->phases()[2], "dmdt", -rDmdt, dmdts);
@@ -326,14 +335,14 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::massTransfer() const
 
         const phaseModel& phase = pair.continuous();
         const volScalarField dmdt(this->rDmdt(pair));
-        const dimensionedScalar coeff(dimless, 1.0 - coeff_[interfaceTrackingModelIter.key()]);
+        const dimensionedScalar coeff(dimless, gCoeff_[interfaceTrackingModelIter.key()]);
 
         const PtrList<volScalarField>& Yi = phase.Y();
 
         const dimensionedScalar fH2(dimless, 1.5*MW_.H2);
         const dimensionedScalar xi(dimless, MW_.Al/(MW_.H2O*eqR_));
         const dimensionedScalar fH2O((xi - 1.5)*MW_.H2O);
-        const volScalarField X(dmdt/(fH2 + fH2O));
+        const volScalarField X(AAlC_*dmdt/(MW_.Al + xi*MW_.H2O));
 
         if (min(X).value() < 0 || fH2.value() < 0 || fH2O.value() < 0)
         {
@@ -366,7 +375,8 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::heatTransfer() const
     const phasePair& pair = this->phasePairs_[rDmdtIter.key()];
     const volScalarField& rDmdt = *rDmdtIter();
 
-    const scalar coeff = coeff_[rDmdtIter.key()];
+    const scalar pcoeff = pCoeff_[rDmdtIter.key()];
+    const scalar gcoeff = gCoeff_[rDmdtIter.key()];
 
     const phaseModel& phase1 = pair.phase1();
     const phaseModel& phase2 = pair.phase2();
@@ -382,10 +392,10 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::heatTransfer() const
     fvScalarMatrix& eqn1 = *eqns[phase1.name()];
     fvScalarMatrix& eqn2 = *eqns[phase2.name()];
 
-    eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
-            + coeff*rDmdt*hs1;
-    eqn2 += - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi())
-            + (1.0 - coeff)*rDmdt*hs2;
+    eqn1 += - fvm::Sp(pcoeff*rDmdt, eqn1.psi())
+            + pcoeff*rDmdt*hs1;
+    eqn2 += - fvm::Sp(gcoeff*rDmdt, eqn2.psi())
+            + gcoeff*rDmdt*hs2;
   }
 
   return eqnsPtr;
@@ -405,7 +415,8 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::momentumTransfer()
     const phasePair& pair = this->phasePairs_[rDmdtIter.key()];
     const volScalarField& rDmdt = *rDmdtIter();
 
-    const scalar coeff = coeff_[rDmdtIter.key()];
+    const scalar pcoeff = pCoeff_[rDmdtIter.key()];
+    const scalar gcoeff = gCoeff_[rDmdtIter.key()];
 
     const phaseModel& phase1 = pair.phase1();
     const phaseModel& phase2 = pair.phase2();
@@ -415,10 +426,10 @@ Foam::PropellantInterfacePhaseSystem<BasePhaseSystem>::momentumTransfer()
     fvVectorMatrix& eqn2 = *eqns[phase2.name()];
 
     // Momentum Source
-    eqn1 += - fvm::Sp(coeff*rDmdt, eqn1.psi())
-            + coeff*rDmdt*Up_;
-    eqn2 += - fvm::Sp((1.0 - coeff)*rDmdt, eqn2.psi())
-            + (1.0 - coeff)*rDmdt*Ug_;
+    eqn1 += - fvm::Sp(pcoeff*rDmdt, eqn1.psi())
+            + pcoeff*rDmdt*Up_;
+    eqn2 += - fvm::Sp(gcoeff*rDmdt, eqn2.psi())
+            + gcoeff*rDmdt*Ug_;
   }
 
   return eqnsPtr;

@@ -82,6 +82,7 @@ public:
 
     //- Interface Iso-value
     scalar isoAlpha_;
+    scalar ztol_;
 
     volScalarField rb_;
 

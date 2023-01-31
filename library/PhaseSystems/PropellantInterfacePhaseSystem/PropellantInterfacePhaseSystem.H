@@ -90,6 +90,9 @@ protected:
           scalar H2;
         } MW_;
 
+        // Active Aluminium content
+        scalar AAlC_;
+
         // Equivalence Ratio
         scalar eqR_;
 
@@ -125,8 +128,10 @@ protected:
             interfaceTable nHat_;
 
             //- Mass Transfer Coefficient for particle phase
-            //        for gas phase it is 1.0 - coeff
-            coeffTable coeff_;
+            coeffTable pCoeff_;
+
+            //- Mass Transfer Coefficient for particle phase
+            coeffTable gCoeff_;
 
             //- The saturation model used to evaluate Tsat = Tf
             autoPtr<saturationModel> saturationModel_;
