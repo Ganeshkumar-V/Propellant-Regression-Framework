@@ -197,7 +197,7 @@ void Foam::interfaceTrackingModels::subCellularInterfaceMotion::regress
     {
       interface_[Own[i]] = 1;
       As_[Own[i]] = Sf[i]/V[Nei[i]];  // Area of face between owner and neighbour
-      alpha[Nei[i]] = alpha0[Nei[i]] - rb_[Own[i]]*Sf[i]*dt/V[Nei[i]];
+      alpha[Nei[i]] = alpha0[Nei[i]] - rb_[Nei[i]]*Sf[i]*dt/V[Nei[i]];
       if (alpha[Nei[i]] < 0)
       {
         FatalErrorInFunction
@@ -215,16 +215,18 @@ void Foam::interfaceTrackingModels::subCellularInterfaceMotion::regress
   {
     const fvPatch& patch = mesh.boundary()[patchi];
     const labelList& fC = patch.faceCells();
-    const scalarField pSf
-    (
-      patch.magSf() * (patch.nf() & vector(1, 0, 0))
-    );
+    const scalarField pSf(patch.magSf());
     forAll(fC, celli)
     {
-      if ((alpha0[fC[celli]] <= 0.5) && (alpha0[fC[celli]] > Zero))
+      if
+      (
+          (alpha0[fC[celli]] <= 0.5) &&
+          (alpha0[fC[celli]] > Zero) &&
+          (interface_[fC[celli]] == 0)
+      )
       {
         interface_[fC[celli]] = 1.0;
-        As_[fC[celli]] += pSf[celli]/V[fC[celli]];
+        As_[fC[celli]] = pSf[celli]/V[fC[celli]];
         alpha[fC[celli]] = alpha0[fC[celli]] - rb_[fC[celli]]*As_[fC[celli]]*dt;
         if (alpha[fC[celli]] < 0)
         {

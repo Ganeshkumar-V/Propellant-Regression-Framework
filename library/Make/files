@@ -19,4 +19,6 @@ multiphaseSystem/multiPhaseSystem.C
 multiphaseSystem/multiPhaseSystemNew.C
 multiphaseSystem/multiPhaseSystems.C
 
+functionObjects/calculateThrust/calculateThrust.C
+
 LIB = $(FOAM_USER_LIBBIN)/libpropellantRegressionPhaseSystem

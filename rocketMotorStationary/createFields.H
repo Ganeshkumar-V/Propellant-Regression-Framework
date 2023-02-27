@@ -64,3 +64,21 @@ forAll(fluid.phases(), phasei)
   else
       propellantIndex = phasei;
 }
+
+// // Write Surface Area of all faces
+// surfaceVectorField Sf
+// (
+//     IOobject
+//     (
+//         "Sf",
+//         runTime.timeName(),
+//         mesh,
+//         IOobject::NO_READ,
+//         IOobject::AUTO_WRITE
+//     ),
+//     mesh.Sf()
+// );
+// if (runTime.writeNow())
+// {
+//   Info << "Surface Area is written" << exit(FatalError);
+// }
