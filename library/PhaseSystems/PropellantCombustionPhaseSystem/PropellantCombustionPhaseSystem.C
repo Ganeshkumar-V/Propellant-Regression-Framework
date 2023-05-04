@@ -116,7 +116,6 @@ Foam::PropellantCombustionPhaseSystem<BasePhaseSystem>::PropellantCombustionPhas
           IOobject::AUTO_WRITE
         ),
         mesh
-        // dimensionedScalar("", dimless,0)
       )
     ),
     epsilon(this->template get<scalar>("trapingFactor")),
