@@ -172,6 +172,10 @@ void Foam::massLoadingFractionFvPatchScalarField::updateCoeffs
     }
     else
     {
+      // scalarField sF
+      // (
+      //   rhog.size(), sum(1/(1 + ((1 - phi_)/max(phi_, 1e-15))*rhop/rhog))/rhog.size()
+      // );
         operator==(1/(1 + ((1 - phi_)/max(phi_, 1e-15))*rhop/rhog));
     }
 

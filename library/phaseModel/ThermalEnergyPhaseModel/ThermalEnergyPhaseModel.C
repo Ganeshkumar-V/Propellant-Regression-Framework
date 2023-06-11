@@ -104,12 +104,15 @@ Foam::ThermalEnergyPhaseModel<BasePhaseModel>::heEqn()
     const tmp<volScalarField> tcontErr(this->continuityError());
     const volScalarField& contErr(tcontErr());
 
-    const tmp<volScalarField> tgradPU(fvc::grad(this->thermo().p())&U);
+    const tmp<volScalarField> tP(this->thermo().p());
+    const volScalarField& P(tP());
+
+    const tmp<volScalarField> tgradPU(fvc::grad(P)&U);
     const volScalarField& gradPU(tgradPU());
 
     const tmp<volScalarField> tDpDt
     (
-      fvc::ddt(this->thermo().p()) + gradPU
+      fvc::ddt(P) + gradPU
     );
     const volScalarField& DpDt(tDpDt());
 
