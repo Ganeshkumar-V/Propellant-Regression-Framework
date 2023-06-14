@@ -69,193 +69,198 @@ Foam::particleDragModels::Loth::~Loth()
 
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::erf
-(const volScalarField& gf) const
-{
-  volScalarField erfF
-  (
-    IOobject
-    (
-      "erf(" + gf.name() + ")",
-      gf.instance(),
-      gf.db(),
-      IOobject::NO_READ,
-      IOobject::NO_WRITE
-    ),
-    gf.mesh(),
-    gf.dimensions()
-  );
 
-  Internal::Field<scalar>& pF(erfF.primitiveFieldRef());
-  // volScalarField& pF(terf.ref());
-  forAll(pF, i)
-  {
-    pF[i] = std::erf(gf[i]);
-  }
+// Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::erf
+// (const volScalarField& gf) const
+// {
+//   volScalarField erfF
+//   (
+//     IOobject
+//     (
+//       "erf(" + gf.name() + ")",
+//       gf.instance(),
+//       gf.db(),
+//       IOobject::NO_READ,
+//       IOobject::NO_WRITE
+//     ),
+//     gf.mesh(),
+//     gf.dimensions()
+//   );
+//
+//   Internal::Field<scalar>& pF(erfF.primitiveFieldRef());
+//   // volScalarField& pF(terf.ref());
+//   forAll(pF, i)
+//   {
+//     pF[i] = std::erf(gf[i]);
+//   }
+//
+//   Boundary& bFs(erfF.boundaryFieldRef());
+//   const Boundary& gfbFs = gf.boundaryField();
+//   forAll(bFs, i)
+//   {
+//     Field<scalar> bFpF = bFs[i];
+//     const Field<scalar> gfbFpF = gfbFs[i];
+//
+//     forAll(bFpF, j)
+//     {
+//       bFpF[j] = std::erf(gfbFpF[j]);
+//     }
+//   }
+//
+//   return Foam::tmp<Foam::volScalarField>(new volScalarField ("terf", erfF));
+// }
+//
+// Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::tanh
+// (const volScalarField& gf) const
+// {
+//   volScalarField tanhF
+//   (
+//     IOobject
+//     (
+//         "tanh(" + gf.name() + ")",
+//         gf.instance(),
+//         gf.db(),
+//         IOobject::NO_READ,
+//         IOobject::NO_WRITE
+//     ),
+//     gf.mesh(),
+//     dimensionedScalar("", dimless, 0)
+//   );
+//
+//   Internal::Field<scalar>& pF = tanhF.primitiveFieldRef();
+//   forAll(pF, i)
+//   {
+//     pF[i] = std::tanh(gf[i]);
+//   }
+//   // tanhF.correctBoundaryConditions();
+//   Boundary& bFs = tanhF.boundaryFieldRef();
+//   const Boundary& gfbFs = gf.boundaryField();
+//   forAll(bFs, i)
+//   {
+//     Field<scalar> bFpF = bFs[i];
+//     const Field<scalar> gfbFpF = gfbFs[i];
+//     forAll(bFpF, j)
+//     {
+//       bFpF[j] = std::tanh(gfbFpF[j]);
+//     }
+//   }
+//
+//   return Foam::tmp<Foam::volScalarField>(new volScalarField ("ttanhF", tanhF));
+// }
 
-  Boundary& bFs(erfF.boundaryFieldRef());
-  const Boundary& gfbFs = gf.boundaryField();
-  forAll(bFs, i)
-  {
-    Field<scalar> bFpF = bFs[i];
-    const Field<scalar> gfbFpF = gfbFs[i];
-
-    forAll(bFpF, j)
-    {
-      bFpF[j] = std::erf(gfbFpF[j]);
-    }
-  }
-
-  return Foam::tmp<Foam::volScalarField>(new volScalarField ("terf", erfF));
-}
-
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::tanh
-(const volScalarField& gf) const
-{
-  volScalarField tanhF
-  (
-    IOobject
-    (
-        "tanh(" + gf.name() + ")",
-        gf.instance(),
-        gf.db(),
-        IOobject::NO_READ,
-        IOobject::NO_WRITE
-    ),
-    gf.mesh(),
-    dimensionedScalar("", dimless, 0)
-  );
-
-  Internal::Field<scalar>& pF = tanhF.primitiveFieldRef();
-  forAll(pF, i)
-  {
-    pF[i] = std::tanh(gf[i]);
-  }
-  // tanhF.correctBoundaryConditions();
-  Boundary& bFs = tanhF.boundaryFieldRef();
-  const Boundary& gfbFs = gf.boundaryField();
-  forAll(bFs, i)
-  {
-    Field<scalar> bFpF = bFs[i];
-    const Field<scalar> gfbFpF = gfbFs[i];
-    forAll(bFpF, j)
-    {
-      bFpF[j] = std::tanh(gfbFpF[j]);
-    }
-  }
-
-  return Foam::tmp<Foam::volScalarField>(new volScalarField ("ttanhF", tanhF));
-}
 // *************************** Rarefied Flow ****************************//
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::fKn
-(const Foam::volScalarField& Kn) const
+Foam::scalar Foam::particleDragModels::Loth::fKn
+(const Foam::scalar& Kn) const
 {
   return 1/(1 + Kn*(2.514 + 0.8*exp(-0.55/max(Kn, SMALL))));
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::JM
-(const volScalarField& Ma) const
+Foam::scalar Foam::particleDragModels::Loth::JM
+(const scalar& Ma) const
 {
-  volScalarField MaMax(max(Ma, SMALL));
   return
-      neg0(Ma - 1)*(2.26 - 0.1/MaMax + 0.14/pow(MaMax, 3))
-      + pos(Ma - 1)*(1.6 + 0.25/MaMax + 0.11/sqr(MaMax) + 0.44/pow(MaMax, 3));
+      neg0(Ma - 1)*(2.26 - 0.1/max(Ma, SMALL) + 0.14/max(pow(Ma, 3), SMALL))
+      + pos(Ma - 1)*(1.6 + 0.25/max(Ma, SMALL) + 0.11/max(sqr(Ma), SMALL) + 0.44/max(pow(Ma, 3), SMALL));
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::Cdfm
-(const volScalarField& S) const
+Foam::scalar Foam::particleDragModels::Loth::Cdfm
+(const scalar& S) const
 {
-  volScalarField Smax(max(S, SMALL));
-  volScalarField sqrS(sqr(Smax));
-  volScalarField S4(pow(Smax, 4));
-
   return
-    (1 + 2*sqrS)*exp(-sqrS)/max((sqrt(constant::mathematical::pi)*pow(Smax, 3)), SMALL)
-    + 2*sqrt(constant::mathematical::pi)/max((3*Smax), SMALL)
-    + (4*S4 + 4*sqrS - 1)*erf(Smax)/max((2*S4), SMALL);
+    (1 + 2*sqr(S))*exp(-sqr(S))/max((sqrt(constant::mathematical::pi)*pow(S, 3)), SMALL)
+    + 2*sqrt(constant::mathematical::pi)/max((3*S), SMALL)
+    + (4*pow(S, 4) + 4*sqr(S) - 1)*std::erf(S)/max((2*pow(S, 4)), SMALL);
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::CdfmRe
-(const volScalarField& Re, const volScalarField& Ma, const volScalarField& S) const
+Foam::scalar Foam::particleDragModels::Loth::CdfmRe
+(const scalar& Re, const scalar& Ma, const scalar& S) const
 {
-  volScalarField CdfmF(Cdfm(S));
-  volScalarField JMF(JM(Ma));
-
-  return CdfmF/(1 + sqrt(Re/45)*(CdfmF/JMF - 1));
+  return Cdfm(S)/(1 + sqrt(Re/45)*(Cdfm(S)/JM(Ma) - 1));
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::CdKnRe
-(const volScalarField& Re, const volScalarField& Kn) const
+Foam::scalar Foam::particleDragModels::Loth::CdKnRe
+(const scalar& Re, const scalar& Kn) const
 {
   return 24*(1 + 0.15*pow(Re, 0.687))*fKn(Kn);
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::CdRare
+Foam::scalar Foam::particleDragModels::Loth::CdRare
 (
-  const volScalarField& Re,
-  const volScalarField& Ma,
-  const volScalarField& Kn,
-  const volScalarField& S
+  const scalar& Re,
+  const scalar& Ma,
+  const scalar& Kn,
+  const scalar& S
 ) const
 {
-  volScalarField Ma4(pow(Ma, 4));
-
-  return (CdKnRe(Re, Kn) + Re*Ma4*CdfmRe(Re, Ma, S))/(1 + Ma4);
+  return (CdKnRe(Re, Kn) + Re*pow(Ma, 4)*CdfmRe(Re, Ma, S))/(1 + pow(Ma, 4));
 }
 
-//* * * * ** * * ** * * * * * * * Compressibility Regime * * * * * * * * * //
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::CM
-(const volScalarField& Ma) const
+//* * * * ** * * ** * * * * * * * Compressibility Regime * * * * * * * * //
+Foam::scalar Foam::particleDragModels::Loth::CM
+(const scalar& Ma) const
 {
-  volScalarField MaMax(max(Ma, SMALL));
   return
-      neg0(MaMax - 1.5)*(1.65 + 0.65*tanh((4*MaMax - 3.4)()))
-      + pos(MaMax - 1.5)*(2.18 - 0.13*tanh((0.9*MaMax - 2.7)()));
+      neg0(Ma - 1.5)*(1.65 + 0.65*std::tanh(4*Ma - 3.4))
+      + pos(Ma - 1.5)*(2.18 - 0.13*std::tanh(0.9*Ma - 2.7));
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::GM
-(const volScalarField& Ma) const
+Foam::scalar Foam::particleDragModels::Loth::GM
+(const scalar& Ma) const
 {
-  volScalarField MaMax(max(Ma, SMALL));
-  volScalarField Ma3(pow(MaMax, 3));
   return
-      neg0(MaMax - 0.8)*(166*Ma3 + 3.29*sqr(MaMax) - 10.9*MaMax + 20)
-      + pos(MaMax - 0.8)*(5 + 40/Ma3);
+      neg0(Ma - 0.8)*(166*pow(Ma, 3) + 3.29*sqr(Ma) - 10.9*Ma + 20)
+      + pos(Ma - 0.8)*(5 + 40/max(pow(Ma, 3), SMALL));
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::HM
-(const volScalarField& Ma) const
+Foam::scalar Foam::particleDragModels::Loth::HM
+(const scalar& Ma) const
 {
-  volScalarField MaMax(max(Ma, SMALL));
   return
-      neg0(MaMax - 1.0)*(0.0239*pow(MaMax, 3) + 0.212*pow(MaMax, 2) - 0.074*MaMax + 1)
-      + pos(MaMax - 1.0)*(0.93 + 1/(3.5 + pow(MaMax, 5)));
+      neg0(Ma - 1.0)*(0.0239*pow(Ma, 3) + 0.212*pow(Ma, 2) - 0.074*Ma + 1)
+      + pos(Ma - 1.0)*(0.93 + 1/(3.5 + pow(Ma, 5)));
 }
 
-Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::CdComp
-(const volScalarField& Re, const volScalarField& Ma) const
+Foam::scalar Foam::particleDragModels::Loth::CdComp
+(const scalar& Re, const scalar& Ma) const
 {
-  volScalarField CMMa(CM(Ma));
-  CMMa.correctBoundaryConditions();
   return
       24*(1 + 0.15*pow(Re, 0.687))*HM(Ma)
-      + Re*0.42*CMMa/(1 + 42500/max(pow(Re, 1.16*CMMa), SMALL)
+      + Re*0.42*CM(Ma)/(1 + 42500/max(pow(Re, 1.16*CM(Ma)), SMALL)
           + GM(Ma)/max(sqrt(Re), SMALL));
 }
 
 Foam::tmp<Foam::volScalarField> Foam::particleDragModels::Loth::CdRe() const
 {
-    volScalarField Ma(pair_.magUr()/sqrt(gamma_*R_*pair_.continuous().thermo().T()));
-    volScalarField Re(pair_.Re());
-    volScalarField S(sqrt(gamma_/2)*Ma);
-    volScalarField Kn(sqrt(constant::mathematical::pi)*S/max(Re, SMALL));
-    Info << "min -> Ma: " << min(Ma).value() << " Re: " << min(Re).value() << " S: " << min(S).value() << " Kn: " << min(Kn).value() << endl;
-    Info << "max -> Ma: " << max(Ma).value() << " Re: " << max(Re).value() << " S: " << max(S).value() << " Kn: " << max(Kn).value() << endl;
+    const tmp<volScalarField> tT(pair_.continuous().thermo().T());
+    const volScalarField& T(tT());
 
-    return
-        neg0(Re - 45)*CdRare(Re, Ma, Kn, S)
-        + pos(Re - 45)*CdComp(Re, Ma);
+    volScalarField M(max(pair_.magUr()/sqrt(gamma_*R_*T), SMALL));
+    volScalarField Re(max(pair_.Re(), SMALL));
+    volScalarField S(sqrt(gamma_/2)*M);
+    volScalarField Kn(sqrt(constant::mathematical::pi)*S/Re);
+
+    volScalarField CdRe
+    (
+      IOobject
+      (
+        "CdRe",
+        pair_.phase1().mesh()
+      ),
+      pair_.phase1().mesh(),
+      dimensionedScalar("", dimless, 0.0)
+    );
+
+    forAll(Re, i)
+    {
+        CdRe[i] =
+        (
+          Re[i] <= 45 ? CdRare(Re[i], M[i], Kn[i], S[i])
+          : CdComp(Re[i], M[i])
+        );
+    }
+    CdRe.correctBoundaryConditions();
+
+    return Foam::tmp<Foam::volScalarField>(new volScalarField ("tCdRe", CdRe));
 }
-
 
 // ************************************************************************* //

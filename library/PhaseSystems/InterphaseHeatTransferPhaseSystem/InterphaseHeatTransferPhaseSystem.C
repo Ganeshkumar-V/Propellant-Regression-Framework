@@ -144,13 +144,9 @@ heatTransfer() const
       // *eqns[phase1.name()] -= K*(T1 - T2);
       // *eqns[phase2.name()] += K*(T1 - T2);
 
-      // Adding stabilization terms (as it was in OpenFOAM)
-      // *eqns[phase1.name()] -= K*(T1 - T2) - fvm::Sp(K/Cp1, he1) + K/Cp1*he1;
-      // *eqns[phase2.name()] += K*(T1 - T2) - fvm::Sp(K/Cp2, he2) + K/Cp2*he2;
-
-      // Linearization around previous iter/previous time step value
-      *eqns[phase1.name()] += K*(T2 - T1) - fvm::Sp(K/Cp1, he1) + K/Cp2*he2;
-      *eqns[phase2.name()] += K*(T1 - T2) - fvm::Sp(K/Cp2, he2) + K/Cp1*he1;
+      // Linearization around previous iter/previous time step value (as it was in OpenFOAM)
+      *eqns[phase1.name()] -= K*(T1 - T2) - fvm::Sp(K/Cp1, he1) + K/Cp1*he1;
+      *eqns[phase2.name()] += K*(T1 - T2) - fvm::Sp(K/Cp2, he2) + K/Cp2*he2;
 
       // // Implicit Source Treatment
       // *eqns[phase1.name()] -=

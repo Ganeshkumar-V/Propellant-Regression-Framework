@@ -93,37 +93,37 @@ public:
     // Member Functions
 
     // Mathematical Functions
-    tmp<volScalarField> erf(const volScalarField& gf) const;
-    tmp<volScalarField> tanh(const volScalarField& gf) const;
+    // tmp<volScalarField> erf(const volScalarField& gf) const;
+    // tmp<volScalarField> tanh(const volScalarField& gf) const;
 
     // Rarefied Flow Regime
-    tmp<volScalarField> CdKnRe(const volScalarField& Re, const volScalarField& Kn) const;
-    tmp<volScalarField> CdfmRe
+    inline scalar CdKnRe(const scalar& Re, const scalar& Kn) const;
+    inline scalar CdfmRe
     (
-      const volScalarField& Re,
-      const volScalarField& Ma,
-      const volScalarField& S
+      const scalar& Re,
+      const scalar& Ma,
+      const scalar& S
     ) const;
-    tmp<volScalarField> Cdfm(const volScalarField& S) const;
-    tmp<volScalarField> JM(const volScalarField& Ma) const;
-    tmp<volScalarField> fKn(const volScalarField& Kn) const;
-    tmp<volScalarField> CdRare
+    inline scalar Cdfm(const scalar& S) const;
+    inline scalar JM(const scalar& Ma) const;
+    inline scalar fKn(const scalar& Kn) const;
+    inline scalar CdRare
     (
-      const volScalarField& Re,
-      const volScalarField& Ma,
-      const volScalarField& Kn,
-      const volScalarField& S
+      const scalar& Re,
+      const scalar& Ma,
+      const scalar& Kn,
+      const scalar& S
     ) const;
 
     // Compressibility Domainated Regime
-    tmp<volScalarField> CdComp
+    inline scalar CdComp
     (
-      const volScalarField& Re,
-      const volScalarField& Ma
+      const scalar& Re,
+      const scalar& Ma
     ) const;
-    tmp<volScalarField> CM(const volScalarField& Ma) const;
-    tmp<volScalarField> GM(const volScalarField& Ma) const;
-    tmp<volScalarField> HM(const volScalarField& Ma) const;
+    inline scalar CM(const scalar& Ma) const;
+    inline scalar GM(const scalar& Ma) const;
+    inline scalar HM(const scalar& Ma) const;
 
 
         //- Drag coefficient
