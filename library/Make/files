@@ -19,7 +19,8 @@ $(multiphaseTurbulence)/BoundaryConditions/JohnsonJacksonSlip/JohnsonJacksonSlip
 iTModel = interfaceTrackingModels
 $(iTModel)/interfaceTrackingModel/interfaceTrackingModel.C
 $(iTModel)/subCellularInterfaceMotion/subCellularInterfaceMotion.C
-$(iTModel)/controlledInterfaceMotion/controlledInterfaceMotion.C
+$(iTModel)/Surface/Surface.C
+$(iTModel)/entrainedInterfaceMotion/entrainedInterfaceMotion.C
 $(iTModel)/burningRate/burningRate.C
 $(iTModel)/burningRateDy/burningRateDy.C
 
@@ -39,8 +40,6 @@ $(HTModel)/sharpInterfaceHeatTransferModel/sharpInterfaceHeatTransferModel.C
 $(HTModel)/RanzMarshall/RanzMarshall.C
 $(HTModel)/DrakeInviscid/DrakeInviscid.C
 $(HTModel)/KavanauRanzMarshall/KavanauRanzMarshall.C
-
-PhaseSystems/EntrainedPropellantCombustionPhaseSystem/Surface.C
 
 multiphaseSystem/multiPhaseSystem.C
 multiphaseSystem/multiPhaseSystemNew.C

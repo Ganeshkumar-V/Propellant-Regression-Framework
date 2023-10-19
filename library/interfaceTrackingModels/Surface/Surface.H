@@ -47,6 +47,8 @@ protected:
 
       // cells containing surface
       volScalarField interface_;
+      autoPtr<labelList> interfaceOwners_;
+      autoPtr<labelList> interfaceNeighbours_;
 
       // surface area
       volScalarField As_;
@@ -88,31 +90,54 @@ public:
 
     // Find interface and correct interface, As and nHat Fields
     void findInterface();
+    void findInterfaceCells();
 
     // Find and regress
-    tmp<volScalarField> regressInterface(const volScalarField& p);
+    tmp<volScalarField> regressInterface
+    (
+        const volScalarField& p,
+        const labelList& bed
+    );
+
+    // Regress based on mdot
+    tmp<volScalarField> regressInterface
+    (
+        const volScalarField& p,
+        const volScalarField& dmdt,
+        const labelList& flame
+    );
 
 
     // Public Access Functions
 
-    tmp<volScalarField> interface()
+    tmp<volScalarField> interface() const
     {
         return tmp<volScalarField>(new volScalarField("interface", interface_));
     }
 
-    tmp<volScalarField> As()
+    tmp<volScalarField> As() const
     {
         return tmp<volScalarField>(new volScalarField("As", As_));
     }
 
-    tmp<volVectorField> nHat()
+    tmp<volVectorField> nHat() const
     {
         return tmp<volVectorField>(new volVectorField("nHat", nHat_));
     }
 
-    tmp<volScalarField> rb()
+    tmp<volScalarField> rb() const
     {
         return tmp<volScalarField>(new volScalarField("rb", rb_));
+    }
+
+    const labelList& iOwners() const
+    {
+        return interfaceOwners_();
+    }
+
+    const labelList& iNeighbours() const
+    {
+        return interfaceNeighbours_();
     }
 
 

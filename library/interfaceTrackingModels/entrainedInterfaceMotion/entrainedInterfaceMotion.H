@@ -24,19 +24,20 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::interfaceTrackingModels::controlledInterfaceMotion
+    Foam::interfaceTrackingModels::entrainedInterfaceMotion
 
 Description
 
 SourceFiles
-    controlledInterfaceMotion.C
+    entrainedInterfaceMotion.C
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef controlledInterfaceMotion_H
-#define controlledInterfaceMotion_H
+#ifndef entrainedInterfaceMotion_H
+#define entrainedInterfaceMotion_H
 
 #include "interfaceTrackingModel.H"
+#include "Surface.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -49,46 +50,32 @@ namespace interfaceTrackingModels
 {
 
 /*---------------------------------------------------------------------------*\
-                          Class controlledInterfaceMotion Declaration
+                          Class entrainedInterfaceMotion Declaration
 \*---------------------------------------------------------------------------*/
 
-class controlledInterfaceMotion
+class entrainedInterfaceMotion
 :
     public interfaceTrackingModel
 {
 public:
 
     //- Runtime type information
-    TypeName("controlledInterfaceMotion");
+    TypeName("entrainedInterfaceMotion");
 
     scalar n;
     scalar f;
     dimensionedScalar a;
 
-    volScalarField interface_;
+    // Flame surface
+    Surface flame_;
 
-    volScalarField rb_;
-
-    volScalarField As_;
-
-    volScalarField dmdt_;
-
-    dimensionedScalar crb_;
-
-    // Parallel comms
-
-    // To transfer interface from owner to neighbour processor
-    PstreamBuffers pBufnB;
-    scalar transfer_;
-    scalarField transferAlpha_;
-
-    // To communicate sources from neighbour to owner processor
-    scalar communicate_;
+    // Propellant Bed surface
+    Surface bed_;
 
     // Constructors
 
         //- Construct from components
-        controlledInterfaceMotion
+        entrainedInterfaceMotion
         (
             const dictionary& dict,
             const phasePair& pair
@@ -96,26 +83,10 @@ public:
 
 
     //- Destructor
-    virtual ~controlledInterfaceMotion();
+    virtual ~entrainedInterfaceMotion();
 
     // Member Functions
     virtual void correct();
-
-    virtual void regress(volScalarField& alpha, const volScalarField& alphaOld);
-
-    virtual void regress
-    (
-      volScalarField& alpha,
-      const volScalarField& alphaOld,
-      volScalarField& regressionAlpha,
-      const volScalarField& regressionAlphaOld
-    );
-
-    virtual void findInterface(const volScalarField& alpha);
-
-    label findNeighbour(const volScalarField& alpha, scalar NEI);
-
-    scalar rb(scalar P);
 
     //- The burning rate
     virtual tmp<volScalarField> rb() const;
@@ -123,14 +94,9 @@ public:
     //- Interface Area / Volume
     virtual tmp<volScalarField> As() const;
 
-    //- Interface normal
-    virtual tmp<volVectorField> nHat() const;
-
-    //- Mass Transfer Rate
-    virtual tmp<volScalarField> dmdt() const;
-
-    //- Return Interface
-    virtual tmp<volScalarField> interface() const;
+    // These virtual functions are not used in this tracking models
+    virtual void regress(volScalarField& alpha, const volScalarField& alphaOld);
+    virtual void findInterface(const volScalarField& alpha){}
 };
 
 

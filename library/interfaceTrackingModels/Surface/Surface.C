@@ -69,6 +69,8 @@ Foam::Surface::Surface
           dimensionedScalar("", dimless, 0)
         )
     ),
+    interfaceOwners_(nullptr),
+    interfaceNeighbours_(nullptr),
     As_
     (
         volScalarField
@@ -119,20 +121,26 @@ Foam::Surface::Surface
     ),
     n_(n),
     f_(f),
-    a_(a),
+    a_(a)
 {
     // Find interface
     this->findInterface();
+
+    label interfaceCells(sum(interface_).value());
+    interfaceOwners_.reset(new labelList(interfaceCells, -1));
+    interfaceNeighbours_.reset(new labelList(interfaceCells, -1));
+
+    findInterfaceCells();
 }
 
 // * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * * //
 
-Foam::scalar Foam::Surface::rb(const scalar p)
+Foam::scalar Foam::Surface::rb(const scalar P)
 {
     if (P > 1e6)
-        return (a*(pow(P/1e6, n))).value()*1e-2;
+        return (a_*(pow(P/1e6, n_))).value()*1e-2;
     else
-        return (a*(pow(P/1e6, n*f))).value()*1e-2;
+        return (a_*(pow(P/1e6, n_*f_))).value()*1e-2;
 }
 
 Foam::label Foam::Surface::findNeighbour
@@ -165,8 +173,8 @@ void Foam::Surface::findInterface()
 {
     // -If found interface -> interface_ = 1
     // use owner neighbour approach
-
-    const fvMesh& mesh = alpha.mesh();
+    const fvMesh& mesh = alpha_.mesh();
+    const volScalarField& alpha = alpha_;
     const labelList& Own = mesh.owner();
     const labelList& Nei = mesh.neighbour();
     const scalar One(1 - SMALL);
@@ -200,9 +208,44 @@ void Foam::Surface::findInterface()
     }
 }
 
+void Foam::Surface::findInterfaceCells()
+{
+
+    const volScalarField& alpha0 = alphaOld_;
+    const fvMesh& mesh = alpha_.mesh();
+    const labelList& Own = mesh.owner();
+    const labelList& Nei = mesh.neighbour();
+    const scalar Zero(SMALL);
+    interface_ = dimensionedScalar(dimless, 0.0);
+
+    // interface owners and neighbours
+    labelList& iOwners(interfaceOwners_());
+    labelList& iNeighbours(interfaceNeighbours_());
+    iOwners = -1;
+    iNeighbours = -1;
+
+    // Internal Cells
+    label j = 0;
+    forAll(Own, i)
+    {
+      // case:1 Interface is present in the Neighbour Cell
+      if
+      (
+          (alpha0[Own[i]] == Zero && alpha0[Nei[i]] > Zero) &&
+          (Nei[i] == Own[i] + 1)
+      )
+      {
+          interface_[Nei[i]] = 1;
+          iOwners[j] = Own[i];
+          iNeighbours[i] = Nei[i];
+          j++;
+      }
+    }
+}
+
 Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
 (
-    const volScalarField& p
+    const volScalarField& p, const labelList& bed
 )
 {
     // dmdt Field
@@ -215,16 +258,16 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
             dimensionedScalar("", dimMass/dimVolume, 0.0)
         )
     );
-    volScalarField& dmdt_(tdmdt());
+    volScalarField& dmdt_(tdmdt.ref());
 
     const volScalarField& alpha0 = alphaOld_;
+    volScalarField& alpha = alpha_;
     const fvMesh& mesh = alpha_.mesh();
     const labelList& Own = mesh.owner();
     const labelList& Nei = mesh.neighbour();
     const surfaceScalarField& Sf = mesh.magSf();
     const scalar dt = mesh.time().deltaTValue();
     const scalarField& V = mesh.V();
-    const scalar One(1 - SMALL);
     const scalar Zero(SMALL);
 
     interface_ = dimensionedScalar(dimless, 0.0);
@@ -232,7 +275,14 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
     rb_ = dimensionedScalar(rb_.dimensions(), 0.0);
     nHat_ = dimensionedVector(dimless, vector(0, 0, 0));
 
+    // interface owners and neighbours
+    labelList& iOwners(interfaceOwners_());
+    labelList& iNeighbours(interfaceNeighbours_());
+    iOwners = -1;
+    iNeighbours = -1;
+
     // Internal Cells
+    label k = 0;
     forAll(Own, i)
     {
       // case:1 Interface is present in the Neighbour Cell
@@ -243,16 +293,13 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
       )
       {
           interface_[Nei[i]] = 1;
+          iOwners[k] = Own[i];
+          iNeighbours[k] = Nei[i];
 
           As_[Nei[i]] = Sf[i]/V[Nei[i]];  // Area of face between owner and neighbour
-          rb_[Nei[i]] = rb(p[Nei[i]]);  // burning Rate
-          dmdt_[Nei[i]] = (1 - alpha0[Nei[i]])*rb_[Nei[i]]*As_[Nei[i]];
+          rb_[Nei[i]] = rb(p[bed[k]]);  // burning Rate
+          dmdt_[Nei[i]] = rb_[Nei[i]]*As_[Nei[i]];
           nHat_[Nei[i]] = vector(1, 0, 0);
-
-          As_[Own[i]] = As_[Nei[i]];
-          rb_[Own[i]] = rb_[Nei[i]];
-          dmdt_[Own[i]] = alpha0[Nei[i]]*rb_[Nei[i]]*As_[Nei[i]];
-          nHat_[Own[i]] = vector(1, 0, 0);
 
           scalar newalpha = alpha0[Nei[i]] - rb_[Nei[i]]*As_[Nei[i]]*dt;
           if (newalpha < 0)
@@ -287,7 +334,116 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
           {
               alpha[Nei[i]] = newalpha;
           }
+
+          k++;
       }
+    }
+
+    return tdmdt;
+}
+
+Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
+(
+    const volScalarField& p,
+    const volScalarField& dmdt,
+    const labelList& flame
+)
+{
+    // dmdt Field
+    tmp<volScalarField> tdmdt
+    (
+        new volScalarField
+        (
+            IOobject("dmdt", p.mesh()),
+            p.mesh(),
+            dimensionedScalar("", dimMass/dimVolume, 0.0)
+        )
+    );
+    volScalarField& dmdt_(tdmdt.ref());
+
+    // Regress interface based on dmdt
+    const volScalarField& alpha0 = alphaOld_;
+    volScalarField& alpha = alpha_;
+    const fvMesh& mesh = alpha.mesh();
+    const labelList& Own = mesh.owner();
+    const labelList& Nei = mesh.neighbour();
+    const surfaceScalarField& Sf = mesh.magSf();
+    const scalar dt = mesh.time().deltaTValue();
+    const scalarField& V = mesh.V();
+    const scalar Zero(SMALL);
+
+    interface_ = dimensionedScalar(dimless, 0.0);
+    As_ = dimensionedScalar(As_.dimensions(), 0.0);
+    rb_ = dimensionedScalar(rb_.dimensions(), 0.0);
+    nHat_ = dimensionedVector(dimless, vector(0, 0, 0));
+
+    // interface owners and neighbours
+    labelList& iOwners(interfaceOwners_());
+    labelList& iNeighbours(interfaceNeighbours_());
+    iOwners = -1;
+    iNeighbours = -1;
+
+    // Internal Cells
+    label k = 0;
+    forAll(Own, i)
+    {
+        // case:1 Interface is present in the Neighbour Cell
+        if
+        (
+            (alpha0[Own[i]] == Zero && alpha0[Nei[i]] > Zero) &&
+            (Nei[i] == Own[i] + 1)
+        )
+        {
+            interface_[Nei[i]] = 1;
+            iOwners[k] = Own[i];
+            iNeighbours[k] = Nei[i];
+
+            As_[Nei[i]] = Sf[i]/V[Nei[i]];  // Area of face between owner and neighbour
+            rb_[Nei[i]] = rb(p[Nei[i]]);  // burning Rate
+            dmdt_[Nei[i]] = (1 - alpha0[Nei[i]])*dmdt[flame[k]]*V[flame[k]]/V[Nei[i]];
+            nHat_[Nei[i]] = vector(1, 0, 0);
+
+            As_[Own[i]] = As_[Nei[i]];
+            rb_[Own[i]] = rb_[Nei[i]];
+            dmdt_[Own[i]] = alpha0[Nei[i]]*dmdt[flame[k]]*V[flame[k]]/V[Nei[i]];
+            nHat_[Own[i]] = vector(1, 0, 0);
+
+            scalar newalpha = alpha0[Nei[i]] - dmdt[flame[k]]*V[flame[k]]*dt/V[Nei[i]];
+            if (newalpha < 0)
+            {
+                scalar Vr = -newalpha*V[Nei[i]];
+                alpha[Nei[i]] = SMALL;
+
+                // Find Neighbour of Neighbour cell
+                bool isFound = false;
+                label NNei = findNeighbour(alpha0, Nei[i]);
+
+                if (NNei != -1)
+                {
+                     alpha[NNei] = alpha0[NNei] - Vr/V[NNei];
+                     isFound = true;
+                     if (alpha[NNei] < 0)
+                     {
+                          FatalErrorInFunction
+                            << "Regression is very fast!\n"
+                            << "Hint: Reduce time step."
+                            << exit(FatalError);
+                     }
+                }
+                if (isFound == false) // No adjacent cells have been found and hence stoping the regression here.
+                {
+                     // Correcting source terms for termination
+                     dmdt_[Nei[i]] = alpha0[Nei[i]]*V[Nei[i]]/dt;
+                     dmdt_[Own[i]] = 0.0;
+                }
+            }
+            else
+            {
+                alpha[Nei[i]] = newalpha;
+            }
+
+            k++;
+        }
     }
 
     return tdmdt;
