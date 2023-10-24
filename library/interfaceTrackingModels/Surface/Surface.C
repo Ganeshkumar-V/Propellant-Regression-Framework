@@ -124,6 +124,9 @@ Foam::Surface::Surface
     a_(a)
 {
     // Find interface
+    alpha_.clip(SMALL, 1 - SMALL);
+    alphaOld_.clip(SMALL, 1 - SMALL);
+
     this->findInterface();
 
     label interfaceCells(sum(interface_).value());
@@ -237,10 +240,11 @@ void Foam::Surface::findInterfaceCells()
       {
           interface_[Nei[i]] = 1;
           iOwners[j] = Own[i];
-          iNeighbours[i] = Nei[i];
+          iNeighbours[j] = Nei[i];
           j++;
       }
     }
+
 }
 
 Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
@@ -283,6 +287,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
 
     // Internal Cells
     label k = 0;
+    // Info << "Name: " << alpha.name() << " ";
     forAll(Own, i)
     {
       // case:1 Interface is present in the Neighbour Cell
@@ -300,7 +305,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
           rb_[Nei[i]] = rb(p[bed[k]]);  // burning Rate
           dmdt_[Nei[i]] = rb_[Nei[i]]*As_[Nei[i]];
           nHat_[Nei[i]] = vector(1, 0, 0);
-
+          // Info << Nei[i] << " ( " << dmdt_[Nei[i]] << " ) ";
           scalar newalpha = alpha0[Nei[i]] - rb_[Nei[i]]*As_[Nei[i]]*dt;
           if (newalpha < 0)
           {
@@ -338,7 +343,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
           k++;
       }
     }
-
+    Info << endl;
     return tdmdt;
 }
 
@@ -385,6 +390,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
     labelList& iNeighbours(interfaceNeighbours_());
     iOwners = -1;
     iNeighbours = -1;
+    // Info << "Name: " << alpha.name() << " ";
 
     // Internal Cells
     label k = 0;
@@ -410,6 +416,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
             rb_[Own[i]] = rb_[Nei[i]];
             dmdt_[Own[i]] = alpha0[Nei[i]]*dmdt[flame[k]]*V[flame[k]]/V[Nei[i]];
             nHat_[Own[i]] = vector(1, 0, 0);
+            // Info << " ( " << Nei[i] << " " << Own[i] << " ) -> " << " ( " << dmdt_[Nei[i]] << " " << dmdt_[Own[i]] << " ) ";
 
             scalar newalpha = alpha0[Nei[i]] - ((1.0 - MR)/fp)*dmdt[flame[k]]*V[flame[k]]*dt/V[Nei[i]];
             if (newalpha < 0)

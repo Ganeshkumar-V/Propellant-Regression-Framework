@@ -142,6 +142,11 @@ public:
         return interfaceNeighbours_();
     }
 
+    const volScalarField& alpha()
+    {
+        return alpha_;
+    }
+
     void store()
     {
         alphaOld_ = alpha_;

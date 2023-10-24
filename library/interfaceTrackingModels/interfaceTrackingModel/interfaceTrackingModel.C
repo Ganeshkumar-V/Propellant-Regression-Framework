@@ -108,7 +108,8 @@ void Foam::interfaceTrackingModel::regress
 
 void Foam::interfaceTrackingModel::regress
 (
-    const scalar fp
+    const scalar fp,
+    volScalarField& alpha
 )
 {}
 

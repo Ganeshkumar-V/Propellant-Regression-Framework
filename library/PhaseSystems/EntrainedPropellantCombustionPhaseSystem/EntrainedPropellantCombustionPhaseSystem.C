@@ -445,7 +445,11 @@ void Foam::EntrainedPropellantCombustionPhaseSystem<BasePhaseSystem>::solve()
       )
       {
           const Entrainment::factors mtf(eta.massTransfer());
-          interfaceTrackingModelIter()->regress(mtf.particles);
+
+          word propellant = "alpha." + interfaceTrackingModelIter()->propellant_;
+          volScalarField& alpha = this->db().template lookupObjectRef<volScalarField>(propellant);
+
+          interfaceTrackingModelIter()->regress(mtf.particles, alpha);
       }
   }
 

@@ -92,7 +92,8 @@ void Foam::interfaceTrackingModels::entrainedInterfaceMotion::correct()
 
 void Foam::interfaceTrackingModels::entrainedInterfaceMotion::regress
 (
-    const scalar fp
+    const scalar fp,
+    volScalarField& alpha
 )
 {
     // Pressure for burning Rate
@@ -103,6 +104,9 @@ void Foam::interfaceTrackingModels::entrainedInterfaceMotion::regress
 
     // 2. Regress bed surface based on flame surface dmdt
     dmdt_ = bed_.regressInterface(p, dmdtf(), flame_.iNeighbours(), fp, MR);
+
+    // 3. Update propellant alpha
+    alpha = bed_.alpha();
 
 }
 
