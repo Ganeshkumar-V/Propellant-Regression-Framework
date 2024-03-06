@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 
     Switch solveRho
     (
-	pimple.dict().getOrDefault<Switch>("solveRho", false)
+	      pimple.dict().getOrDefault<Switch>("solveRho", false)
     );
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
