@@ -25,74 +25,29 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef EntrainedSystem_H
-#define EntrainedSystem_H
+#ifndef GCPSystem_H
+#define GCPSystem_H
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 #include "runTimeSelectionTables.H"
 #include "phaseModel.H"
+#include "EntrainedSystem.H"
 
 namespace Foam
 {
-  namespace Entrainment
-  {
-    struct molecularWeight
-    {
-      scalar Al;
-      scalar Al2O3;
-      scalar H2O;
-      scalar H2;
-      scalar Prop;
-      scalar gas;
-    };
 
-    struct moles
-    {
-      scalar Al;
-      scalar Al2O3;
-      scalar H2O;
-      scalar H2;
-    };
-
-    struct factors
-    {
-      scalar particles;
-      scalar H2;
-      scalar H2O;
-      scalar gas;
-    };
-  }
 /*---------------------------------------------------------------------------*\
                             Class Entrained System
 \*---------------------------------------------------------------------------*/
 
-class EntrainedSystem
+class GCPSystem
 {
 protected:
 
   // Protected data
 
-    // Molecular Weights of all the species
-    dictionary molecularWeights;
-
-    Entrainment::molecularWeight MW;
-
-    Entrainment::moles n;
-
-    // Propellant density and Active Aluminium content
-    dimensionedScalar rhoPropellant;
-    scalar AAlC;
-    scalar K;
-
-    // Equivalence Ratio
-    scalar phi;
-    scalar zeta;
-
     // Adiabatic Flame Temperature
     scalar Tad;
-
-    // Chemical efficiency
-    scalar eta;
 
     // Mass Transfer Rate factors
     Entrainment::factors mtf;
@@ -101,7 +56,6 @@ protected:
     dimensionedScalar rhoP;
 
     // Reactant particle phase apparent density
-    dimensionedScalar alphaRhoAlp;
     dimensionedScalar alphaP;
 
     // gas phase RT
@@ -110,12 +64,12 @@ protected:
 public:
 
   //- Runtime type information
-  // TypeName("EntrainedSystem");
+  // TypeName("GCPSystem");
 
   // Constructors
 
     //- Construct from dictionary
-    EntrainedSystem(const dictionary& dict);
+    GCPSystem(const fvMesh& mesh, const dictionary& dict);
 
   // Methods
 
@@ -150,7 +104,7 @@ public:
     }
 
     //- Destructor
-    // virtual ~EntrainedSystem();
+    // virtual ~GCPSystem();
 
 };
 

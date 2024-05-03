@@ -35,6 +35,7 @@ License
 #include "InterphaseHeatTransferPhaseSystem.H"
 #include "PropellantCombustionPhaseSystem.H"
 #include "EntrainedPropellantCombustionPhaseSystem.H"
+#include "EntrainedGCPCombustionPhaseSystem.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -111,6 +112,24 @@ namespace Foam
         entrainedPropellantCombustionMultiphaseSystem,
         dictionary,
         entrainedPropellantCombustionMultiphaseSystem
+    );
+
+    typedef
+        EntrainedGCPCombustionPhaseSystem
+        <
+            InterphaseHeatTransferPhaseSystem
+            <
+                MomentumEnergyTransferPhaseSystem<multiPhaseSystem>
+            >
+        >
+        entrainedGCPCombustionMultiphaseSystem;
+
+    addNamedToRunTimeSelectionTable
+    (
+        multiPhaseSystem,
+        entrainedGCPCombustionMultiphaseSystem,
+        dictionary,
+        entrainedGCPCombustionMultiphaseSystem
     );
 
 }

@@ -34,14 +34,18 @@ $(dragModel)/Ergun/Ergun.C
 $(dragModel)/WenYu/WenYu.C
 $(dragModel)/Loth/Loth.C
 $(dragModel)/Henderson/Henderson.C
+$(dragModel)/HaiderLevenspiel/HaiderLevenspiel.C
+$(dragModel)/HolzerSommerfeld/HolzerSommerfeld.C
 
 HTModel = sharpInterfaceHeatTransferModels
 $(HTModel)/sharpInterfaceHeatTransferModel/sharpInterfaceHeatTransferModel.C
 $(HTModel)/RanzMarshall/RanzMarshall.C
 $(HTModel)/DrakeInviscid/DrakeInviscid.C
 $(HTModel)/KavanauRanzMarshall/KavanauRanzMarshall.C
+$(HTModel)/Brenner/Brenner.C
 
 PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.C
+PhaseSystems/EntrainedGCPCombustionPhaseSystem/GCPSystem.C
 multiphaseSystem/multiPhaseSystem.C
 multiphaseSystem/multiPhaseSystemNew.C
 multiphaseSystem/multiPhaseSystems.C

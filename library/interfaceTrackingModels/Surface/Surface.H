@@ -24,6 +24,9 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 \*---------------------------------------------------------------------------*/
+#ifndef Surface_H
+#define Surface_H
+
 #include "phaseSystem.H"
 
 namespace Foam
@@ -155,3 +158,5 @@ public:
 };
 
 }
+
+#endif
