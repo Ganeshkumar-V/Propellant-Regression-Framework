@@ -1,39 +1,37 @@
 {
 // OutletPatch Fields
-label inIndex = -1;
+label outIndex = -1;
 forAll(mesh.boundary(), bFi)
 {
-    if (mesh.boundary()[bFi].name() == "inlet")
+    if (mesh.boundary()[bFi].name() == "outlet")
     {
-        inIndex = mesh.boundary()[bFi].index();
+        outIndex = mesh.boundary()[bFi].index();
     }
 }
-const scalarField& pF(p.boundaryField()[inIndex]);
+const scalarField& pF(p.boundaryField()[outIndex]);
 
-const scalarField& alphaParticlesF(alphaParticles.boundaryField()[inIndex]);
-// const scalarField& TparticlesF(Tparticles.boundaryField()[inIndex]);
-const scalarField& phiParticlesF(phiParticles.boundaryField()[inIndex]);
-vectorField UparticlesF(Uparticles.boundaryField()[inIndex]);
-const scalarField& hparticlesF(hparticles.boundaryField()[inIndex]);
+const scalarField& alphaParticlesF(alphaParticles.boundaryField()[outIndex]);
+// const scalarField& TparticlesF(Tparticles.boundaryField()[outIndex]);
+const scalarField& phiParticlesF(phiParticles.boundaryField()[outIndex]);
+const vectorField& UparticlesF(Uparticles.boundaryField()[outIndex]);
+const scalarField& hparticlesF(hparticles.boundaryField()[outIndex]);
 
 const scalarField alphaGasF(1.0 - alphaParticlesF);
-const scalarField& TgasF(Tgas.boundaryField()[inIndex]);
-const scalarField& phiGasF(phiGas.boundaryField()[inIndex]);
-const vectorField& UgasF(Ugas.boundaryField()[inIndex]);
-const scalarField& hgasF(hgas.boundaryField()[inIndex]);
+const scalarField& TgasF(Tgas.boundaryField()[outIndex]);
+const scalarField& phiGasF(phiGas.boundaryField()[outIndex]);
+const vectorField& UgasF(Ugas.boundaryField()[outIndex]);
+const scalarField& hgasF(hgas.boundaryField()[outIndex]);
 
 const volScalarField W(phases[0].thermo().W());
-const scalarField rhoGas(pF*W.boundaryField()[inIndex]/(8314*TgasF));
-// const scalarField rhoGas(phases[0].thermo().rho()().boundaryField()[inIndex]);
-const scalarField rhoParticles(phases[1].thermo().rho()().boundaryField()[inIndex]);
+const scalarField rhoGas(pF*W.boundaryField()[outIndex]/(8314*TgasF));
+const scalarField rhoParticles(phases[1].thermo().rho()().boundaryField()[outIndex]);
 
-// const vectorField& Sf(mesh.boundary()[inIndex].Sf());
+// const vectorField& Sf(mesh.boundary()[outIndex].Sf());
 
 // Mass flow rates and momentum flow rates
 const scalarField mdotGas(alphaGasF*rhoGas*phiGasF);
 const scalarField mdotparticles(alphaParticlesF*rhoParticles*phiParticlesF);
 const vectorField Pgas(mdotGas*UgasF);
-UparticlesF = UgasF;
 const vectorField Pparticles(mdotparticles*UparticlesF);
 const scalarField Hgas(mdotGas*hgasF);
 const scalarField Hparticles(mdotparticles*hparticlesF);
@@ -53,9 +51,9 @@ scalar tKparticles(sum(Kparticles));
 // write scalar values to the table
 if (timei%100 == 0)
 {
-    file.open(infileName, std::ios_base::app);
-    file << inString.str();
-    inString.str(std::string());
+    file.open(outfileName, std::ios_base::app);
+    file << outString.str();
+    outString.str(std::string());
     {
       file << runTime.timeName() << ", "
            << tmdotGas << ", "
@@ -77,7 +75,7 @@ if (timei%100 == 0)
 }
 else
 {
-    inString << runTime.timeName() << ", "
+    outString << runTime.timeName() << ", "
            << tmdotGas << ", "
            << tmdotparticles << ", "
            << tMgas.x() << ", "

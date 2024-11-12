@@ -132,6 +132,7 @@ int main(int argc, char *argv[])
             if (mesh.boundary()[bFi].name() == "outlet")
             {
                 outIndex = mesh.boundary()[bFi].index();
+                Info << "Outlet Index: " << outIndex << endl;
             }
         }
         const scalarField& pF(p.boundaryField()[outIndex]);
