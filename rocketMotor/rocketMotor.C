@@ -177,13 +177,14 @@ int main(int argc, char *argv[])
               } 
             }
             labelList particleFreeCells(particleFreeCellSize);
+	    const volScalarField& gasTemp(phases[0].thermo().T());
             scalarField setParticleTemp(particleFreeCellSize, 300);
             {
               const volScalarField alphaP(phases[1]);
               label j = 0;
               forAll(alphaP, i)
               {
-                if(alphaP[i] < 1e-10) { particleFreeCells[j] = i; j++; }
+                if(alphaP[i] < 1e-10) { particleFreeCells[j] = i; setParticleTemp[j] = gasTemp[i]; j++; }
               }
             }
             //*********** End Find Particle Free Cells *******//

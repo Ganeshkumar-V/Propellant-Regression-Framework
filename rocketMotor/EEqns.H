@@ -69,4 +69,19 @@ forAll(phases, phasei)
         << " - "
         << max(phase.thermo().T()).value()
         << endl;
+    /***
+    scalar minT = min(phase.thermo().T()).value();
+    if (minT == 300)
+    {
+    const volScalarField& T(phase.thermo().T());
+    forAll(T, i)
+    {
+	    if (T[i] == minT)
+	    {
+		Pout << "minT at: " << i << " , ";
+	    }
+    }
+    Pout << endl;
+    }
+    ***/
 }
