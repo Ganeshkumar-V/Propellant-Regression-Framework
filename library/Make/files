@@ -34,6 +34,7 @@ $(dragModel)/CliftGauvinInviscid/CliftGauvinInviscid.C
 $(dragModel)/Ergun/Ergun.C
 $(dragModel)/WenYu/WenYu.C
 $(dragModel)/Loth/Loth.C
+$(dragModel)/TurbulentLoth/TurbulentLoth.C
 $(dragModel)/Henderson/Henderson.C
 $(dragModel)/HaiderLevenspiel/HaiderLevenspiel.C
 $(dragModel)/HolzerSommerfeld/HolzerSommerfeld.C
