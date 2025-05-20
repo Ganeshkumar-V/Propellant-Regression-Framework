@@ -130,7 +130,7 @@ class continuousMultiphaseKEpsilon
 
     volScalarField Kpg_;
 
-    const phaseModel& particlePhase_;
+    const word particlePhaseName_;
 
     // Private Member Functions
 

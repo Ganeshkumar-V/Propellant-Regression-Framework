@@ -75,12 +75,9 @@ continuousMultiphaseKEpsilon<BasicTurbulenceModel>::continuousMultiphaseKEpsilon
         this->mesh_,
         dimensionedScalar("Kpg", dimVelocity*dimVelocity, 0.0)
     ),
-    particlePhase_
+    particlePhaseName_
     (
-      this->db().template lookupObject<phaseModel>
-      (
-        this->coeffDict_.template get<word>("particlePhase")
-      )
+      this->coeffDict_.template get<word>("particlePhase")
     ),
     CEpsilon3_("CEpsilon3", dimless, 1.2)
 {
@@ -97,6 +94,8 @@ template<class BasicTurbulenceModel>
 tmp<fvScalarMatrix>
 continuousMultiphaseKEpsilon<BasicTurbulenceModel>::kSource() const
 {
+    const phaseModel& particlePhase_(this->db().template lookupObject<phaseModel>("alpha." + particlePhaseName_));
+
     const volScalarField& alpha = particlePhase_;
 
     // Drag Force
@@ -113,6 +112,8 @@ template<class BasicTurbulenceModel>
 tmp<fvScalarMatrix>
 continuousMultiphaseKEpsilon<BasicTurbulenceModel>::epsilonSource() const
 {
+    const phaseModel& particlePhase_(this->db().template lookupObject<phaseModel>("alpha."+particlePhaseName_));
+
     const volScalarField& alpha = particlePhase_;
 
     // Drag Force
@@ -121,14 +122,19 @@ continuousMultiphaseKEpsilon<BasicTurbulenceModel>::epsilonSource() const
         this->db().template lookupObject<volScalarField>("Kd.particlesInGas")
     );
 
-    return fvm::Sp(CEpsilon3_*alpha*rhoPbeta*(Kpg_/this->k_ - 2.0), this->epsilon_);
+    return fvm::Sp(CEpsilon3_*alpha*rhoPbeta*(Kpg_/max(this->k_, dimensionedScalar("", dimVelocity*dimVelocity, SMALL)) - 2.0), this->epsilon_);
 }
 
 template<class BasicTurbulenceModel>
 void continuousMultiphaseKEpsilon<BasicTurbulenceModel>::correctKpg()
 {
-    const volScalarField& dp = particlePhase_.d();
-    const volScalarField& rhoP = particlePhase_.rho();
+    const phaseModel& particlePhase_ = this->db().template lookupObject<phaseModel>("alpha."+particlePhaseName_);
+
+    const tmp<volScalarField> tdp(particlePhase_.d());
+    const volScalarField& dp(tdp());
+
+    const tmp<volScalarField> trhoP(particlePhase_.rho());
+    const volScalarField& rhoP(trhoP());
 
     // Drag Force
     volScalarField rhoPbeta
@@ -137,9 +143,9 @@ void continuousMultiphaseKEpsilon<BasicTurbulenceModel>::correctKpg()
     );
 
     // Relative velocity
-    volScalarField Ur
+    volVectorField Ur
     (
-        this->db().template lookupObject<volScalarField>("Ur.particlesInGas")
+        this->db().template lookupObject<volVectorField>("Ur.particlesInGas")
     );
 
     // Fluctuating kinetic energy of particle phase
@@ -148,7 +154,7 @@ void continuousMultiphaseKEpsilon<BasicTurbulenceModel>::correctKpg()
         this->db().template lookupObject<volScalarField>("Theta." + particlePhase_.name())
     );
 
-    Kpg_ = rhoPbeta*dp/(4.0*sqrt(constant::mathematical::pi*Theta)*rhoP)*sqr(Ur); // Koch Relation
+    Kpg_ = (rhoPbeta*dp*sqr(mag(Ur))/rhoP)/(4.0*sqrt(constant::mathematical::pi*Theta)); // Koch Relation
     // Kpg_ = Csf/sqrt(this->k_*Theta); // Isotropic turbulence
 }
 
