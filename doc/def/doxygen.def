@@ -3123,6 +3123,1698 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* class */
 class = {
+  cp-id     = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon';
+  cp-name   = 'Foam::RASModels::continuousMultiphaseKEpsilon';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classkEpsilon';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-type';
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a1117b9022929eec6630bb5f8dee763e4';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+BasicTurbulenceModel::alphaField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'alphaField';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '159';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1aa7be912a612caa389e56df520848e92e';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+BasicTurbulenceModel::rhoField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'rhoField';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '160';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1ab2cdc983a8f7dc2eeac67646f27691df';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+BasicTurbulenceModel::transportModel
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'transportModel';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '161';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a1c7930aae38585859d210cb9d7851ce5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'TypeName';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+"continuousMultiphaseKEpsilon"
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '164';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a528080fcc38f86d205ae4a2c918459c8';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'continuousMultiphaseKEpsilon';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const alphaField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'alpha';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const rhoField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'rho';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'U';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const surfaceScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'alphaRhoPhi';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const surfaceScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'phi';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const transportModel &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'transport';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const word &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'propertiesName';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+turbulenceModel::propertiesName
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const word &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'type';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+typeName
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '170';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a82475635f88b746cadf62242af72b5cc';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~continuousMultiphaseKEpsilon';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '184';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a55cf8eca8bf38a03eb57daee4426c341';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'correctKpg';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '190';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1ae76985a5c51501ac35649d7576dd2c1f';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'correct';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '193';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'protected-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1ad1f5e54f2159087280d03a843f4d0bf5';
+      sec-mem-virt = virtual;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< fvScalarMatrix >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'kSource';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '153';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a92820085454a13a733abf16ef29add95';
+      sec-mem-virt = virtual;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< fvScalarMatrix >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'epsilonSource';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '154';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'protected-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a879b6f491b2d8301968e3d33a9bf2804';
+      sec-mem-virt = normal;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CEpsilon3_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '149';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a4a977a2ab50518f791e40b3645f7f7cf';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'continuousMultiphaseKEpsilon';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const continuousMultiphaseKEpsilon &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '139';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1adb22255f593df4e9062e3c6d24ed667f';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator=';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const continuousMultiphaseKEpsilon &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '142';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1a751c369fbe79c455cc2cada793eea613';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volScalarField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Kpg_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '131';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon_1ac1695cde10d979823d948c3bc67b7405';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const word
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'particlePhaseName_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+      sec-mem-desc-line = '133';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+  cp-fileline  = '128';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::RASModels::continuousMultiphaseKEpsilon< BasicTurbulenceModel >';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'kEpsilon< BasicTurbulenceModel >';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::RASModels::continuousMultiphaseKEpsilon< BasicTurbulenceModel >';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'kEpsilon< BasicTurbulenceModel >';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST';
+  cp-name   = 'Foam::RASModels::continuousMultiphaseKOmegaSST';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classkOmegaSST';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-type';
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a985ed89d33fc8120a67e5dae202785b5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+BasicTurbulenceModel::alphaField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'alphaField';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '161';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1afc1ae8958000e8718f11dd9490ef7ea6';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+BasicTurbulenceModel::rhoField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'rhoField';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '162';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1ae74012da08fa86b75e1027de1486ae6b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+BasicTurbulenceModel::transportModel
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'transportModel';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '163';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a3a16f41b2dd71136205c867064c098e5';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'TypeName';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+"continuousMultiphaseKOmegaSST"
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '166';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a7b7603baf7b78282c22936cb0305236b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'continuousMultiphaseKOmegaSST';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const alphaField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'alpha';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const rhoField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'rho';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'U';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const surfaceScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'alphaRhoPhi';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const surfaceScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'phi';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const transportModel &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'transport';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const word &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'propertiesName';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+turbulenceModel::propertiesName
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const word &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'type';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+typeName
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '172';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1ac482c58e0adcb95046372064363945ad';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~continuousMultiphaseKOmegaSST';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '186';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a0e02e98ace97f8c912ca9c11d565fe0f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'correctKpg';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '192';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1aae0a551b4ac5c3cbaa5b63511793efb8';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'correct';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '195';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'protected-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a578604c85321f34044005b2154d2dd57';
+      sec-mem-virt = virtual;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< fvScalarMatrix >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'kSource';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '155';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a1898ef62d5cbaa770fceb931e93382f2';
+      sec-mem-virt = virtual;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< fvScalarMatrix >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'omegaSource';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '156';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'protected-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a213887de4747a00061f1ddadc0fc0eae';
+      sec-mem-virt = normal;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CEpsilon3_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '151';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a536958be155f0c2050c99a8135231d7b';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'continuousMultiphaseKOmegaSST';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const continuousMultiphaseKOmegaSST &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '141';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a6b752311d506a6892399f5d54d628446';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator=';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const continuousMultiphaseKOmegaSST &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '144';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1abea7f7adcb7f08536974504c5a103840';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volScalarField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Kpg_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '134';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST_1a8d6ead1e083a13d10b987c26d0e7f2aa';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const word
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'particlePhaseName_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+      sec-mem-desc-line = '136';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+  cp-fileline  = '131';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::RASModels::continuousMultiphaseKOmegaSST< BasicTurbulenceModel >';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'kOmegaSST< kOmegaSSTBase< eddyViscosity< RASModel< BasicTurbulenceModel > > > >';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::RASModels::continuousMultiphaseKOmegaSST< BasicTurbulenceModel >';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'kOmegaSST< kOmegaSSTBase< eddyViscosity< RASModel< BasicTurbulenceModel > > > >';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF';
+  cp-name   = 'Foam::RASModels::dispersedMultiphaseKTGF';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classeddyViscosity';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a7e8596ca12e6d32ff6ab6bfed678bfec';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'TypeName';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+"multiphaseKineticTheory"
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '172';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a72c1d9f25e3c6987e849b20be58eff09';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'dispersedMultiphaseKTGF';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'alpha';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'rho';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'U';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const surfaceScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'alphaRhoPhi';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const surfaceScalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'phi';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const phaseModel &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'transport';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const word &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'propertiesName';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+turbulenceModel::propertiesName
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const word &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'type';
+        sec-mem-param-defval = <<_EnD_oF_dEf_TeXt_
+typeName
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '178';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1ac3a96101bcb56214330f7ea822dca811';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~dispersedMultiphaseKTGF';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '192';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1ae1b2f98148fd91db4ac6dd4b13d1d5f8';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'read';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '198';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a96b0174ee5808a01deadbb322cd0542f';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'nuEff';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '201';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1ab6787860bdfcb9e47a8a44e163bc1505';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< scalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'nuEff';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const label
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'patchi';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '207';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a45e206cb5f2bdfd0318d098970b806b8';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'k';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '213';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1acdcd8691c1620bba4eaf364b28b583e1';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'epsilon';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '216';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a8697f6a25a76bbfb8d8cdad0624e16ba';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'omega';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '219';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a57251ad0bfb75505adb9620267780baf';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volSymmTensorField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'R';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '222';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a0d97a97bc2f099fc7507ed954bf8b893';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'pPrime';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '226';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a9f8571123221867c54f56cd80def1548';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< surfaceScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'pPrimef';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '230';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1ae380655c8cd930171741daa58adb82ea';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volSymmTensorField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'devRhoReff';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '233';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a2184c3ecb9cdf96cb92d5fc89fb5e73a';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volSymmTensorField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'devRhoReff';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'U';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '236';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1aae2b58442d546c64c7e0b6d966b7fb8f';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< fvVectorMatrix >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'divDevRhoReff';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+volVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'U';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '242';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a2581e4330dc46f9218ac2f5badcdd2df';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'correct';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '245';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a99ab83930504836691c45dcce7f8e7ca';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'correctNut';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '159';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a00c2da7a7cb05e0a17a1d783d51cfd51';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'dispersedMultiphaseKTGF';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const dispersedMultiphaseKTGF &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '163';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1ad18bad2550e163ba9e0765bc9d941a5d';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'operator=';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const dispersedMultiphaseKTGF &
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '166';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1ae2e4ae857791385cc931600835bd2113';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const phaseModel &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'phase_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '86';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a508827dd358d636a5664b16102c9060c';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const dictionary &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'kineticCoeffDict_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '87';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a258b45fd6412936670d86ff54b051815';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const phaseModel &
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'otherPhase_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '89';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1afe165795db617f51115b486b849df79b';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+autoPtr< kineticTheoryModels::viscosityModel >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'viscosityModel_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '95';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a58150b00efeccf1a03b2d5a4b82763c4';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+autoPtr< kineticTheoryModels::conductivityModel >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'conductivityModel_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '98';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a3ac886de86400320ec1a56cbc64e2b89';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+autoPtr< kineticTheoryModels::radialModel >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'radialModel_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '101';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1aac2becdabfdefefa112db65253080bb1';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+autoPtr< kineticTheoryModels::granularPressureModel >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'granularPressureModel_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '105';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1af0fb91a5e5686339bdaff5d23becfcaa';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+autoPtr< kineticTheoryModels::frictionalStressModel >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'frictionalStressModel_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '109';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a8628726cc0dda195b5703003de1c9849';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'equilibrium_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '115';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a3dce4ddc3998eae8e32da0a1465cb933';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'e_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '118';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a2d5a6bf4168185d912c6ef13f3e8e4fb';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'alphaMax_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '121';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a8acfef73b6e309bd83b860d55e351bc2';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'alphaMinFriction_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '124';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a8d7c16a161ca274518482c903e4675f4';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'residualAlpha_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '127';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a46a1ff33b4cb01ef3352d55c760bb9c6';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'maxNut_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '130';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a3f2882fa7d8d322480da484c5c7cd95d';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'ThetaSmall';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '133';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a33ff593ac7fa5818aef1bac3e5a7e5c6';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volScalarField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Theta_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '139';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a5397d001a1908c1ea7b4866abd152f5a';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volScalarField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'lambda_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '142';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a993d016fd13a38a4742ab2785c03de43';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volScalarField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'gs0_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '145';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1a8e71608dfbffe56ed66fceb7449460f9';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volScalarField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'kappa_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '148';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1ad4ea5623f61504937c90b1ec118f43d2';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volScalarField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'nuFric_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '151';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF_1acee9587df360930a92b4908f211caf6f';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'cutoff_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+      sec-mem-desc-line = '154';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+  cp-fileline  = '81';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'eddyViscosity< RASModel< EddyDiffusivity< phaseCompressibleTurbulenceModel > > >';
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::RASModels::dispersedMultiphaseKTGF';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'eddyViscosity< RASModel< EddyDiffusivity< phaseCompressibleTurbulenceModel > > >';
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::RASModels::dispersedMultiphaseKTGF';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
   cp-id     = 'classFoam_1_1sharpInterfaceHeatTransferModels_1_1DrakeInviscid';
   cp-name   = 'Foam::sharpInterfaceHeatTransferModels::DrakeInviscid';
   cp-ref     = {
@@ -3360,6 +5052,12 @@ class = {
   cp-name   = 'eddyViscosity';
   cp-ref     = {
     ref-type = derived;
+    ref-id   = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
     ref-id   = 'classFoam_1_1RASModels_1_1multiphaseKineticTheoryModel';
     ref-prot = public;
     ref-virt = non-virtual;
@@ -3378,10 +5076,21 @@ _EnD_oF_dEf_TeXt_;
         node-label = 'eddyViscosity';
       }; /* node */
       node = {
-        node-id    = 2;
+        node-id    = 3;
         node-label = 'Foam::RASModels::multiphaseKineticTheoryModel< RASModel< EddyDiffusivity< phaseCompressibleTurbulenceModel > > >';
         node-link = {
           node-link-id = 'classFoam_1_1RASModels_1_1multiphaseKineticTheoryModel';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Foam::RASModels::dispersedMultiphaseKTGF< RASModel< EddyDiffusivity< phaseCompressibleTurbulenceModel > > >';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1dispersedMultiphaseKTGF';
         };
         node-child = {
           child-id = '1';
@@ -4183,7 +5892,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '67';
+      sec-mem-desc-line = '63';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -4213,15 +5922,12 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'pair';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '95';
+      sec-mem-desc-line = '84';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Construct from components.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-Constructor for entrainedInterfaceMotion.
 
-@param dict Dictionary containing configuration.
-@param pair Phase pair for the interface.
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4234,12 +5940,12 @@ virtual
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = '~entrainedInterfaceMotion';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '104';
+      sec-mem-desc-line = '92';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Destructor.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-Destructor for entrainedInterfaceMotion.
+
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4252,9 +5958,9 @@ virtual void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'correct';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '109';
+      sec-mem-desc-line = '95';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Correct the interface motion.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4270,12 +5976,12 @@ virtual tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'rb';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '115';
+      sec-mem-desc-line = '98';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Compute the burning rate.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\return Burning rate as a volScalarField.
+
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4288,12 +5994,12 @@ virtual tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'As';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '121';
+      sec-mem-desc-line = '101';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Compute the interface area or volume.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\return Interface area/volume as a volScalarField.
+
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4306,12 +6012,12 @@ virtual tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'dmdt';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '127';
+      sec-mem-desc-line = '104';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Compute the mass transfer rate.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\return Mass transfer rate as a volScalarField.
+
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4336,18 +6042,12 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'alpha';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '134';
+      sec-mem-desc-line = '107';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Regress the interface (not used in this model).
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-Regress the interface based on the given parameters.
 
-@param fp Some scalar parameter.
-@param alpha Volume scalar field.
-
-@param fp Some scalar parameter.
-@param alpha Volume scalar field to update.
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4366,12 +6066,12 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'alpha';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '140';
+      sec-mem-desc-line = '108';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Find the interface (not used in this model).
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-@param alpha Volume scalar field.
+
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -4384,12 +6084,12 @@ virtual void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'store';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '145';
+      sec-mem-desc-line = '110';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Store the current state.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-Store the current state of the interface.
+
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
@@ -4405,9 +6105,9 @@ scalar
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'n';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '70';
+      sec-mem-desc-line = '65';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Scaling factor for some property.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4423,9 +6123,9 @@ scalar
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'f';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '73';
+      sec-mem-desc-line = '66';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Another scaling factor.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4441,9 +6141,9 @@ dimensionedScalar
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'a';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '76';
+      sec-mem-desc-line = '67';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Dimensioned scalar parameter.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4459,9 +6159,9 @@ Surface
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'flame_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '79';
+      sec-mem-desc-line = '70';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Flame surface.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4477,9 +6177,9 @@ Surface
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'bed_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '82';
+      sec-mem-desc-line = '73';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Propellant Bed surface.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4495,9 +6195,9 @@ tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'dmdt_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '85';
+      sec-mem-desc-line = '76';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Mass transfer rate.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4513,9 +6213,9 @@ scalar
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'MR';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-      sec-mem-desc-line = '88';
+      sec-mem-desc-line = '79';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Retainer value.
+
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -4523,9 +6223,9 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
   cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfaceTrackingModels/entrainedInterfaceMotion/entrainedInterfaceMotion.H';
-  cp-fileline  = '63';
+  cp-fileline  = '59';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
-Tracks the motion of an entrained interface in the simulation.
+
 _EnD_oF_dEf_TeXt_;
   cp-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -6483,6 +8183,12 @@ class = {
   cp-name   = 'fixedValueFvPatchVectorField';
   cp-ref     = {
     ref-type = derived;
+    ref-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
     ref-id   = 'classFoam_1_1particleFlowRateInletVelocityFvPatchVectorField';
     ref-prot = public;
     ref-virt = non-virtual;
@@ -6513,7 +8219,7 @@ _EnD_oF_dEf_TeXt_;
         node-label = 'fixedValueFvPatchVectorField';
       }; /* node */
       node = {
-        node-id    = 4;
+        node-id    = 5;
         node-label = 'Foam::propellantWallFvPatchVectorField';
         node-link = {
           node-link-id = 'classFoam_1_1propellantWallFvPatchVectorField';
@@ -6525,6 +8231,17 @@ _EnD_oF_dEf_TeXt_;
       }; /* node */
       node = {
         node-id    = 2;
+        node-label = 'Foam::gasFlowRateInletVelocityFvPatchVectorField';
+        node-link = {
+          node-link-id = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 3;
         node-label = 'Foam::particleFlowRateInletVelocityFvPatchVectorField';
         node-link = {
           node-link-id = 'classFoam_1_1particleFlowRateInletVelocityFvPatchVectorField';
@@ -6535,13 +8252,429 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 3;
+        node-id    = 4;
         node-label = 'Foam::pressureDirectedOutletInletVelocityFvPatchVectorField';
         node-link = {
           node-link-id = 'classFoam_1_1pressureDirectedOutletInletVelocityFvPatchVectorField';
         };
         node-child = {
           child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField';
+  cp-name   = 'Foam::gasFlowRateInletVelocityFvPatchVectorField';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classfixedValueFvPatchVectorField';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a6bf1f1fafb6e1e19b0fc7dcd377185a2';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'TypeName';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+"gasFlowRateInletVelocity"
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '125';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1af808e9f1138232059f71ca35e8e00c1a';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'gasFlowRateInletVelocityFvPatchVectorField';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const fvPatch &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'p';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const DimensionedField< vector, volMesh > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'iF';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '131';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a731a1808254056ef7abaa83bf7de52ae';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'gasFlowRateInletVelocityFvPatchVectorField';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const fvPatch &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'p';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const DimensionedField< vector, volMesh > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'iF';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const dictionary &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'dict';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '138';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a9e9d4982963c94c53cb2548db999befc';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'gasFlowRateInletVelocityFvPatchVectorField';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const gasFlowRateInletVelocityFvPatchVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'ptf';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const fvPatch &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'p';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const DimensionedField< vector, volMesh > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'iF';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const fvPatchFieldMapper &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'mapper';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '148';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1abcec147b66992819c35f322f39a58648';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'gasFlowRateInletVelocityFvPatchVectorField';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const gasFlowRateInletVelocityFvPatchVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'ptf';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '157';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a600c12d8d9476c05759bf2303f5bf597';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< fvPatchVectorField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'clone';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '163';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a284438f92c4bd482d7569dab4c3850d3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'gasFlowRateInletVelocityFvPatchVectorField';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const gasFlowRateInletVelocityFvPatchVectorField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'ptf';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const DimensionedField< vector, volMesh > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'iF';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '172';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a1c1d3d0e1b076b985ab43ed39e5d1bb8';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< fvPatchVectorField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'clone';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const DimensionedField< vector, volMesh > &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'iF';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '179';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a0f7618691630163dae79e680eb772643';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'updateCoeffs';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '194';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1ac07613f53b077eb865f81446fbfceb06';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'write';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+Ostream &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-defname = 'os';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '197';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1a789a22491de629cfbaac40c1fe5ae4d2';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'updateValues';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const RhoType &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'rho';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalarField &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'alpha';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '119';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1adaa538c0e703f228ab5e5772771ce364';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+autoPtr< Function1< scalar > >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'flowRate_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '106';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1abd728b05541d82f7ced6b1dd1be80743';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+word
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'rhoName_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '109';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField_1ae1e6f61ce778b5c6a91710a77d65d1f3';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+word
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'phaseName_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+      sec-mem-desc-line = '112';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
+  cp-fileline  = '102';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'fixedValueFvPatchVectorField';
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::gasFlowRateInletVelocityFvPatchVectorField';
+        node-link = {
+          node-link-id = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'fixedValueFvPatchVectorField';
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::gasFlowRateInletVelocityFvPatchVectorField';
+        node-link = {
+          node-link-id = 'classFoam_1_1gasFlowRateInletVelocityFvPatchVectorField';
+        };
+        node-child = {
+          child-id = '2';
           relation = public-inheritance;
         }; /* node-child */
       }; /* node */
@@ -10745,6 +12878,78 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* class */
 class = {
+  cp-id     = 'classkEpsilon';
+  cp-name   = 'kEpsilon';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+  cp-fileline  = '128';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 1;
+        node-label = 'kEpsilon';
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Foam::RASModels::continuousMultiphaseKEpsilon< BasicTurbulenceModel >';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1continuousMultiphaseKEpsilon';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
+  cp-id     = 'classkOmegaSST';
+  cp-name   = 'kOmegaSST';
+  cp-ref     = {
+    ref-type = derived;
+    ref-id   = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+  cp-fileline  = '131';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 2;
+        node-label = 'Foam::RASModels::continuousMultiphaseKOmegaSST< kOmegaSSTBase< eddyViscosity< RASModel< BasicTurbulenceModel > > > >';
+        node-link = {
+          node-link-id = 'classFoam_1_1RASModels_1_1continuousMultiphaseKOmegaSST';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'kOmegaSST';
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
   cp-id     = 'classFoam_1_1particleDragModels_1_1Loth';
   cp-name   = 'Foam::particleDragModels::Loth';
   cp-ref     = {
@@ -11325,7 +13530,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '159';
+      sec-mem-desc-line = '123';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11355,7 +13560,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'iF';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '165';
+      sec-mem-desc-line = '129';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11391,7 +13596,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'dict';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '172';
+      sec-mem-desc-line = '136';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11433,7 +13638,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'mapper';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '181';
+      sec-mem-desc-line = '145';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11457,7 +13662,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'tppsf';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '190';
+      sec-mem-desc-line = '154';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11475,7 +13680,7 @@ virtual tmp< fvPatchScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'clone';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '196';
+      sec-mem-desc-line = '160';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11505,7 +13710,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'iF';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '205';
+      sec-mem-desc-line = '169';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11529,7 +13734,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'iF';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '212';
+      sec-mem-desc-line = '176';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11547,7 +13752,7 @@ const word &
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Name';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '229';
+      sec-mem-desc-line = '193';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11565,7 +13770,7 @@ word &
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Name';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '236';
+      sec-mem-desc-line = '200';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11589,7 +13794,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'm';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '244';
+      sec-mem-desc-line = '208';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11619,7 +13824,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'addr';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '250';
+      sec-mem-desc-line = '214';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11637,7 +13842,7 @@ virtual void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'updateCoeffs';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '263';
+      sec-mem-desc-line = '227';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11661,7 +13866,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-defname = 'os';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '267';
+      sec-mem-desc-line = '231';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11682,7 +13887,7 @@ word
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Name_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '144';
+      sec-mem-desc-line = '108';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11700,7 +13905,7 @@ word
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'gas_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '147';
+      sec-mem-desc-line = '111';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11718,7 +13923,7 @@ word
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'particle_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '150';
+      sec-mem-desc-line = '114';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11736,7 +13941,7 @@ scalar
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'phi_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-      sec-mem-desc-line = '153';
+      sec-mem-desc-line = '117';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -11746,7 +13951,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
   cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/massLoadingFraction/massLoadingFractionFvPatchScalarField.H';
-  cp-fileline  = '140';
+  cp-fileline  = '104';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -12194,93 +14399,6 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 struct = {
-  cp-id     = 'structFoam_1_1Entrainment_1_1moles';
-  cp-name   = 'Foam::Entrainment::moles';
-  cp-section = {
-    sec-kind = 'public-attrib';
-    sec-member = {
-      sec-mem-kind = 'variable';
-      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1a18f6373c1340e1ee993935cbf529e2a2';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-scalar
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'Al';
-      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
-      sec-mem-desc-line = '51';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-    sec-member = {
-      sec-mem-kind = 'variable';
-      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1a9b698f77ce7e26657cb6fe7ed8bacf66';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-scalar
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'Al2O3';
-      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
-      sec-mem-desc-line = '52';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-    sec-member = {
-      sec-mem-kind = 'variable';
-      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1a5435a4e4c9dba7362a22985714ab09db';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-scalar
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'H2O';
-      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
-      sec-mem-desc-line = '53';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-    sec-member = {
-      sec-mem-kind = 'variable';
-      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1aaedaea3b1f07a749e0fef2dda488db39';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-scalar
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'H2';
-      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
-      sec-mem-desc-line = '54';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-  }; /* cp-section */
-  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
-  cp-fileline  = '50';
-  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-  cp-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-}; /* struct */
-struct = {
   cp-id     = 'structFoam_1_1moles';
   cp-name   = 'Foam::moles';
   cp-section = {
@@ -12360,6 +14478,93 @@ _EnD_oF_dEf_TeXt_;
   }; /* cp-section */
   cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/PropellantCombustionPhaseSystem/ChemicalEfficiency.H';
   cp-fileline  = '41';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* struct */
+struct = {
+  cp-id     = 'structFoam_1_1Entrainment_1_1moles';
+  cp-name   = 'Foam::Entrainment::moles';
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1a18f6373c1340e1ee993935cbf529e2a2';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Al';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
+      sec-mem-desc-line = '51';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1a9b698f77ce7e26657cb6fe7ed8bacf66';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Al2O3';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
+      sec-mem-desc-line = '52';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1a5435a4e4c9dba7362a22985714ab09db';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'H2O';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
+      sec-mem-desc-line = '53';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'structFoam_1_1Entrainment_1_1moles_1aaedaea3b1f07a749e0fef2dda488db39';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'H2';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
+      sec-mem-desc-line = '54';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/PhaseSystems/EntrainedPropellantCombustionPhaseSystem/EntrainedSystem.H';
+  cp-fileline  = '50';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15030,6 +17235,12 @@ class = {
   };
   cp-ref     = {
     ref-type = derived;
+    ref-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-ref     = {
+    ref-type = derived;
     ref-id   = 'classFoam_1_1particleDragModels_1_1WenYu';
     ref-prot = public;
     ref-virt = non-virtual;
@@ -15051,7 +17262,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '73';
+      sec-mem-desc-line = '79';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15094,7 +17305,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '78';
+      sec-mem-desc-line = '84';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15124,7 +17335,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'registerObject';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '101';
+      sec-mem-desc-line = '107';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15160,7 +17371,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'registerObject';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '108';
+      sec-mem-desc-line = '114';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15178,7 +17389,7 @@ virtual
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = '~particleDragModel';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '117';
+      sec-mem-desc-line = '123';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15196,7 +17407,7 @@ virtual tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'CdRe';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '132';
+      sec-mem-desc-line = '138';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15214,7 +17425,7 @@ virtual tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Ki';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '138';
+      sec-mem-desc-line = '144';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15232,7 +17443,7 @@ virtual tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'K';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '144';
+      sec-mem-desc-line = '150';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15250,7 +17461,7 @@ virtual tmp< surfaceScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'Kf';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '148';
+      sec-mem-desc-line = '154';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15268,7 +17479,7 @@ virtual tmp< volScalarField >
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'mu';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '151';
+      sec-mem-desc-line = '157';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15286,7 +17497,25 @@ virtual bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'isInviscid';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '152';
+      sec-mem-desc-line = '158';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModel_1ad46f3e0ecd0fdb5eabb7da47a9b728f7';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volVectorField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Ur';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
+      sec-mem-desc-line = '161';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15310,7 +17539,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'os';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '155';
+      sec-mem-desc-line = '164';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15343,7 +17572,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'pair';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '122';
+      sec-mem-desc-line = '128';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15364,7 +17593,7 @@ static const dimensionSet
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'dimK';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
-      sec-mem-desc-line = '95';
+      sec-mem-desc-line = '101';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15404,6 +17633,42 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'factor_';
       sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
       sec-mem-desc-line = '68';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1particleDragModel_1ad1b975efa3fa20e5404b32250d9f760b';
+      sec-mem-virt = normal;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+volVectorField
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Ur_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
+      sec-mem-desc-line = '71';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1particleDragModel_1a8de453b77d03ca3b2e3fd7a6e3b7c6b2';
+      sec-mem-virt = normal;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'activeDrifting_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/particleDragModel/particleDragModel.H';
+      sec-mem-desc-line = '74';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -15525,6 +17790,17 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
+        node-id    = 13;
+        node-label = 'Foam::particleDragModels::TurbulentLoth';
+        node-link = {
+          node-link-id = 'classFoam_1_1particleDragModels_1_1TurbulentLoth';
+        };
+        node-child = {
+          child-id = '1';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
         node-id    = 4;
         node-label = 'Foam::particleDragModels::CliftGauvinInviscid';
         node-link = {
@@ -15536,7 +17812,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 13;
+        node-id    = 14;
         node-label = 'Foam::particleDragModels::WenYu';
         node-link = {
           node-link-id = 'classFoam_1_1particleDragModels_1_1WenYu';
@@ -22532,6 +24808,17 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
+        node-id    = 13;
+        node-label = 'Foam::particleDragModels::TurbulentLoth';
+        node-link = {
+          node-link-id = 'classFoam_1_1particleDragModels_1_1TurbulentLoth';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
         node-id    = 4;
         node-label = 'Foam::particleDragModels::CliftGauvinInviscid';
         node-link = {
@@ -22543,7 +24830,7 @@ _EnD_oF_dEf_TeXt_;
         }; /* node-child */
       }; /* node */
       node = {
-        node-id    = 13;
+        node-id    = 14;
         node-label = 'Foam::particleDragModels::WenYu';
         node-link = {
           node-link-id = 'classFoam_1_1particleDragModels_1_1WenYu';
@@ -25775,13 +28062,13 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'classFoam_1_1Surface_1a7fe529cdbc8548cf1953a8983c19bd8c';
+      sec-mem-id   = 'classFoam_1_1Surface_1a26d9c70cd6df490c65fa2cc239f151b0';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
-label
+scalar
 _EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'findNeighbourSurface';
+      sec-mem-name = 'findNeighbourSurfaceArea';
       sec-mem-param = {
         sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
 const volScalarField &
@@ -28406,6 +30693,597 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* class */
 class = {
+  cp-id     = 'classFoam_1_1particleDragModels_1_1TurbulentLoth';
+  cp-name   = 'Foam::particleDragModels::TurbulentLoth';
+  cp-ref     = {
+    ref-type = base;
+    ref-id   = 'classFoam_1_1particleDragModel';
+    ref-prot = public;
+    ref-virt = non-virtual;
+  };
+  cp-section = {
+    sec-kind = 'public-func';
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1aec60f691a38206ae424f2f522c20e45d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'TypeName';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+"TurbulentLoth"
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '73';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a6cc291786fc1efe7115717a9b61de2c9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'TurbulentLoth';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const dictionary &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'dict';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const phasePair &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'pair';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const bool
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'registerObject';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '79';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1acf83890a55993764d36a7406bfd7f90f';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = '~TurbulentLoth';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '88';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1af7b32fcfbf9a7d62da0ad3f2a8db25a3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CdKnRe';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Re';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Kn';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '100';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a92a94c51ed84af4dbf9a6903a2e187fe';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CdfmRe';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Re';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Ma';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'S';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '101';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1acfcf8900dd5325772517517de358444c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Cdfm';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'S';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '107';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a3557faaa969bcfc6d6bb0697c357228d';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'JM';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Ma';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '108';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1aabbc2cdd949fa6b58baea310e2b68487';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'fKn';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Kn';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '109';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1af733b0ad736b3f38fc1b3c1de550be58';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CdRare';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Re';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Ma';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Kn';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'S';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '110';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a5935c8d94ff2beb35337fd87a5cf3044';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CdComp';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Re';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Ma';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '119';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a03433b800c6139a3290acc532952210f';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CM';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Ma';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '124';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a3392f4be264af06fc4ead7c6bd559133';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'GM';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Ma';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '125';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1ab7dfeddd96fc71a4ff221c9b34df4d6b';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'HM';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const scalar &
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'Ma';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '126';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1ae9e853552000369bfe4ba664a159bed3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+tmp< volScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'turbulentDispersion';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '129';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a2dde8eb448629efaf13a65d6b9be6b88';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volVectorField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Ur';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '131';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1af68716d540a7548fedfb788933017b8f';
+      sec-mem-virt = virtual;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+virtual tmp< volScalarField >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'CdRe';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '134';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'public-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1ab192f7db535dfa3dc4a635beaed32884';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'R_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '90';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a06b295d10eb2a1a87642f9a9801d4b61';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+scalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'gamma_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '91';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-type';
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a1b29c5e9581fa09498445116e2e6ab9e';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+DimensionedField< scalar, fvMesh >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Internal';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '66';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'typedef';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a83a19208fa4dabca339d25ace781c695';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+FieldField< fvPatchField, scalar >
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'Boundary';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '67';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-section = {
+    sec-kind = 'private-attrib';
+    sec-member = {
+      sec-mem-kind = 'variable';
+      sec-mem-id   = 'classFoam_1_1particleDragModels_1_1TurbulentLoth_1a8fbe891fdcb302bad03e396f48ef7d80';
+      sec-mem-virt = normal;
+      sec-mem-prot = private;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+const dimensionedScalar
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'residualRe_';
+      sec-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+      sec-mem-desc-line = '63';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+  }; /* cp-section */
+  cp-filename  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+  cp-fileline  = '59';
+  cp-briefdesc = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  cp-inheritancegraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 3;
+        node-label = 'regIOobject';
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Foam::particleDragModel';
+        node-link = {
+          node-link-id = 'classFoam_1_1particleDragModel';
+        };
+        node-child = {
+          child-id = '3';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::particleDragModels::TurbulentLoth';
+        node-link = {
+          node-link-id = 'classFoam_1_1particleDragModels_1_1TurbulentLoth';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+  cp-collaborationgraph = <<_EnD_oF_dEf_TeXt_
+      node = {
+        node-id    = 3;
+        node-label = 'regIOobject';
+      }; /* node */
+      node = {
+        node-id    = 2;
+        node-label = 'Foam::particleDragModel';
+        node-link = {
+          node-link-id = 'classFoam_1_1particleDragModel';
+        };
+        node-child = {
+          child-id = '3';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+      node = {
+        node-id    = 1;
+        node-label = 'Foam::particleDragModels::TurbulentLoth';
+        node-link = {
+          node-link-id = 'classFoam_1_1particleDragModels_1_1TurbulentLoth';
+        };
+        node-child = {
+          child-id = '2';
+          relation = public-inheritance;
+        }; /* node-child */
+      }; /* node */
+
+_EnD_oF_dEf_TeXt_;
+}; /* class */
+class = {
   cp-id     = 'classFoam_1_1functionObjects_1_1vorticityStreamFunction';
   cp-name   = 'Foam::functionObjects::vorticityStreamFunction';
   cp-ref     = {
@@ -29898,6 +32776,60 @@ file = {
   file-id   = 'vorticityStreamFunction_8H';
   file-name = 'vorticityStreamFunction.H';
   file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/functionObjects/vorticityStreamFunction/vorticityStreamFunction.H';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'gasFlowRateInletVelocityFvPatchVectorField_8C';
+  file-name = 'gasFlowRateInletVelocityFvPatchVectorField.C';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'gasFlowRateInletVelocityFvPatchVectorField_8C_1a3f8158e0fb384412e2055fd4d279b1c2';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'makePatchTypeField';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+fvPatchVectorField
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+gasFlowRateInletVelocityFvPatchVectorField
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.C';
+      func-mem-desc-line = '201';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.C';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'gasFlowRateInletVelocityFvPatchVectorField_8H';
+  file-name = 'gasFlowRateInletVelocityFvPatchVectorField.H';
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/fvPatchFields/gasFlowRateInletVelocity/gasFlowRateInletVelocityFvPatchVectorField.H';
   file-first-line = '1';
   file-briefdesc  = <<_EnD_oF_dEf_TeXt_
 
@@ -32525,6 +35457,93 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
+  file-id   = 'TurbulentLoth_8C';
+  file-name = 'TurbulentLoth.C';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'TurbulentLoth_8C_1a55a145d95b6b5890e36c836184b4f865';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'defineTypeNameAndDebug';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+TurbulentLoth
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+0
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.C';
+      func-mem-desc-line = '40';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'TurbulentLoth_8C_1aff19cb09dcc87402cfa4273e7294e567';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'addToRunTimeSelectionTable';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+particleDragModel
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+TurbulentLoth
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+dictionary
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.C';
+      func-mem-desc-line = '41';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.C';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'TurbulentLoth_8H';
+  file-name = 'TurbulentLoth.H';
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/interfacialModels/dragModels/TurbulentLoth/TurbulentLoth.H';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
   file-id   = 'WenYu_8C';
   file-name = 'WenYu.C';
     func = {
@@ -32720,8 +35739,160 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
+  file-id   = 'continuousMultiphaseKEpsilon_8C';
+  file-name = 'continuousMultiphaseKEpsilon.C';
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.C';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'continuousMultiphaseKEpsilon_8H';
+  file-name = 'continuousMultiphaseKEpsilon.H';
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKEpsilon/continuousMultiphaseKEpsilon.H';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'continuousMultiphaseKOmegaSST_8C';
+  file-name = 'continuousMultiphaseKOmegaSST.C';
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.C';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'continuousMultiphaseKOmegaSST_8H';
+  file-name = 'continuousMultiphaseKOmegaSST.H';
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/continuousMultiphaseKOmega/continuousMultiphaseKOmegaSST.H';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'dispersedMultiphaseKTGF_8C';
+  file-name = 'dispersedMultiphaseKTGF.C';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'dispersedMultiphaseKTGF_8C_1ac3faf9ba9acb34eac3e834c3c979f1b5';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'ImposeWall';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+volScalarField &
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'psi';
+      }; /*        func-mem-param--param */
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volScalarField &
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'alpha';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.C';
+      func-mem-desc-line = '218';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'dispersedMultiphaseKTGF_8C_1a814acd687d718ee7c75b8ef448dfb536';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'detectZero';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+const volScalarField &
+_EnD_oF_dEf_TeXt_;
+        func-mem-param-declname = 'psi';
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.C';
+      func-mem-desc-line = '262';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    };
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.C';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'dispersedMultiphaseKTGF_8H';
+  file-name = 'dispersedMultiphaseKTGF.H';
+  file-full-name  = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.H';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
   file-id   = 'multiphaseCompressibleTurbulenceModels_8C';
   file-name = 'multiphaseCompressibleTurbulenceModels.C';
+    define = {
+    define-member = {
+      define-mem-kind = 'define';
+      define-mem-id   = 'multiphaseCompressibleTurbulenceModels_8C_1a774964b9c69e7eb4c950bf8899fabe10';
+      define-mem-virt = normal;
+      define-mem-prot = public;
+      define-mem-name = 'makeRASModel';
+      define-mem-param  = {
+        define-mem-def-name = 'Type';
+      }; /*        define-mem-def--param */
+      define-mem-initializer = <<_EnD_oF_dEf_TeXt_
+    makeTemplatedTurbulenceModel                                               \
+    (phaseModelPhaseCompressibleTurbulenceModel, RAS, Type)
+_EnD_oF_dEf_TeXt_;
+      define-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/multiphaseCompressibleTurbulenceModels.C';
+      define-mem-desc-line = '54';
+      define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      define-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* define-member */
+    };
     func = {
     func-member = {
       func-mem-kind = 'function';
@@ -32773,6 +35944,29 @@ _EnD_oF_dEf_TeXt_;
     }; /* func-member */
     func-member = {
       func-mem-kind = 'function';
+      func-mem-id   = 'multiphaseCompressibleTurbulenceModels_8C_1acdb4ce7eab5b1699681477ce13dfb542';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'makeRASModel';
+      func-mem-param = {
+        func-mem-param-type = <<_EnD_oF_dEf_TeXt_
+continuousMultiphaseKEpsilon
+_EnD_oF_dEf_TeXt_;
+      }; /*        func-mem-param--param */
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/multiphaseCompressibleTurbulenceModels.C';
+      func-mem-desc-line = '63';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
       func-mem-id   = 'multiphaseCompressibleTurbulenceModels_8C_1aa9220ac15ec7b6279099b43f3ebba56c';
       func-mem-virt = normal;
       func-mem-prot = public;
@@ -32796,7 +35990,7 @@ multiphaseKineticTheoryModel
 _EnD_oF_dEf_TeXt_;
       }; /*        func-mem-param--param */
       func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/multiphaseCompressibleTurbulenceModels.C';
-      func-mem-desc-line = '59';
+      func-mem-desc-line = '73';
       func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -32820,7 +36014,7 @@ file = {
     func = {
     func-member = {
       func-mem-kind = 'function';
-      func-mem-id   = 'multiphaseKineticTheoryModel_8C_1ac3faf9ba9acb34eac3e834c3c979f1b5';
+      func-mem-id   = 'dispersedMultiphaseKTGF_8C_1ac3faf9ba9acb34eac3e834c3c979f1b5';
       func-mem-virt = normal;
       func-mem-prot = public;
       func-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -32839,7 +36033,7 @@ const volScalarField &
 _EnD_oF_dEf_TeXt_;
         func-mem-param-declname = 'alpha';
       }; /*        func-mem-param--param */
-      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/multiphaseKineticTheoryModel/multiphaseKineticTheoryModel.C';
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.C';
       func-mem-desc-line = '218';
       func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
@@ -32850,7 +36044,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* func-member */
     func-member = {
       func-mem-kind = 'function';
-      func-mem-id   = 'multiphaseKineticTheoryModel_8C_1a814acd687d718ee7c75b8ef448dfb536';
+      func-mem-id   = 'dispersedMultiphaseKTGF_8C_1a814acd687d718ee7c75b8ef448dfb536';
       func-mem-virt = normal;
       func-mem-prot = public;
       func-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -32863,7 +36057,7 @@ const volScalarField &
 _EnD_oF_dEf_TeXt_;
         func-mem-param-declname = 'psi';
       }; /*        func-mem-param--param */
-      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/multiphaseKineticTheoryModel/multiphaseKineticTheoryModel.C';
+      func-mem-desc-file = '/home/ganeshkumar/OpenFOAM/ganeshkumar-v2112/src/phaseSystemModels/reactingEuler/Propellant-Regression-Framework/library/multiphaseCompressibleTurbulenceModels/dispersedMultiphaseKTGF/dispersedMultiphaseKTGF.C';
       func-mem-desc-line = '262';
       func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 

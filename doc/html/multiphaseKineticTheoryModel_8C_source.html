@@ -669,8 +669,8 @@ $(function() {
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        ThetaEqn.solve();</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        <span class="comment">// Impose wall on propellant surface</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <span class="keyword">const</span> volScalarField&amp; alphaProp(this-&gt;db().lookupObject&lt;volScalarField&gt;(<span class="stringliteral">&quot;alpha.propellant&quot;</span>));</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        ImposeWall(Theta_, alphaProp);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <span class="comment">// const volScalarField&amp; alphaProp(this-&gt;db().lookupObject&lt;volScalarField&gt;(&quot;alpha.propellant&quot;));</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="comment">// ImposeWall(Theta_, alphaProp);</span></div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="comment">// Theta_ = pos0(alpha - minAlpha_)*Theta_;</span></div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        fvOptions.correct(Theta_);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    }</div>
