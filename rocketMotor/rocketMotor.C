@@ -7,34 +7,38 @@
 -------------------------------------------------------------------------------
     Copyright (C) 2011-2018 OpenFOAM Foundation
     Copyright (C) 2020 OpenCFD Ltd.
+    Copyright (C) 2025 Ganeshkumar V, Dilip Srinivas Sundaram, IIT Gandhinagar
 -------------------------------------------------------------------------------
 License
-    This file is part of OpenFOAM.
+    This file is part of Rocket Motor Firing Simulation Software Suite, 
+    which is developed on top of OpenFOAM-v2112.
 
-    OpenFOAM is free software: you can redistribute it and/or modify it
+    rocketMotor is free software: you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
-    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-    for more details.
+    rocketMotor is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    This software is not part of the official OpenFOAM® distribution.
+    OpenFOAM® is a registered trademark of OpenCFD Limited, the producer
+    of the OpenFOAM open source CFD software. This project is an independent
+    work and has no association with OpenCFD Limited.
 
     You should have received a copy of the GNU General Public License
-    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
-
+    along with rocketMotor.  If not, see <http://www.gnu.org/licenses/>.
+-------------------------------------------------------------------------------
 Application
-    reactingMultiphaseEulerFoam
+    rocketMotor
 
 Description
-    Solver for a system of any number of compressible fluid phases with a
-    common pressure, but otherwise separate properties. The type of phase model
-    is run time selectable and can optionally represent multiple species and
-    in-phase reactions. The phase system is also run time selectable and can
-    optionally represent different types of momentum, heat and mass transfer.
-
+    CFD solver for rocket motor internal ballistics and combustion,
+    developed on top of OpenFOAM. 
 \*---------------------------------------------------------------------------*/
+
 
 #include "fvCFD.H"
 #include "multiPhaseSystem.H"
