@@ -119,33 +119,6 @@ volScalarField Mach
     mag(phases[0].U())/sqrt(phases[0].thermo().gamma()*p/phases[0].thermo().rho())
 );
 
-// Gas phase density and specific heat ratios
-volScalarField rhog
-(
-    IOobject
-    (
-      "rho.gas",
-      runTime.timeName(),
-      mesh,
-      IOobject::NO_READ,
-      IOobject::AUTO_WRITE
-    ),
-    phases[0].thermo().rho()
-);
-
-volScalarField gammag
-(
-    IOobject
-    (
-      "gamma.gas",
-      runTime.timeName(),
-      mesh,
-      IOobject::NO_READ,
-      IOobject::AUTO_WRITE
-    ),
-    phases[0].thermo().gamma()
-);
-
 volScalarField rhoPropellant
 (
     IOobject

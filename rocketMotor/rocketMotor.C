@@ -54,185 +54,167 @@ Description
 
 int main(int argc, char *argv[])
 {
-    #include "postProcess.H"
+  #include "postProcess.H"
 
-    #include "addCheckCaseOptions.H"
-    #include "setRootCase.H"
-    #include "createTime.H"
-    #include "createMesh.H"
-    #include "createControl.H"
-    #include "createTimeControls.H"
-    #include "createFields.H"
-    #include "createFieldRefs.H"
+  #include "addCheckCaseOptions.H"
+  #include "setRootCase.H"
+  #include "createTime.H"
+  #include "createMesh.H"
+  #include "createControl.H"
+  #include "createTimeControls.H"
+  #include "createFields.H"
+  #include "createFieldRefs.H"
 
-    if (!LTS)
-    {
-        #include "CourantNo.H"
-        #include "setInitialDeltaT.H"
-    }
+  if (!LTS)
+  {
+    #include "CourantNo.H"
+    #include "setInitialDeltaT.H"
+  }
 
-    Switch partialElimination
+  Switch partialElimination
+  (
+    pimple.dict().getOrDefault<Switch>("partialElimination", false)
+  );
+
+  Switch solveRho
+  (
+	  pimple.dict().getOrDefault<Switch>("solveRho", false)
+  );
+
+  // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+  Info<< "\nStarting time loop\n" << endl;
+
+  // Correcting Phase Volume Fractions
+  forAll(fluid.phases(), phasei)
+  {
+    fluid.phases()[phasei].clip(SMALL, 1 - SMALL);
+  }
+
+  // Setting variables to initialize
+  labelList purePropellantCells(0);
+  scalarField setTemp(0, 0);
+  scalarField setPressure(0, 0);
+  vectorField setVelocity(0, vector(0, 0, 0));
+  label propellantIndex = fluid.get<label>("propellantIndex");
+  bool limitTemperature = fluid.getOrDefault<bool>("limitTemperature", false);
+
+  while (runTime.run())
+  {
+    #include "readTimeControls.H"
+
+    int nEnergyCorrectors
     (
-        pimple.dict().getOrDefault<Switch>("partialElimination", false)
+        pimple.dict().getOrDefault<int>("nEnergyCorrectors", 1)
     );
 
-    Switch solveRho
-    (
-	      pimple.dict().getOrDefault<Switch>("solveRho", false)
-    );
+    #include "CourantNo.H"
+    #include "setDeltaTFactor.H"
 
-    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+    runTime++;
+    Info<< "Time = " << runTime.timeName() << nl << endl;
 
-    Info<< "\nStarting time loop\n" << endl;
-    // Info << "Propellant Volume: "
-    //       << sum(fluid.phases()[2].internalField()*mesh.V())*10000 << endl;
+    // Store Old Time
+    fluid.store();
 
-    // Correcting Phase Volume Fractions
-    forAll(fluid.phases(), phasei)
+    // --- Pressure-velocity PIMPLE corrector loop
+    while (pimple.loop())
     {
-      fluid.phases()[phasei].clip(SMALL, 1 - SMALL);
-    }
+      fluid.solve();
+      fluid.correct();
 
-    // Setting variables to initialize
-    labelList purePropellantCells(0);
-    scalarField setTemp(0, 0);
-    scalarField setPressure(0, 0);
-    vectorField setVelocity(0, vector(0, 0, 0));
-    label propellantIndex = fluid.get<label>("propellantIndex");
-    bool limitTemperature = fluid.getOrDefault<bool>("limitTemperature", false);
+      // // Reconstruct Propellant surface
+      // surf.reconstruct();
 
-    while (runTime.run())
-    {
-        #include "readTimeControls.H"
+      //***********  Start Find Propellant size ***********//
+      if (propellantIndex != -1)
+      {
+        label purePropellantSize = 0;
+        scalar cutoff = 0.999; //(1.0 - SMALL);
+        {
+          const volScalarField& propellant = phases[propellantIndex];
 
-        int nEnergyCorrectors
+          forAll(propellant, i)
+          {
+            if (propellant[i] >= cutoff)
+            {
+              purePropellantSize++;
+            }
+          }
+        }
+        purePropellantCells = labelList(purePropellantSize);
+        setTemp = scalarField
         (
-            pimple.dict().getOrDefault<int>("nEnergyCorrectors", 1)
+          purePropellantSize,
+          fluid.getOrDefault<scalar>("Tset", 2000)
         );
-
-        #include "CourantNo.H"
-        #include "setDeltaTFactor.H"
-
-        runTime++;
-        Info<< "Time = " << runTime.timeName() << nl << endl;
-
-        // Store Old Time
-        fluid.store();
-
-        // --- Pressure-velocity PIMPLE corrector loop
-        while (pimple.loop())
+        setPressure = scalarField(purePropellantSize, 101325);
+        setVelocity = vectorField(purePropellantSize, vector(0, 0, 0));
         {
-            fluid.solve();
-            fluid.correct();
+          const volScalarField& propellant = phases[propellantIndex];
 
-            // // Reconstruct Propellant surface
-            // surf.reconstruct();
-
-            //***********  Start Find Propellant size ***********//
-            if (propellantIndex != -1)
+          label j = 0;
+          forAll(propellant, i)
+          {
+            if (propellant[i] >= cutoff)
             {
-              label purePropellantSize = 0;
-              scalar cutoff = 0.999; //(1.0 - SMALL);
-              {
-                const volScalarField& propellant = phases[propellantIndex];
-
-                forAll(propellant, i)
-                {
-                  if (propellant[i] >= cutoff)
-                  {
-                    purePropellantSize++;
-                  }
-                }
-              }
-              purePropellantCells = labelList(purePropellantSize);
-              setTemp = scalarField
-              (
-                purePropellantSize,
-                fluid.getOrDefault<scalar>("Tset", 2000)
-              );
-              setPressure = scalarField(purePropellantSize, 101325);
-              setVelocity = vectorField(purePropellantSize, vector(0, 0, 0));
-              {
-                const volScalarField& propellant = phases[propellantIndex];
-
-                label j = 0;
-                forAll(propellant, i)
-                {
-                  if (propellant[i] >= cutoff)
-                  {
-                    purePropellantCells[j] = i;
-                    j++;
-                  }
-                }
-              }
+              purePropellantCells[j] = i;
+              j++;
             }
-            //***********  End Find Propellant size ***********//
-
-            //*********** Start Find Particle Free Cells ******//
-            label particleFreeCellSize = 0;
-            {
-              const volScalarField alphaP(phases[1]);
-              forAll(alphaP, i)
-              {
-                if(alphaP[i] < 1e-10) { particleFreeCellSize++; }
-              } 
-            }
-            labelList particleFreeCells(particleFreeCellSize);
-	          const volScalarField& gasTemp(phases[0].thermo().T());
-            scalarField setParticleTemp(particleFreeCellSize, 300);
-            {
-              const volScalarField alphaP(phases[1]);
-              label j = 0;
-              forAll(alphaP, i)
-              {
-                if(alphaP[i] < 1e-10) { particleFreeCells[j] = i; setParticleTemp[j] = gasTemp[i]; j++; }
-              }
-            }
-            //*********** End Find Particle Free Cells *******//
-
-            // #include "YEqns.H"
-
-            #include "pU/UEqns.H"
-            #include "EEqns.H"
-            #include "pU/pEqn.H"
-
-            fluid.correctKinematics();
-
-            // if (pimple.turbCorr())
-            // {
-                fluid.correctTurbulence();
-            // }
+          }
         }
+      }
+      //***********  End Find Propellant size ***********//
 
-        if (runTime.write())
+      //*********** Start Find Particle Free Cells ******//
+      label particleFreeCellSize = 0;
+      {
+        const volScalarField alphaP(phases[1]);
+        forAll(alphaP, i)
         {
-            rhog = phases[0].thermo().rho();
-            gammag = phases[0].thermo().gamma();
-            if (propellantIndex != -1)
-            {
-                rhoPropellant = phases[propellantIndex].thermo().rho();
-            }
-        }
-        else
+          if(alphaP[i] < 1e-10) { particleFreeCellSize++; }
+        } 
+      }
+      labelList particleFreeCells(particleFreeCellSize);
+	    const volScalarField& gasTemp(phases[0].thermo().T());
+      scalarField setParticleTemp(particleFreeCellSize, 300);
+      {
+        const volScalarField alphaP(phases[1]);
+        label j = 0;
+        forAll(alphaP, i)
         {
-            const tmp<volScalarField> trhog(phases[0].rho());
-            const tmp<volScalarField> tgammag(phases[0].thermo().gamma());
-
-            const volScalarField& Rhog(trhog());
-            const volScalarField& Gammag(tgammag());
-            Mach = mag(phases[0].U())/sqrt(Gammag*p/Rhog);
+          if(alphaP[i] < 1e-10) { particleFreeCells[j] = i; setParticleTemp[j] = gasTemp[i]; j++; }
         }
-        // rhog.clip(SMALL, max(rhog));
-        // Mach = mag(phases[0].U())/sqrt(phases[0].thermo().gamma()*p/rhog);
+      }
+      //*********** End Find Particle Free Cells *******//
 
-        runTime.write();
+      #include "pU/UEqns.H"
+      #include "EEqns.H"
+      #include "pU/pEqn.H"
 
-        runTime.printExecutionTime(Info);
+      fluid.correctKinematics();
+      fluid.correctTurbulence();
     }
-    findYplus(phases[0]);
-    Info<< "End\n" << endl;
 
-    return 0;
+    // Find gas phase Mach number only during writeTime
+    if (runTime.writeTime())
+    {
+      const tmp<volScalarField> trhog(phases[0].rho());
+      const tmp<volScalarField> tgammag(phases[0].thermo().gamma());
+
+      const volScalarField& Rhog(trhog());
+      const volScalarField& Gammag(tgammag());
+      Mach = mag(phases[0].U())/sqrt(Gammag*p/Rhog);
+    }
+
+    runTime.write();
+    runTime.printExecutionTime(Info);
+  }
+  // findYplus(phases[0]);
+  Info<< "End\n" << endl;
+
+  // ::_Exit(0);
+  return 0;
 }
 
 
