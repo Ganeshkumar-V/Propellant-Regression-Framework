@@ -28,11 +28,11 @@ Application
     rocketMotor
 
 Description
-    Solver for a system of any number of compressible fluid phases with a
-    common pressure, but otherwise separate properties. The type of phase model
-    is run time selectable and can optionally represent multiple species and
-    in-phase reactions. The phase system is also run time selectable and can
-    optionally represent different types of momentum, heat and mass transfer.
+    Simulates gas-particle flow in the rocket motor while capturing propellant
+    surface regression. Propellant, gas and particles are modelled as three 
+    separate phases. Can also be used without propellant phase and can also
+    be applicable for simulating gas-particle flow in the rocket motor and
+    CD nozzle without propellant regression. 
 
 \*---------------------------------------------------------------------------*/
 
