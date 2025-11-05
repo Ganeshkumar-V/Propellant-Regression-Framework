@@ -16,6 +16,36 @@ fvPatchFields/burningRateInletVelocity/burningRateInletVelocityFvPatchVectorFiel
 phaseModel/phaseModel/phaseModels.C
 
 multiphaseTurbulence = multiphaseCompressibleTurbulenceModels
+viscosity = $(multiphaseTurbulence)/kineticTheoryModels/viscosityModel
+$(viscosity)/viscosityModel/viscosityModel.C
+$(viscosity)/Gidaspow/GidaspowViscosity.C
+$(viscosity)/Syamlal/SyamlalViscosity.C
+$(viscosity)/HrenyaSinclair/HrenyaSinclairViscosity.C
+$(viscosity)/none/noneViscosity.C
+
+conductivity = $(multiphaseTurbulence)/kineticTheoryModels/conductivityModel
+$(conductivity)/conductivityModel/conductivityModel.C
+$(conductivity)/Gidaspow/GidaspowConductivity.C
+$(conductivity)/Syamlal/SyamlalConductivity.C
+$(conductivity)/HrenyaSinclair/HrenyaSinclairConductivity.C
+
+radial = $(multiphaseTurbulence)/kineticTheoryModels/radialModel
+$(radial)/radialModel/radialModel.C
+$(radial)/CarnahanStarling/CarnahanStarlingRadial.C
+$(radial)/LunSavage/LunSavageRadial.C
+$(radial)/SinclairJackson/SinclairJacksonRadial.C
+
+granular = $(multiphaseTurbulence)/kineticTheoryModels/granularPressureModel
+$(granular)/granularPressureModel/granularPressureModel.C
+$(granular)/Lun/LunPressure.C
+$(granular)/SyamlalRogersOBrien/SyamlalRogersOBrienPressure.C
+
+frictional = $(multiphaseTurbulence)/kineticTheoryModels/frictionalStressModel
+$(frictional)/frictionalStressModel/frictionalStressModel.C
+$(frictional)/JohnsonJackson/JohnsonJacksonFrictionalStress.C
+$(frictional)/Schaeffer/SchaefferFrictionalStress.C
+$(frictional)/JohnsonJacksonSchaeffer/JohnsonJacksonSchaefferFrictionalStress.C
+
 $(multiphaseTurbulence)/multiphaseCompressibleTurbulenceModels.C
 $(multiphaseTurbulence)/multiphaseKineticTheoryModel/multiphaseKineticTheoryModel.C
 $(multiphaseTurbulence)/BoundaryConditions/JohnsonJacksonTheta/JohnsonJacksonTheta.C
@@ -26,8 +56,6 @@ $(iTModel)/interfaceTrackingModel/interfaceTrackingModel.C
 $(iTModel)/subCellularInterfaceMotion/subCellularInterfaceMotion.C
 $(iTModel)/Surface/Surface.C
 $(iTModel)/entrainedInterfaceMotion/entrainedInterfaceMotion.C
-$(iTModel)/burningRate/burningRate.C
-$(iTModel)/burningRateDy/burningRateDy.C
 
 dragModel = interfacialModels/dragModels
 $(dragModel)/particleDragModel/particleDragModel.C

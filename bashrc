@@ -26,5 +26,5 @@ export FOAM_PRF_APPBIN="$PRF_PROJECT_DIR/platforms/$WM_OPTIONS/bin"
 export FOAM_PRF_LIBBIN="$PRF_PROJECT_DIR/platforms/$WM_OPTIONS/lib"
 export PATH=$FOAM_PRF_APPBIN:$PATH
 export LD_LIBRARY_PATH=$FOAM_PRF_LIBBIN:$LD_LIBRARY_PATH
-chmod +x Allwmake Allwclean
+chmod +x $PRF_PROJECT_DIR/Allw*
 #------------------------------------------------------------------------------

@@ -580,9 +580,8 @@ Foam::multiPhaseSystem::multiPhaseSystem
     (
         "deltaN",
         1e-8/pow(average(mesh_.V()), 1.0/3.0)
-    ),
+    )
 
-    isoAdvection_(this->get<bool>("isoAdvection"))
 {
     forAll(phases(), phasei)
     {
