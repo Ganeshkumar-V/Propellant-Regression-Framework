@@ -49,12 +49,12 @@ Foam::pressureOutletNSCBCFvPatchField<Type>::pressureOutletNSCBCFvPatchField
     UName_("U"),
     phiName_("phi"),
     rhoName_("rho"),
+    fieldInf_(Zero),
+    lInf_(-GREAT),
     psiName_("thermo:psi"),
     pInf_(0.0),
     gamma_(0.0),
-    etaAc_(0.25),
-    fieldInf_(Zero),
-    lInf_(-GREAT)
+    etaAc_(0.25)
 {
     this->refValue() = Zero;
     this->refGrad() = Zero;
@@ -96,12 +96,12 @@ Foam::pressureOutletNSCBCFvPatchField<Type>::pressureOutletNSCBCFvPatchField
     UName_(dict.lookupOrDefault<word>("U", "U")),
     phiName_(dict.getOrDefault<word>("phi", "phi")),
     rhoName_(dict.getOrDefault<word>("rho", "rho")),
+    fieldInf_(Zero),
+    lInf_(-GREAT),
     psiName_(dict.lookupOrDefault<word>("psi", "thermo:psi")),
     pInf_(readScalar(dict.lookup("pInf"))),
     gamma_(readScalar(dict.lookup("gamma"))),
-    etaAc_(readScalar(dict.lookup("etaAc"))),
-    fieldInf_(Zero),
-    lInf_(-GREAT)
+    etaAc_(readScalar(dict.lookup("etaAc")))
 {
     if (dict.found("value"))
     {
@@ -146,12 +146,12 @@ Foam::pressureOutletNSCBCFvPatchField<Type>::pressureOutletNSCBCFvPatchField
     UName_(ptpsf.UName_),
     phiName_(ptpsf.phiName_),
     rhoName_(ptpsf.rhoName_),
+    fieldInf_(ptpsf.fieldInf_),
+    lInf_(ptpsf.lInf_),
     psiName_(ptpsf.psiName_),
     pInf_(ptpsf.pInf_),
     gamma_(ptpsf.gamma_),
-    etaAc_(ptpsf.etaAc_),
-    fieldInf_(ptpsf.fieldInf_),
-    lInf_(ptpsf.lInf_)
+    etaAc_(ptpsf.etaAc_)
 {}
 
 
@@ -166,12 +166,12 @@ Foam::pressureOutletNSCBCFvPatchField<Type>::pressureOutletNSCBCFvPatchField
     UName_(ptpsf.UName_),
     phiName_(ptpsf.phiName_),
     rhoName_(ptpsf.rhoName_),
+    fieldInf_(ptpsf.fieldInf_),
+    lInf_(ptpsf.lInf_),
     psiName_(ptpsf.psiName_),
     pInf_(ptpsf.pInf_),
     gamma_(ptpsf.gamma_),
-    etaAc_(ptpsf.etaAc_),
-    fieldInf_(ptpsf.fieldInf_),
-    lInf_(ptpsf.lInf_)
+    etaAc_(ptpsf.etaAc_)
 {}
 
 

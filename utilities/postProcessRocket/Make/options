@@ -18,7 +18,7 @@ EXE_INC = \
     -I$(PWD)/../../library/lnInclude
 
 EXE_LIBS = \
-    -L$(FOAM_USER_LIBBIN) \
+    -L$(FOAM_PRF_LIBBIN) \
     -lfiniteVolume \
     -lfvOptions \
     -lmeshTools \

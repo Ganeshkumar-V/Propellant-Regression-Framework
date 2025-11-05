@@ -188,7 +188,6 @@ Foam::scalar Foam::Surface::findNeighbourSurfaceArea
     const surfaceScalarField& Sf = mesh.magSf();
     const labelList& Own = mesh.owner();
     const labelList& Nei = mesh.neighbour();
-    const scalar One(1 - SMALL);
     
     if (Neighbour != -1)
     {    

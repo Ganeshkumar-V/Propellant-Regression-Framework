@@ -25,7 +25,7 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Application
-    reactingMultiphaseEulerFoam
+    rocketMotor
 
 Description
     Solver for a system of any number of compressible fluid phases with a
@@ -213,8 +213,8 @@ int main(int argc, char *argv[])
   // findYplus(phases[0]);
   Info<< "End\n" << endl;
 
-  // ::_Exit(0);
-  return 0;
+  ::_Exit(0);
+  // return 0;
 }
 
 

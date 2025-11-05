@@ -56,4 +56,4 @@ multiphaseSystem/multiPhaseSystem.C
 multiphaseSystem/multiPhaseSystemNew.C
 multiphaseSystem/multiPhaseSystems.C
 
-LIB = $(FOAM_USER_LIBBIN)/libpropellantRegressionPhaseSystem
+LIB = $(FOAM_PRF_LIBBIN)/libpropellantRegressionPhaseSystem

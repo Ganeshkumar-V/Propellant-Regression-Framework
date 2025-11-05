@@ -1,0 +1,16 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # Run from this directory
+
+# Basic Libraries
+wclean library
+
+# Metal Oxidizer Combustion Library
+wclean rocketMotor
+
+# Additional utilities
+wclean utilities/mapVolFields
+wclean utilities/postProcessRocket
+wclean utilities/rocketConservation
+wclean utilities/setRocketInitField
+
+rm -rf platforms

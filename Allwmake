@@ -5,3 +5,10 @@ cd "${0%/*}" || exit                                # Run from this directory
 
 wmake $targetType library
 wmake $targetType rocketMotor
+
+#-- Compile Utilities --------------------------------------------------------
+cd utilities
+wmake $targetType postProcessRocket
+wmake $targetType mapVolFields
+wmake $targetType rocketConservation
+wmake $targetType setRocketInitField
