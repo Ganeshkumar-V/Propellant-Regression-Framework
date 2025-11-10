@@ -8,13 +8,18 @@ This codebase is provided as source and is intended to be built and run on Linux
 
 ## ✨ Key Features
 
-* **rocketMotor:** `applications/rocketMotor` - an application for simulating gas-particle flows in rocket motor with propellant regression handling.
+* **Core Application:** `applications/rocketMotor/rocketMotor` - a
+  specialised application for rocket motor simulations, propellant
+  regression handling, and CD nozzle flows.
 
-* **Post-Processing:** A collection of `functionObjects` useful for post-processing
-  (thrust, vorticity/stream function, etc.).
+* **Multiphase Models:** Includes various models to capture gas-particle inerphase momentum and energy interactions.
 
-* **Utilities:** Tools under `utilities/` for mapping fields, post-processing
-  rocket-related quantities, and initializing rocket-specific fields.
+* **Custom Libraries:** Specialized boundary conditions (`fvPatchFields`)
+  tailored for the propulsion community.
+
+* **Post-Processing:** A collection of `functionObjects` (thrust,
+  vorticity/stream function, etc.) and utilities for performance
+  parameter extraction and field initialization.
 
 * **Build System:** Platform-specific makefiles (`platforms/`) and per-target
   Makefiles (`Make/`) for `wmake`.
