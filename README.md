@@ -2,15 +2,13 @@
 
 ![Simulation GIF](media.gif)
 
-An OpenFOAM-based collection of applications, solvers, utilities, and functionObjects for modelling propellant regression, particle-laden flows, and rocket motor-related post-processing. This repository bundles example applications (e.g., the `rocketMotor` application), a set of custom `functionObjects`, `fvPatchFields`, interfacial models, and utilities commonly used for propellant combustion/regression studies.
+This repository provides an OpenFOAM-based collection of applications, libraries, and utilities for simulating rocket motor firing, specializing in propellant regression and particle-laden flows. The framework's core is the `rocketMotor` application, which handles propellant surface regression (for center-perforated and end-burning configurations) and various models for gas-particle interactions.  The suite also supports CD nozzle simulations (both single-phase gas and two-phase gas-particle flows). To accelerate research, this project includes a set of tutorial and validation cases, specialized boundary conditions for propulsion, and utilities for performance-parameter extraction and to setup initial-conditions.
 
 This codebase is provided as source and is intended to be built and run on Linux platforms with a compatible C++ toolchain and OpenFOAM build tools.
 
 ## ✨ Key Features
 
-* **Custom Application:** `applications/rocketMotor/rocketMotor` - a
-  specialised application for rocket motor simulations and propellant
-  regression handling.
+* **rocketMotor:** `applications/rocketMotor` - an application for simulating gas-particle flows in rocket motor with propellant regression handling.
 
 * **Post-Processing:** A collection of `functionObjects` useful for post-processing
   (thrust, vorticity/stream function, etc.).
