@@ -1,6 +1,6 @@
 # Propellant Regression Framework
 
-![Simulation GIF](media.gif)
+![Simulation GIF](docs/media.gif)
 
 This repository provides an OpenFOAM-based collection of applications, libraries, and utilities for simulating rocket motor firing, specializing in propellant regression and particle-laden flows. The framework's core is the `rocketMotor` application, which handles propellant surface regression (for center-perforated and end-burning configurations) and various models for gas-particle interactions.  The suite also supports CD nozzle simulations (both single-phase gas and two-phase gas-particle flows). To accelerate research, this project includes a set of tutorial and validation cases, specialized boundary conditions for propulsion, and utilities for performance-parameter extraction and to setup initial-conditions.
 
