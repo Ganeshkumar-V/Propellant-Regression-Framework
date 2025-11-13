@@ -139,8 +139,18 @@ header [aria-current="page"] svg {
 
 /* Hero section */
 .hero {
-    background: linear-gradient(135deg, #3b82f6, #f97316); /* Blue to Orange */
-    color: #ffffff;
+    /* background: linear-gradient(135deg, #3b82f6, #f97316); /* Blue to Orange */
+    /* color: #ffffff; */
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
+
+    background: linear-gradient(135deg, #FF9933, #FFFFFF, #138808);
+    
+    /* Note: You may need to adjust the text color. 
+    The original 'color: #ffffff;' (white) will be difficult 
+    to read against the white middle of this new gradient.
+    You might try a dark color like #333333.
+    */
+    color: #333333; /* Changed from #ffffff for better readability */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 

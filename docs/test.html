@@ -1,34 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Math Test</title>
+    <meta charset="UTF-M">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation.js Demo (Direct DOI Links)</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/citation-js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
-
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
-
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {
-            delimiters: [
-                {left: '$$', right: '$$', display: true},
-                {left: '$', right: '$', display: false}
-            ]
-        });"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2em;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .csl-entry {
+            /* This is no longer needed for jumping, but good to keep */
+            scroll-margin-top: 2em; 
+        }
+    </style>
 </head>
 <body>
 
-    <h2>Test Equations</h2>
-    <p>This is an inline equation: $a^2 + b^2 = c^2$.</p>
-    <p>This is a display equation:</p>
-    $$
-    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-    $$
+    <h1>A Demo of citation.js (Direct DOI Links)</h1>
 
-    <h2>Your Equations</h2>
-    <p>The mass conservation equations of gas and particle phases are given by</p>
-    $$
-    \frac{\partial}{\partial t}(\alpha_k \rho_k) + \nabla \cdot (\alpha_k \rho_k \mathbf{u}_k) = \dot{m}'''_{prop \rightarrow k} \tag{1}
-    $$
+    <p>
+        This is a sample paragraph. The citation for Smith 
+        <span class="cite" data-key="smith2023"></span>
+        should now link directly to its DOI.
+    </p>
+
+    <p>
+        Here is another one for Doe 
+        <span class="cite" data-key="doe2021"></span>.
+        This one will also link externally to its DOI.
+    </p>
+
+    <h2>References</h2>
+    
+    <div id="bibliography"></div>
+
+
+    <script>
+        const Cite = require('citation-js');
+
+        const myBibData = `
+            @article{smith2023,
+              author  = {Smith, Jane A.},
+              title   = {Web Citations and Their Importance},
+              journal = {Journal of Web Standards},
+              year    = {2023},
+              volume  = {10},
+              pages   = {1-20},
+              doi     = {10.1000/jws.2023.123}
+            }
+            
+            @book{doe2021,
+              author    = {Doe, John},
+              title     = {The Art of JavaScript},
+              publisher = {Web Press},
+              year      = {2021},
+              doi       = {10.1000/js-art.2021.456}
+            }
+        `;
+
+        function buildCitations() {
+            const bibData = new Cite(myBibData);
+
+            // ---
+            // B. Generate the main bibliography
+            // ---
+            // This part is unchanged. It will STILL show the DOI link at the bottom.
+            const bibHtml = bibData.format('bibliography', {
+                format: 'html',
+                template: 'apa',
+                lang: 'en-US'
+            });
+            document.getElementById('bibliography').innerHTML = bibHtml;
+
+            // ---
+            // C. Generate the in-text citations
+            // ---
+            // !! THIS IS THE MODIFIED SECTION !!
+            // ---
+            document.querySelectorAll('.cite').forEach(span => {
+                const key = span.dataset.key;
+                
+                // 1. Get the text for the citation (e.g., "Smith, 2023")
+                const citationText = bibData.format('citation', {
+                    entry: key,
+                    template: 'apa'
+                });
+
+                // 2. Find the full data entry for this key
+                // The 'bibData.data' array holds all the parsed BibTeX objects
+                const entry = bibData.data.find(item => item.id === key);
+
+                // 3. Check if this entry exists AND has a DOI field
+                if (entry && entry.DOI) {
+                    // It has a DOI! Build the external link.
+                    const doiUrl = `https://doi.org/${entry.DOI}`;
+                    
+                    const link = document.createElement('a');
+                    link.href = doiUrl;
+                    link.textContent = `(${citationText})`;
+                    link.target = "_blank"; // Open in new tab
+                    link.rel = "noopener noreferrer"; // Security best practice
+                    
+                    // Replace the <span> with the new <a> link
+                    span.parentNode.replaceChild(link, span);
+
+                } else {
+                    // No DOI found for this entry.
+                    // Just insert the plain text citation (not a link).
+                    const textNode = document.createTextNode(`(${citationText})`);
+                    span.parentNode.replaceChild(textNode, span);
+                }
+            });
+        }
+
+        buildCitations();
+    </script>
 
 </body>
 </html>
