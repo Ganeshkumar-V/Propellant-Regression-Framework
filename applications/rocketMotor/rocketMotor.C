@@ -164,7 +164,7 @@ int main(int argc, char *argv[])
     runTime.write();
     runTime.printExecutionTime(Info);
   }
-  // findYplus(phases[0]); <- to find Yplus along the walls (uncomment if req.)
+  findYplus(phases[0]); // <- to find Yplus along the walls (uncomment if req.)
   Info<< "End\n" << endl;
 
   ::_Exit(0);

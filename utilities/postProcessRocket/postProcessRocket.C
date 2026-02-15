@@ -106,11 +106,15 @@ int main(int argc, char *argv[])
     std::remove(fileName.c_str()); // delete if already present
     std::ofstream file;
     file.open(fileName, std::ios_base::app);
-    file << "t, " << "mdotG, " << "mdotP, " << "Fg, " << "Fp, " << "Fpressure, " << "Pc\n";
+    file << "t, " << "mdotG, " << "mdotP, " << "Fg, " << "Fp, " << "Fpressure, " << "Pc," << "Isp," << "mdotRMS, " << "FRMS, " << "FpMdotp,"<< "IspRMS\n";
     file.close();
     std::stringstream output;
 
     Info << "timeDirs: " << timeDirs.size() << endl;
+    
+    // Check for presence of turbulence
+    bool activeTurbulence = fluid.get<bool>("activeTurbulence");
+    
     // #pragma omp parallel for ordered
     for (label timei = 0; timei < timeDirs.size(); ++timei)
     // forAll(timeDirs, timei)
@@ -166,6 +170,21 @@ int main(int argc, char *argv[])
         scalar tFparticles(sum(Pparticles.component(vector::Z)));
         scalar tFpressure(sum((pF - 101325)*mag(Sf)));
 
+        scalar tF(tFgas + tFparticles + tFpressure);
+        scalar tmdot(tmdotGas + tmdotparticles);
+        scalar tIsp(tF/(tmdot*9.81));
+
+        scalar tmdotRMS(0.0);
+        scalar tFRMS(0.0);
+        scalar tFprimeMdotprime(0.0);
+        scalar tIspRMS(0.0);
+
+        // Calculate RMS values of flow rate and thrust
+        if (activeTurbulence)
+        {
+            #include "calculateRMS.H"
+        }
+
         // write scalar values to the table
         if (timei%100 == 0)
         {
@@ -180,7 +199,13 @@ int main(int argc, char *argv[])
                    << tFgas << ", "
                    << tFparticles << ", "
                    << tFpressure << ", "
-                   << p[0] << ", " << "\n";
+                   << p[0] << ", " 
+                   << tIsp << ", " 
+                   << tmdotRMS << ", "
+                   << tFRMS << ", "
+                   << tFprimeMdotprime << ", "
+                   << tIspRMS << ", "
+                   << "\n";
             }
             file.close();
         }
@@ -192,7 +217,13 @@ int main(int argc, char *argv[])
                    << tFgas << ", "
                    << tFparticles << ", "
                    << tFpressure << ", "
-                   << p[0] << ", " << "\n";
+                   << p[0] << ", " 
+                   << tIsp << ", " 
+                   << tmdotRMS << ", "
+                   << tFRMS << ", "
+                   << tFprimeMdotprime << ", "
+                   << tIspRMS << ", "
+                   << "\n";
         }
 
     }

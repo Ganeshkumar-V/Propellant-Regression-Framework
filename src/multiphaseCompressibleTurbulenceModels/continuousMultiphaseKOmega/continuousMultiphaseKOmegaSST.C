@@ -170,111 +170,111 @@ void continuousMultiphaseKOmegaSST<BasicTurbulenceModel>::correct()
     // Solve the turbulence equations
     kOmegaSST<BasicTurbulenceModel>::correct();
 
-    if (writeFields_)
-    {
-        const volScalarField& alpha(this->db().template lookupObject<volScalarField>("alpha.gas"));
-        const volScalarField& rho(this->db().template lookupObject<volScalarField>("thermo:rho.gas"));
-        const surfaceScalarField& alphaRhoPhi(this->db().template lookupObject<surfaceScalarField>("alphaRhoPhi.gas"));
-        const volVectorField& U(this->db().template lookupObject<volVectorField>("U.gas"));
-        const volScalarField& Dk(this->db().template lookupObject<volScalarField>("Dk.gas"));
-        const volSymmTensorField tau(rho*this->nut()*(dev(twoSymm(fvc::grad(U)))));
-        volScalarField ddt
-        (
-            IOobject
-            (
-                "ddt",
-                this->runTime_.timeName(),
-                this->mesh_,
-                IOobject::NO_READ,
-                IOobject::AUTO_WRITE
-            ),
-            fvc::ddt(alpha, rho, this->k()())
-        );
-        volScalarField conv
-        (
-            IOobject
-            (
-                "div",
-                this->runTime_.timeName(),
-                this->mesh_,
-                IOobject::NO_READ,
-                IOobject::AUTO_WRITE
-            ),
-            fvc::div(alphaRhoPhi, this->k()())
-        );
-        volScalarField production
-        (
-            IOobject
-            (
-                "production",
-                this->runTime_.timeName(),
-                this->mesh_,
-                IOobject::NO_READ,
-                IOobject::AUTO_WRITE
-            ),
-            tau && fvc::grad(alpha*U)
-        );
-        volScalarField dissipation
-        (
-            IOobject
-            (
-                "dissipation",
-                this->runTime_.timeName(),
-                this->mesh_,
-                IOobject::NO_READ,
-                IOobject::AUTO_WRITE
-            ),
-            0.09*alpha*this->k()*this->omega()
-        );
-        volScalarField transport
-        (
-            IOobject
-            (
-                "transport",
-                this->runTime_.timeName(),
-                this->mesh_,
-                IOobject::NO_READ,
-                IOobject::AUTO_WRITE
-            ),
-            fvc::div((alpha*rho*Dk)*fvc::grad(this->k()))
-        );
+    // if (writeFields_)
+    // {
+    //     const volScalarField& alpha(this->db().template lookupObject<volScalarField>("alpha.gas"));
+    //     const volScalarField& rho(this->db().template lookupObject<volScalarField>("thermo:rho.gas"));
+    //     const surfaceScalarField& alphaRhoPhi(this->db().template lookupObject<surfaceScalarField>("alphaRhoPhi.gas"));
+    //     const volVectorField& U(this->db().template lookupObject<volVectorField>("U.gas"));
+    //     const volScalarField& Dk(this->db().template lookupObject<volScalarField>("Dk.gas"));
+    //     const volSymmTensorField tau(rho*this->nut()*(dev(twoSymm(fvc::grad(U)))));
+    //     volScalarField ddt
+    //     (
+    //         IOobject
+    //         (
+    //             "ddt",
+    //             this->runTime_.timeName(),
+    //             this->mesh_,
+    //             IOobject::NO_READ,
+    //             IOobject::AUTO_WRITE
+    //         ),
+    //         fvc::ddt(alpha, rho, this->k()())
+    //     );
+    //     volScalarField conv
+    //     (
+    //         IOobject
+    //         (
+    //             "div",
+    //             this->runTime_.timeName(),
+    //             this->mesh_,
+    //             IOobject::NO_READ,
+    //             IOobject::AUTO_WRITE
+    //         ),
+    //         fvc::div(alphaRhoPhi, this->k()())
+    //     );
+    //     volScalarField production
+    //     (
+    //         IOobject
+    //         (
+    //             "production",
+    //             this->runTime_.timeName(),
+    //             this->mesh_,
+    //             IOobject::NO_READ,
+    //             IOobject::AUTO_WRITE
+    //         ),
+    //         tau && fvc::grad(alpha*U)
+    //     );
+    //     volScalarField dissipation
+    //     (
+    //         IOobject
+    //         (
+    //             "dissipation",
+    //             this->runTime_.timeName(),
+    //             this->mesh_,
+    //             IOobject::NO_READ,
+    //             IOobject::AUTO_WRITE
+    //         ),
+    //         0.09*alpha*this->k()*this->omega()
+    //     );
+    //     volScalarField transport
+    //     (
+    //         IOobject
+    //         (
+    //             "transport",
+    //             this->runTime_.timeName(),
+    //             this->mesh_,
+    //             IOobject::NO_READ,
+    //             IOobject::AUTO_WRITE
+    //         ),
+    //         fvc::div((alpha*rho*Dk)*fvc::grad(this->k()))
+    //     );
 
-        volScalarField dragSource
-        (
-            IOobject
-            (
-                "dragSource",
-                this->runTime_.timeName(),
-                this->mesh_,
-                IOobject::NO_READ,
-                IOobject::AUTO_WRITE
-            ),
-            this->kSource() & this->k()
-        );
+    //     volScalarField dragSource
+    //     (
+    //         IOobject
+    //         (
+    //             "dragSource",
+    //             this->runTime_.timeName(),
+    //             this->mesh_,
+    //             IOobject::NO_READ,
+    //             IOobject::AUTO_WRITE
+    //         ),
+    //         this->kSource() & this->k()
+    //     );
 
-        volScalarField nuRatio
-        (
-            IOobject
-            (
-                "nuRatio",
-                this->runTime_.timeName(),
-                this->mesh_,
-                IOobject::NO_READ,
-                IOobject::AUTO_WRITE
-            ),
-            this->nut()/this->nu()
-        );
+    //     volScalarField nuRatio
+    //     (
+    //         IOobject
+    //         (
+    //             "nuRatio",
+    //             this->runTime_.timeName(),
+    //             this->mesh_,
+    //             IOobject::NO_READ,
+    //             IOobject::AUTO_WRITE
+    //         ),
+    //         this->nut()/this->nu()
+    //     );
 
-        ddt.write();
-        conv.write();
-        production.write();
-        dissipation.write();
-        transport.write();
-        dragSource.write();
-        nuRatio.write();
+    //     ddt.write();
+    //     conv.write();
+    //     production.write();
+    //     dissipation.write();
+    //     transport.write();
+    //     dragSource.write();
+    //     nuRatio.write();
 
-        Info << "Written Fields for this time step -> now exiting" << exit(FatalError);
-    }
+    //     Info << "Written Fields for this time step -> now exiting" << exit(FatalError);
+    // }
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 

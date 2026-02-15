@@ -101,3 +101,16 @@ surfaceScalarField phiParticles
     ),
     fvc::flux(Uparticles)
 );
+
+volScalarField Mach
+(
+    IOobject
+    (
+      "Mach",
+      runTime.timeName(),
+      mesh,
+      IOobject::MUST_READ,
+      IOobject::NO_WRITE
+    ),
+    mesh
+);
