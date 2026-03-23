@@ -127,6 +127,7 @@ Foam::Surface::Surface
     alphaOld_.clip(SMALL, 1 - SMALL);
 
     this->findInterface();
+    Info << "1-> Interface: " << sum(interface_) << endl;
 
     label interfaceCells(sum(interface_).value());
     interfaceOwners_.reset(new labelList(interfaceCells, -1));
@@ -166,7 +167,7 @@ Foam::label Foam::Surface::findNeighbour
     {
         if (Own[i] == NEI)
         {
-            //Info << "Nei: " << Nei[i] << " alpha: " << alpha[Nei[i]] << endl;
+            // Info << "Nei: " << Nei[i] << " alpha: " << alpha[Nei[i]] << endl;
             if (alpha[Nei[i]] == One)
             {
                 return Nei[i];
@@ -224,58 +225,103 @@ Foam::scalar Foam::Surface::findNeighbourSurfaceArea
 
 void Foam::Surface::findInterface()
 {
-    // -If found interface -> interface_ = 1
-    // use owner neighbour approach
+    // ------------- Old Logic ------------------------------------- 
+    // // -If found interface -> interface_ = 1
+    // // use owner neighbour approach
+    // const fvMesh& mesh = alpha_.mesh();
+    // const volScalarField& alpha = alpha_;
+    // const labelList& Own = mesh.owner();
+    // const labelList& Nei = mesh.neighbour();
+    // const scalar One(1 - SMALL);
+    // const scalar Zero(SMALL);
+    // interface_ = dimensionedScalar(dimless, 0.0);
+
+    // forAll(Own, i)
+    // {
+    //     // case:1 Interface is present at the center of the owner cell
+    //     if (alpha[Own[i]] == 0.5 && alpha[Nei[i]] == One)
+    //     {
+    //         interface_[Own[i]] = 1;
+    //     }
+    //     // case:2 Interface is present in between owner center and face
+    //     else if ((alpha[Own[i]] < 0.5) && (alpha[Nei[i]] == One))
+    //     {
+    //         interface_[Own[i]] = 1;
+    //     }
+    //     // case:3 Interface is present exactly at the center
+    //     else if ((alpha[Own[i]] == Zero) && (alpha[Nei[i]] == One))
+    //     {
+    //         interface_[Own[i]] = 1;
+    //     }
+    //     // case:4 Interface is present in between face and neighbour center
+    //     else if ((alpha[Own[i]] == Zero) && (alpha[Nei[i]] >= 0.5))
+    //     {
+    //         interface_[Own[i]] = 1;
+    //     }
+    //     // case:5 Interface is present in the boundary cell
+    //     else if ((alpha[Own[i]] == Zero) && (alpha[Nei[i]] < 0.5))
+    //     {
+    //         // Additional check for boundary cells
+    //         const fvPatchList& patches = mesh.boundary();
+    //         forAll(patches, j)
+    //         {
+    //             const fvPatch& patch = patches[j];
+    //             const labelList& fC = patch.faceCells();
+    //             forAll(fC, k)
+    //             {
+    //                 if (fC[k] == Nei[i])
+    //                 {
+    //                     interface_[Nei[i]] = 1;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     // case:6 Interface is not present (Ignore)
+    //     else  continue;
+    // }
+    // -------------------------------------------------------------------------- //
+
+    // --------- New Logic ----------------------------------------------------- //
+    const volScalarField& alpha0 = alphaOld_;
     const fvMesh& mesh = alpha_.mesh();
-    const volScalarField& alpha = alpha_;
     const labelList& Own = mesh.owner();
     const labelList& Nei = mesh.neighbour();
-    const scalar One(1 - SMALL);
     const scalar Zero(SMALL);
+    const scalar One(1.0 - SMALL);
     interface_ = dimensionedScalar(dimless, 0.0);
 
+    // Internal Cells
     forAll(Own, i)
     {
-        // case:1 Interface is present at the center of the owner cell
-        if (alpha[Own[i]] == 0.5 && alpha[Nei[i]] == One)
+      // case:1 Interface is present in the Neighbour Cell
+      if
+      (
+          (alpha0[Own[i]] == Zero && alpha0[Nei[i]] > Zero) &&
+          (Nei[i] == Own[i] + 1)
+      )
+      {
+          interface_[Nei[i]] = 1;
+      }
+    }
+
+    // Interface in Processor Patch Cells
+    const volScalarField::Boundary& alpha0bF(alpha0.boundaryField());
+    forAll(alpha0bF, bFi)
+    {
+        word BCtype = mesh.boundaryMesh().types()[bFi];
+        if ( BCtype == "processor" )    // For Processor Boundary
         {
-            interface_[Own[i]] = 1;
-        }
-        // case:2 Interface is present in between owner center and face
-        else if ((alpha[Own[i]] < 0.5) && (alpha[Nei[i]] == One))
-        {
-            interface_[Own[i]] = 1;
-        }
-        // case:3 Interface is present exactly at the center
-        else if ((alpha[Own[i]] == Zero) && (alpha[Nei[i]] == One))
-        {
-            interface_[Own[i]] = 1;
-        }
-        // case:4 Interface is present in between face and neighbour center
-        else if ((alpha[Own[i]] == Zero) && (alpha[Nei[i]] >= 0.5))
-        {
-            interface_[Own[i]] = 1;
-        }
-        // case:5 Interface is present in the boundary cell
-        else if ((alpha[Own[i]] == Zero) && (alpha[Nei[i]] < 0.5))
-        {
-            // Additional check for boundary cells
-            const fvPatchList& patches = mesh.boundary();
-            forAll(patches, j)
+            // const processorPolyPatch& pp = refCast<const processorPolyPatch>(mesh.boundaryMesh()[bFi]);
+            const UList<label>& fC(mesh.boundaryMesh()[bFi].faceCells());
+            forAll(fC, i)
             {
-                const fvPatch& patch = patches[j];
-                const labelList& fC = patch.faceCells();
-                forAll(fC, k)
+                if (((alpha0[fC[i]] > Zero) && (alpha0[fC[i]] != One))  && (interface_[fC[i]] != 1))
                 {
-                    if (fC[k] == Nei[i])
-                    {
-                        interface_[Nei[i]] = 1;
-                    }
+                    // New Interface cell is found in this processor patch
+                    interface_[fC[i]] = 1;
                 }
             }
         }
-        // case:6 Interface is not present (Ignore)
-        else  continue;
     }
 }
 
@@ -287,6 +333,7 @@ void Foam::Surface::findInterfaceCells()
     const labelList& Own = mesh.owner();
     const labelList& Nei = mesh.neighbour();
     const scalar Zero(SMALL);
+    const scalar One(1.0 - SMALL);
     interface_ = dimensionedScalar(dimless, 0.0);
 
     // interface owners and neighbours
@@ -311,6 +358,29 @@ void Foam::Surface::findInterfaceCells()
           iNeighbours[j] = Nei[i];
           j++;
       }
+    }
+
+    // Interface in Processor Patch Cells
+    const volScalarField::Boundary& alpha0bF(alpha0.boundaryField());
+    forAll(alpha0bF, bFi)
+    {
+        word BCtype = mesh.boundaryMesh().types()[bFi];
+        if ( BCtype == "processor" )    // For Processor Boundary
+        {
+            // const processorPolyPatch& pp = refCast<const processorPolyPatch>(mesh.boundaryMesh()[bFi]);
+            const UList<label>& fC(mesh.boundaryMesh()[bFi].faceCells());
+            forAll(fC, i)
+            {
+                if (((alpha0[fC[i]] > Zero) && (alpha0[fC[i]] != One))  && (interface_[fC[i]] != 1))
+                {
+                    // New Interface cell is found in this processor patch
+                    interface_[fC[i]] = 1;
+                    iOwners[j] = -1; // should be the index of the patch neighbour cells - not existent in this processor! - what to do?
+                    iNeighbours[j] = fC[i];
+                    j++;
+                }
+            }
+        }
     }
 
 }
@@ -365,7 +435,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
           (Nei[i] == Own[i] + 1)
       )
       {
-//	Info << "Flame Regress: Cell: " << Nei[i]  << " - " << alpha0[Nei[i]]; 
+        //   Info << "Flame Regress: Cell: " << Nei[i]  << " - " << alpha0[Nei[i]]; 
           interface_[Nei[i]] = 1;
           iOwners[k] = Own[i];
           iNeighbours[k] = Nei[i];
@@ -384,7 +454,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
           rb_[Nei[i]] = rb(p[bed[k]]);  // burning Rate
           dmdt_[Nei[i]] = rb_[Nei[i]]*As_[Nei[i]];
           nHat_[Nei[i]] = vector(1, 0, 0);
-          //Info << "Bed Regress: " << Nei[i] << " ( " << dmdt_[Nei[i]] << " ) ";
+          // Info << "Bed Regress: " << Nei[i] << " ( " << dmdt_[Nei[i]] << " ) ";
           scalar newalpha = alpha0[Nei[i]] - rb_[Nei[i]]*As_[Nei[i]]*dt;
           if (newalpha < 0)
           {
@@ -435,7 +505,6 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
     const scalar MR
 )
 {
-
     // dmdt Field
     tmp<volScalarField> tdmdt
     (
@@ -482,7 +551,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
             (Nei[i] == Own[i] + 1)
         )
         {
-//		Info << "Bed Regress -> Cell: " << Nei[i] << " - " << alpha0[Nei[i]];
+        	// Info << "Bed Regress -> Cell: " << Nei[i] << " - " << alpha0[Nei[i]];
             scalar dmdtflame = 0;
             scalar Vflame = 0;
 
@@ -555,7 +624,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
             {
                 alpha[Nei[i]] = newalpha;
             }
-//		Info << " New Alpha: " << alpha[Nei[i]] << endl;
+            // Info << " New Alpha: " << alpha[Nei[i]] << endl;
             k++;
         }
     }
