@@ -488,11 +488,91 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
           {
               alpha[Nei[i]] = newalpha;
           }
-	//Info << " New Alpha: " << alpha[Nei[i]] << endl;
+	      // Info << " New Alpha: " << alpha[Nei[i]] << endl;
           k++;
       }
     }
-    Info << endl;
+    
+    // (In Parallel Run) Interface is present in Owner cell belonging to the processor patch
+    const volScalarField::Boundary& alpha0bF(alpha0.boundaryField());
+    forAll(alpha0bF, bFi)
+    {
+        word BCtype = mesh.boundaryMesh().types()[bFi];
+        if ( BCtype == "processor" )    // For Processor Boundary
+        {
+            const processorPolyPatch& pp = refCast<const processorPolyPatch>(mesh.boundaryMesh()[bFi]);
+            const UList<label>& fC(pp.faceCells());
+            const scalarField Sfp(mag(pp.faceAreas()));
+            const scalarField& alpha0NbF(alpha0bF[bFi].patchNeighbourField());
+            
+            forAll(fC, i)
+            {
+                if (((alpha0[fC[i]] > Zero) && (alpha0NbF[i] == Zero))  && (interface_[fC[i]] != 1))
+                {
+                    // New Interface cell is found in this processor patch
+                    interface_[fC[i]] = 1;
+                    iOwners[k] = -1; // should be the index of the patch neighbour cells - not existent in this processor! - what to do?
+                    iNeighbours[k] = fC[i];
+
+                    // Linear Interpolation of Area -----------------
+                    scalar Asi = Sfp[i];
+                    label NNei = findNeighbour(alpha0, fC[i]);
+                    scalar Asip1 = findNeighbourSurfaceArea(alpha0, fC[i], NNei);
+                    scalar Sfj = alpha0[fC[i]]*Asi + (1 - alpha0[fC[i]])*Asip1;
+                    As_[fC[i]] = Sfj/V[fC[i]];  // Area of face between owner and neighbour
+                    // Pout << "Asi: " << Asi << " Asip1: " << Asip1 << endl;
+                    // ----------------------------------------------
+          
+                    rb_[fC[i]] = rb(p[bed[k]]);  // burning Rate
+                    dmdt_[fC[i]] = rb_[fC[i]]*As_[fC[i]];
+                    nHat_[fC[i]] = vector(1, 0, 0);
+                    scalar newalpha = alpha0[fC[i]] - rb_[fC[i]]*As_[fC[i]]*dt;
+                    if (newalpha < 0)
+                    {
+                        scalar Vr = -newalpha*V[fC[i]];
+                        alpha[fC[i]] = SMALL;
+                    
+                        // Find Neighbour of Neighbour cell
+                        bool isFound = false;
+                    
+                        if (NNei != -1)
+                        {
+                            alpha[NNei] = alpha0[NNei] - Vr/V[NNei];
+                            isFound = true;
+                            if (alpha[NNei] < 0)
+                            {
+                                FatalErrorInFunction
+                                  << "Regression is very fast!\n"
+                                  << "Hint: Reduce time step."
+                                  << exit(FatalError);
+                            }
+                        }
+                        if (isFound == false) // No adjacent cells have been found and hence stoping the regression here.
+                        {
+                            // Correcting source terms for termination
+                            dmdt_[fC[i]] = alpha0[fC[i]]*V[fC[i]]/dt;
+                            // dmdt_[Own[i]] = 0.0;
+                        }
+                    }
+                    else
+                    {
+                        alpha[fC[i]] = newalpha;
+                    }
+
+                    k++;
+                }
+            }
+        }
+    }
+
+    // Communicate the Processor Patch Information
+    alpha_.correctBoundaryConditions();
+    dmdt_.correctBoundaryConditions();
+    rb_.correctBoundaryConditions();
+    As_.correctBoundaryConditions();
+    nHat_.correctBoundaryConditions();
+
+    // Info << endl;
     return tdmdt;
 }
 
@@ -516,6 +596,14 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
         )
     );
     volScalarField& dmdt_(tdmdt.ref());
+    volScalarField V
+    (
+        IOobject("dmdt", p.mesh()),
+        p.mesh(),
+        dimensionedScalar("", dimVolume, 0.0)
+    );
+    V.primitiveFieldRef() = alpha_.mesh().V();
+    V.correctBoundaryConditions();
 
     // Regress interface based on dmdt
     const volScalarField& alpha0 = alphaOld_;
@@ -525,7 +613,7 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
     const labelList& Nei = mesh.neighbour();
     const surfaceScalarField& Sf = mesh.magSf();
     const scalar dt = mesh.time().deltaTValue();
-    const scalarField& V = mesh.V();
+    // const scalarField& V = mesh.V();
     const scalar Zero(SMALL);
 
     interface_ = dimensionedScalar(dimless, 0.0);
@@ -628,6 +716,141 @@ Foam::tmp<Foam::volScalarField> Foam::Surface::regressInterface
             k++;
         }
     }
+
+    // (In Parallel Run) Interface is present in Owner cell belonging to the processor patch
+    label k1 = k; // To restart from this label for distribution of source
+    const volScalarField::Boundary& alpha0bF(alpha0.boundaryField());
+    forAll(alpha0bF, bFi)
+    {
+        word BCtype = mesh.boundaryMesh().types()[bFi];
+        if ( BCtype == "processor" )    // For Processor Boundary
+        {
+            const processorPolyPatch& pp = refCast<const processorPolyPatch>(mesh.boundaryMesh()[bFi]);
+            const UList<label>& fC(pp.faceCells());
+            const scalarField Sfp(mag(pp.faceAreas()));
+            const scalarField& alpha0NbF(alpha0bF[bFi].patchNeighbourField());
+            forAll(fC, i)
+            {
+                if (((alpha0[fC[i]] > Zero) && (alpha0NbF[i] == Zero))  && (interface_[fC[i]] != 1))
+                {
+                    scalar dmdtflame = 0;
+                    scalar Vflame = 0;
+
+                    if (flame.size() > 0)
+                    {
+                        if (flame[k] != -1)
+                        {
+                            dmdtflame = dmdt[flame[k]];
+                            Vflame = V[flame[k]];
+                        }
+                    }
+                    
+                    interface_[fC[i]] = 1;
+                    iOwners[k] = -1;
+                    iNeighbours[k] = fC[i];
+
+                    // Linear Interpolation of Area -----------------
+                    scalar Asi = Sfp[i];
+                    label NNei = findNeighbour(alpha0, fC[i]);
+                    scalar Asip1 = findNeighbourSurfaceArea(alpha0, fC[i], NNei);
+                    scalar Sfj = alpha0[fC[i]]*Asi + (1 - alpha0[fC[i]])*Asip1;
+                    As_[fC[i]] = Sfj/V[fC[i]];  // Area of face between owner and neighbour
+                    // ----------------------------------------------
+                
+                    rb_[fC[i]] = rb(p[fC[i]]);  // burning Rate
+                    dmdt_[fC[i]] = (1 - alpha0[fC[i]])*dmdtflame*Vflame/V[fC[i]];
+                    nHat_[fC[i]] = vector(1, 0, 0);
+                    
+                    // --- This following code is for distributing the source to the next cell ! - Written after this loop... 
+                    // As_[Own[i]] = As_[Nei[i]];
+                    // rb_[Own[i]] = rb_[Nei[i]];
+                    // dmdt_[Own[i]] = alpha0[Nei[i]]*dmdtflame*Vflame/V[Own[i]];
+                    // nHat_[Own[i]] = vector(1, 0, 0);
+                
+                    scalar newalpha = alpha0[fC[i]] - (1.0 - MR/fp)*dmdt[flame[k]]*V[flame[k]]*dt/V[fC[i]];
+                    if (newalpha < 0)
+                    {
+                        scalar Vr = -newalpha*V[fC[i]];
+                        alpha[fC[i]] = SMALL;
+                    
+                        // Find Neighbour of Neighbour cell
+                        bool isFound = false;
+                    
+                        if (NNei != -1)
+                        {
+                            alpha[NNei] = alpha0[NNei] - Vr/V[NNei];
+                            isFound = true;
+                            if (alpha[NNei] < 0)
+                            {
+                                 FatalErrorInFunction
+                                   << "Regression is very fast!\n"
+                                   << "Hint: Reduce time step."
+                                   << exit(FatalError);
+                            }
+                        }
+                        if (isFound == false) // No adjacent cells have been found and hence stoping the regression here.
+                        {
+                            // Correcting source terms for termination
+                            dmdt_[fC[i]] = alpha0[fC[i]]*V[fC[i]]/dt;
+                            // dmdt_[Own[i]] = 0.0;
+                        }
+                    }
+                    else
+                    {
+                        alpha[fC[i]] = newalpha;
+                    }
+
+                    k++;
+                }
+            }
+        }
+    }
+
+    // Communicate the Processor Patch Information
+    alpha_.correctBoundaryConditions();
+    dmdt_.correctBoundaryConditions();
+    rb_.correctBoundaryConditions();
+    As_.correctBoundaryConditions();
+    nHat_.correctBoundaryConditions();
+    
+    // Distribute the mass source source to the cell across the processor patch (Currently works only if flame and bed are in the same processor :/
+    forAll(alpha0bF, bFi)
+    {
+        word BCtype = mesh.boundaryMesh().types()[bFi];
+        if ( BCtype == "processor" )    // For Processor Boundary
+        {
+            const UList<label>& fC(mesh.boundaryMesh()[bFi].faceCells());
+            const scalarField& alphaNbF(alpha_.boundaryField()[bFi].patchNeighbourField());
+            const scalarField& alpha0NbF(alpha0.boundaryField()[bFi].patchNeighbourField());
+            const scalarField& As_NbF(As_.boundaryField()[bFi].patchNeighbourField());
+            const scalarField& dmdt_NbF(dmdt_.boundaryField()[bFi].patchNeighbourField());
+            const scalarField& VNbF(V.boundaryField()[bFi].patchNeighbourField());
+            const scalarField& rb_NbF(rb_.boundaryField()[bFi].patchNeighbourField());
+            forAll(fC, i)
+            {
+                if ((alpha0[fC[i]] == Zero) && (alphaNbF[i] != Zero))
+                {
+                    iOwners[k1] = fC[i];
+                    iNeighbours[k1] = -1;
+
+                    // --- This following code is for distributing the source to the next cell that is found in the previous loop... 
+                    As_[fC[i]] = As_NbF[i];
+                    rb_[fC[i]] = rb_NbF[i];
+                    dmdt_[fC[i]] = (alpha0NbF[i]/(1.0 - alpha0NbF[i]))*dmdt_NbF[i]*VNbF[i]/V[fC[i]];
+                    nHat_[fC[i]] = vector(1, 0, 0);
+
+                    k1++;
+                }
+            }
+        }
+    }
+
+    // Communicate the Processor Patch Information
+    alpha_.correctBoundaryConditions();
+    dmdt_.correctBoundaryConditions();
+    rb_.correctBoundaryConditions();
+    As_.correctBoundaryConditions();
+    nHat_.correctBoundaryConditions();
 
     return tdmdt;
 }
